@@ -1,8 +1,0 @@
-minimize 0
-subject to
-2x - 3y + z <= -2
-x + 3y + z <= -3
--2x - 3y + z <= -2
--x - 3y - 3z <= 1
--2x - y - 3z <= 3
-end

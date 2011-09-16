@@ -1,3 +1,0 @@
-;; Easy window management
-(winner-mode t) ;; turn on the global minor mode
-

@@ -1,9 +1,0 @@
-#!/bin/bash
-ln -s -i ~/Dropbox/Config\ files/BBDB ~/.bbdb
-ln -s -i ~/Dropbox/Config\ files/dotBashRc ~/.bashrc
-ln -s -i ~/Dropbox/Config\ files/dotEmacs ~/.emacs
-ln -s -i ~/Dropbox/Config\ files/dotEmacsDotD ~/.emacs.d/
-ln -s -i ~/Dropbox/Config\ files/dotNewsRC ~/.newsrc
-ln -s -i ~/Dropbox/Config\ files/dotNewsRCdotELD ~/.newsrc.eld
-ln -s -i ~/Dropbox/Config\ files/News ~/News/
-
