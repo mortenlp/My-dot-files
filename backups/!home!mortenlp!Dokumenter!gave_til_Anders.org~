@@ -1,0 +1,46 @@
+
+* Folk der er med (x hvis de har betalt) [7/10]
+
+- [X] Nana
+
+- [X] Helene
+
+- [ ] Michael
+
+- [X] Lene
+
+- [X] Morten
+
+- [ ] Kedde
+
+- [ ] Troels
+
+- [X] Bettina
+
+- [X] Lisbeth
+
+- [X] Niels
+
+* Folk der IKKE er med
+
+- Majken
+
+- Maria
+
+* Folk der ikke har svaret
+
+- Berit
+
+* Regnskab
+
+  |--------------------------+-----------|
+  |                          |     Beløb |
+  |--------------------------+-----------|
+  | Stempelkande             |    369.95 |
+  | Kaffe                    |     79.00 |
+  |--------------------------+-----------|
+  | Total                    |    448.95 |
+  |--------------------------+-----------|
+  | Pr. person (10 personer) |    44.895 |
+  |--------------------------+-----------|
+  #+TBLFM: @4$2=@2$2+@3$2::@5$2=@4$2/10

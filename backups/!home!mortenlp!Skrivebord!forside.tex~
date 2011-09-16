@@ -1,0 +1,53 @@
+\calccentering{\unitlength}
+\begin{adjustwidth*}{\unitlength}{-\unitlength}
+\centering
+\vspace*{5mm}
+{
+%\bfseries
+\fontsize{1cm}{1.2cm}\selectfont \textbf{
+On split cuts and lattice point free convex sets}
+\par
+}
+
+
+\vspace*{0.5cm}
+\LARGE
+{
+\itshape
+Working title
+}
+
+\vspace*{2cm}
+
+\large
+\includegraphics[width=8cm]{segla1s.pdf}
+
+\vspace*{2cm}
+Master's Thesis in Mathematics-Economics \\
+\vspace*{0.5cm}
+by Morten Leander Petersen, 20061557
+
+\vspace*{1cm}
+
+\large
+Supervisor: Kent Andersen
+
+% \vspace*{1cm}
+% Afleveret 21. april 2008\\
+
+\enlargethispage{1cm}
+
+
+\vspace*{0.5cm}
+
+\large
+Department of Mathematical Sciences\\
+University of Aarhus\\
+September 2011
+\end{adjustwidth*}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End: 

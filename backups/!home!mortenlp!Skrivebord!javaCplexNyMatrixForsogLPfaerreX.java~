@@ -1,0 +1,654 @@
+import java.io.*;
+import java.util.*;
+import ilog.concert.*;
+import ilog.cplex.*;
+import java.lang.Math;
+//fil med kanter som en sti bruger, skal angive kanter i begge retninger
+public class javaCplexNyMatrixForsogLPfaerreX {
+
+	public ReturnValuesDoublesCplex LoesMP2NyMatrix(double[][] dist, int[][] erhvervsKunder, int[][] mobilKunder, int[][] netKunder, int[][] dslamKunder, int antalKnuder, int[] antalStier, int[][][] kanterSti, int[][][] knuderSti, int[] max, int stiDim, long[][] branchingVector, int maxAntalKn, int maxAntalKa, int antalKunder, int[] antalKunderPaaType, int[][] skabe, int[][] feeders, int[] kanterBruges, int antalKanterBruges){
+		//double[][] dist=new double[a.length][]; //ny matrix med vaegte paa kanter
+		//int[][] erhvervsKunder=new int[erhvervsKunder1.length][];
+		//int[][] mobilKunder=new int[mobilKunder1.length][];
+		//int[][] netKunder=new int[netKunder1.length][];
+		//int[][] dslamKunder=new int[dslamKunder1.length][];
+		//int antalKunder=antalKunder1;
+		//int antalKnuder=c;
+		//int[] antalStier=new int[d.length];
+		int antalKanter=antalKnuder*antalKnuder;
+		int maxAntalKnuder=maxAntalKn;
+		int maxAntalKanter=maxAntalKa;
+		double objValue=0;
+		//int[] max=new int[max1.length];
+		//int[] antalKunderPaaType= new int[antalKunderPaaType1.length];
+		//int[] kanterBruges= new int[kanterBruges1.length];
+		//for (int i=0; i<kanterBruges1.length; i++){			kanterBruges[i]=kanterBruges1[i];		}
+		//int antalKanterBruges=antalKanterBruges1;
+
+		double[][] yLoesning=new double[antalKunder][stiDim];
+		double[] xLoesning=new double[antalKanterBruges];
+		double[] pi=new double[antalKunder];
+		double[][] sigma=new double[max.length][antalKnuder]; 
+		double[][] omega=new double[max.length][antalKanterBruges];
+		double[] delta=new double[antalKanterBruges];
+		double[][] gamma= new double[antalKunder][antalKanterBruges];
+		double[] rho=new double[antalKanterBruges];
+
+		//int[][] skabe= new int[skabe1.length][];
+		//for (int i=0; i<skabe1.length; i++){ 			skabe[i]=skabe1[i];		}
+		//int[][] feeders= new int[feeders1.length][];
+		//for (int i=0; i<feeders1.length; i++){			feeders[i]=feeders1[i];		}
+		int antalFeeders=feeders[0].length;
+		int antalSkabe=skabe[0].length;
+		//for (int i=0; i<antalKunderPaaType1.length; i++){			antalKunderPaaType[i]=antalKunderPaaType1[i];		}
+		//for (int i=0; i<max1.length; i++){			max[i]=max1[i];		}
+
+		//initialiserer vaegte
+		//for (int i=0; i<a.length; i++){ dist[i]=a[i]; }
+		//initialiserer kunder
+		//for (int i=0; i<erhvervsKunder1.length; i++){			erhvervsKunder[i]=erhvervsKunder1[i];		}
+		//for (int i=0; i<mobilKunder1.length; i++){			mobilKunder[i]=mobilKunder1[i];		}
+		//for (int i=0; i<netKunder1.length; i++){			netKunder[i]=netKunder1[i];		}
+		//for (int i=0; i<dslamKunder1.length; i++){			dslamKunder[i]=dslamKunder1[i];		}
+		//initialiserer antalStier
+		//for (int i=0; i<d.length; i++){			antalStier[i]=d[i];		}
+		int antalStierIAlt=0;
+		for(int i=0; i<antalKunder; i++){
+			antalStierIAlt=antalStierIAlt+antalStier[i];
+		}
+		//long[][] branchingVector= new long[branch.length][];
+		//initialiserer antalStier		for (int i=0; i<branch.length; i++){			branchingVector[i]=branch[i];		}
+
+
+		try{
+			IloCplex cplex = new IloCplex(); //lave ny cplex
+			//IloNumVar[] x = cplex.numVarArray(antalKanter, 0.0, Integer.MAX_VALUE); //laver x-variable. Vektor med antalKanter indgange.
+			IloNumVar[] x = cplex.numVarArray(antalKanterBruges, 0.0, Integer.MAX_VALUE); //laver x-variable. Vektor med antalKanter indgange.
+			IloLinearNumExpr expr = cplex.linearNumExpr(); //laver nyt lineært udtryk som hedder expr. IloLinearNumExpr er en udvidelse af IloNumExpr
+			//Laver udtryk expr, som er sum af x'er gange afstandsmatrix			
+			for (int i=0; i<antalKanterBruges;i++) {
+					int slutknude=kanterBruges[i]%antalKnuder;
+					int startknude=(kanterBruges[i]-slutknude)/antalKnuder;
+					double index=dist[startknude][slutknude];
+					expr.addTerm(index, x[i]);
+			}
+			//Tilfoejer expr som objektfunktion
+			IloObjective obj = cplex.minimize(expr); //laver expr til en objektfunktion der skal minimeres
+			cplex.add(obj); //tilføjer objektfunktionen til det problem der skal løses.
+
+			IloNumVar[][] y = new IloNumVar[antalKunder][]; //Ny variabel y som har antal kunder som antallet af raekker
+			//Soerger for at y-variablene bliver lavet, der skal vaere antalStier soejler for hver raekke (svarende til hver kunde), og y skal ligge mellem 0 og 1.
+			for (int i = 0; i < antalKunder; i++) { 
+				y[i] = cplex.numVarArray(antalStier[i], 0, Integer.MAX_VALUE);
+       	 	}
+			//Laver udtryk og tilfoejer til cplex. sum_j y_[i,j]=1
+			IloRange[] rng1 = new IloRange[antalKunder]; // rng1 er navn paa denne gruppe af bibetingelser
+			for (int i=0; i<antalKunder; i++) {
+				IloLinearNumExpr v = cplex.linearNumExpr(); //Laver nyt udtryk v
+				for (int j=0; j<antalStier[i]; j++){
+					v.addTerm(1., y[i][j]); //Tilfoejer leddet 1*y[i][j] til udtrykket v
+				}
+				rng1[i]=cplex.addEq(v,1); //Tilfoejer udtrykket v til programmet og rng1. Udtrykket skal vaere lig 1 og faar navnet sumY
+			}	
+
+				//Betingelse for erhvervskunder begraensning paa knuder
+				IloRange[] betingelseKnude0= new IloRange[antalKnuder];
+				IloRange[] betingelseKnude1= new IloRange[antalKnuder];
+				IloRange[] betingelseKnude2= new IloRange[antalKnuder];
+				IloRange[] betingelseKnude3= new IloRange[antalKnuder];
+				for (int knude=0; knude<antalKnuder; knude++){
+					IloLinearNumExpr qKnude0=cplex.linearNumExpr(); //Laver nyt udtryk q
+					for(int i=erhvervsKunder[0][0]; i<erhvervsKunder[0][erhvervsKunder[0].length-1];i++){
+						for(int j=0; j<antalStier[i]; j++){
+							for(int l=0; l<maxAntalKnuder; l++){
+								if(knuderSti[i][j][l]==knude){
+									qKnude0.addTerm(1,y[i][j]);
+								}
+							}					
+						}
+					}
+					int erOrigin=0;
+					for(int i=0; i<antalFeeders; i++){
+						if(knude==feeders[0][i]){
+							erOrigin=1;
+						}
+					}
+					if(erOrigin!=1){ 
+						betingelseKnude0[knude]=cplex.addLe(qKnude0,max[0], "_erhvervKnuder");
+					}
+
+					IloLinearNumExpr qKnude1=cplex.linearNumExpr(); //Laver nyt udtryk q
+					for(int i=mobilKunder[0][0]; i<mobilKunder[0][mobilKunder[0].length-1];i++){
+						for(int j=0; j<antalStier[i]; j++){
+							for(int l=0; l<maxAntalKnuder; l++){
+								if(knuderSti[i][j][l]==knude){
+									qKnude1.addTerm(1,y[i][j]);
+								}
+							}
+							
+						}
+					}
+					
+					if(erOrigin!=1){ 
+						betingelseKnude1[knude]=cplex.addLe(qKnude1,max[1], "_mobilKnuder");
+					}
+
+				//Betingelse for netKunder, begraensning paa knuder
+				
+				
+					IloLinearNumExpr qKnude2=cplex.linearNumExpr(); //Laver nyt udtryk q
+					for(int i=netKunder[0][0]; i<netKunder[0][netKunder[0].length-1];i++){
+						for(int j=0; j<antalStier[i]; j++){
+							for(int l=0; l<maxAntalKnuder; l++){
+								if(knuderSti[i][j][l]==knude){
+									qKnude2.addTerm(1,y[i][j]);
+								}
+							}
+							
+						}
+					}
+					if(erOrigin!=1){ 
+						betingelseKnude2[knude]=cplex.addLe(qKnude2,max[2], "_netKnuder");
+					}
+				
+				//Betingelse for dslamKunder, begraensning paa knuder
+				
+					IloLinearNumExpr qKnude3=cplex.linearNumExpr(); //Laver nyt udtryk q
+					for(int i=dslamKunder[0][0]; i<dslamKunder[0][dslamKunder[0].length-1];i++){
+						for(int j=0; j<antalStier[i]; j++){
+							for(int l=0; l<maxAntalKnuder; l++){
+								if(knuderSti[i][j][l]==knude){
+									qKnude3.addTerm(1,y[i][j]);
+								}
+							}							
+						}
+					}
+					if(erOrigin!=1){ 
+						betingelseKnude3[knude]=cplex.addLe(qKnude3,max[3], "_dslamKnuder");
+					}
+				}
+			
+				//Betingelse for erhvervskunder begraensning paa knuder
+		//		IloRange[] betingelseKnude0= new IloRange[antalKnuder];
+		//		for (int knude=0; knude<antalKnuder; knude++){
+		//			IloLinearNumExpr qKnude0=cplex.linearNumExpr(); //Laver nyt udtryk q
+		//			for(int i=erhvervsKunder[0][0]; i<erhvervsKunder[0][erhvervsKunder[0].length-1];i++){
+		//				for(int j=0; j<antalStier[i]; j++){
+		//					for(int l=0; l<maxAntalKnuder; l++){
+		//						if(knuderSti[i][j][l]==knude){
+		//							qKnude0.addTerm(1,y[i][j]);
+		//						}
+		//					}					
+		//				}
+		//			}
+		//			int erOrigin=0;
+		//			for(int i=0; i<antalFeeders; i++){
+		//				if(knude==feeders[0][i]){
+		//					erOrigin=1;
+		//				}
+		//			}
+		//			if(erOrigin!=1){ 
+		//				betingelseKnude0[knude]=cplex.addLe(qKnude0,max[0], "_erhvervKnuder");
+		//			}
+		//		}
+		//		//Betingelse for mobilKunder, begraensning paa knuder
+		//		IloRange[] betingelseKnude1= new IloRange[antalKnuder];
+		//		for (int knude=0; knude<antalKnuder; knude++){
+		//			IloLinearNumExpr qKnude1=cplex.linearNumExpr(); //Laver nyt udtryk q
+		//			for(int i=mobilKunder[0][0]; i<mobilKunder[0][mobilKunder[0].length-1];i++){
+		//				for(int j=0; j<antalStier[i]; j++){
+		//					for(int l=0; l<maxAntalKnuder; l++){
+		//						if(knuderSti[i][j][l]==knude){
+		//							qKnude1.addTerm(1,y[i][j]);
+		//						}
+		//					}
+		//					
+		//				}
+		//			}
+		//			int erOrigin=0;
+		//			for(int i=0; i<antalFeeders; i++){
+		//				if(knude==feeders[0][i]){
+		//					erOrigin=1;
+		//				}
+		//			}
+		//			if(erOrigin!=1){ 
+		//				betingelseKnude1[knude]=cplex.addLe(qKnude1,max[1], "_mobilKnuder");
+		//			}
+		//		}
+
+		//		//Betingelse for netKunder, begraensning paa knuder
+		//		IloRange[] betingelseKnude2= new IloRange[antalKnuder];
+		//		for (int knude=0; knude<antalKnuder; knude++){
+		//			IloLinearNumExpr qKnude2=cplex.linearNumExpr(); //Laver nyt udtryk q
+		//			for(int i=netKunder[0][0]; i<netKunder[0][netKunder[0].length-1];i++){
+		//				for(int j=0; j<antalStier[i]; j++){
+		//					for(int l=0; l<maxAntalKnuder; l++){
+		//						if(knuderSti[i][j][l]==knude){
+		//							qKnude2.addTerm(1,y[i][j]);
+		//						}
+		//					}
+		//					
+		//				}
+		//			}
+		//			int erOrigin=0;
+		//			for(int i=0; i<antalFeeders; i++){
+		//				if(knude==feeders[0][i]){
+		//					erOrigin=1;
+		//				}
+		//			}
+		//			if(erOrigin!=1){ 
+		//				betingelseKnude2[knude]=cplex.addLe(qKnude2,max[2], "_netKnuder");
+		//			}
+		//		}
+		//		//Betingelse for dslamKunder, begraensning paa knuder
+		//		IloRange[] betingelseKnude3= new IloRange[antalKnuder];
+		//		for (int knude=0; knude<antalKnuder; knude++){
+		//			IloLinearNumExpr qKnude3=cplex.linearNumExpr(); //Laver nyt udtryk q
+		//			for(int i=dslamKunder[0][0]; i<dslamKunder[0][dslamKunder[0].length-1];i++){
+		//				for(int j=0; j<antalStier[i]; j++){
+		//					for(int l=0; l<maxAntalKnuder; l++){
+		//						if(knuderSti[i][j][l]==knude){
+		//							qKnude3.addTerm(1,y[i][j]);
+		//						}
+		//					}							
+		//				}
+		//			}
+		//			int erOrigin=0;
+		//			for(int i=0; i<antalFeeders; i++){
+		//				if(knude==feeders[0][i]){
+		//					erOrigin=1;
+		//				}
+		//			}
+		//			if(erOrigin!=1){ 
+		//				betingelseKnude3[knude]=cplex.addLe(qKnude3,max[3], "_dslamKnuder");
+		//			}
+		//		}
+
+			
+			
+			//Laver udtryk of tilfoejer til cplex.Sikrer at x'erne er mindre end eller lig 1
+			//IloRange[]  rng4 = new IloRange[antalKanterBruges]; //ny bibetingelse rng3, som har antalKanter som antal bibetingelser
+			//for(int k=0; k<antalKanterBruges; k++){
+				//IloLinearNumExpr xBound = cplex.linearNumExpr(); //Laver nyt udtryk xBound
+				//xBound.addTerm(1,x[k]);
+				//rng4[k]=cplex.addLe(xBound,1);
+			//}
+			//sum y eji^k -x <=0
+			IloRange[][] rng6 = new IloRange[antalKunder][antalKanterBruges]; //ny bibetingelse rng6, som har antalKanter som antal bibetingelser
+			for(int i=0; i<antalKunder; i++){
+				for (int k=0; k<antalKanterBruges; k++){				
+					IloLinearNumExpr ekstra = cplex.linearNumExpr(); //Laver nyt udtryk ekstra
+					for(int j=0; j<antalStier[i]; j++){
+						for(int l=0; l<maxAntalKanter; l++){
+							if(kanterSti[i][j][l]==kanterBruges[k]){	
+								int slutknude= kanterSti[i][j][l]%antalKnuder;
+								int startknude= (kanterSti[i][j][l]-slutknude)/antalKnuder;
+								//System.out.println("kunde " + i + " bruger kant " + kanterBruges[k] + " dvs startknude " + startknude + " slutknude " + slutknude);
+								ekstra.addTerm(1, y[i][j]);
+							}
+						}		
+					}
+					ekstra.addTerm(-1, x[k]);
+					//int index1=k*antalKunder+i;
+					rng6[i][k]=cplex.addLe(ekstra,0);
+				}
+			}
+
+			//Laver udtryk of tilfoejer til cplex.Sikrer at x'erne er mindre end eller lig 1
+			IloRange[]  rng4 = new IloRange[antalKanterBruges]; //ny bibetingelse rng3, som har antalKanter som antal bibetingelser
+			
+			IloRange[]  rng5 = new IloRange[antalKanterBruges]; //ny bibetingelse rng3, som har antalKanter som antal bibetingelser			
+			for(int k=0; k<antalKanterBruges; k++){
+				IloLinearNumExpr xBound = cplex.linearNumExpr(); //Laver nyt udtryk xBound
+				xBound.addTerm(1,x[k]);
+				rng4[k]=cplex.addLe(xBound,1);
+
+
+				if(branchingVector[2][k]>0){
+					System.out.println("branchingVector>0 kanter " + branchingVector[1][k] + " vaerdi " + branchingVector[2][k]);
+					IloLinearNumExpr xBranch = cplex.linearNumExpr(); //Laver nyt udtryk xBound
+					for(int i=0; i<antalKanterBruges; i++){
+						if(kanterBruges[i]==branchingVector[1][k]){
+							xBranch.addTerm(1,x[i]);
+							rng5[i]=cplex.addEq(xBranch,1);
+						}
+					}
+					
+				}
+				if(branchingVector[2][k]<0){
+					System.out.println("branchingVector<0 kant " + branchingVector[1][k] + " vaerdi " + branchingVector[2][k]);
+					IloLinearNumExpr xBranch = cplex.linearNumExpr(); //Laver nyt udtryk xBound
+					for(int i=0; i<antalKanterBruges; i++){
+						if(kanterBruges[i]==branchingVector[1][k]){
+							xBranch.addTerm(1,x[i]);
+							rng5[i]=cplex.addEq(xBranch,0);
+						}
+					}
+				}
+			}
+
+		//	//Capacitetsbegr. på kanter
+		//	IloRange[] rng7 = new IloRange[antalKanterBruges]; //ny bibetingelse rng6, som har antalKanter som antal bibetingelser
+		//	for (int k=0; k<antalKanterBruges; k++){
+		//		IloLinearNumExpr ekstra = cplex.linearNumExpr(); //Laver nyt udtryk ekstra
+		//			for(int i=erhvervsKunder[0][0]; i<erhvervsKunder[0][erhvervsKunder[0].length-1];i++){
+		//			for(int j=0; j<antalStier[i]; j++){
+		//				for(int l=0; l<maxAntalKanter; l++){
+		//					if(kanterSti[i][j][l]==kanterBruges[k]){	
+		//						int slutknude= kanterSti[i][j][l]%antalKnuder;
+		//						int startknude= (kanterSti[i][j][l]-slutknude)/antalKnuder;
+		//						//System.out.println("kunde " + i + " bruger kant " + kanterBruges[k] + " dvs startknude " + startknude + " slutknude " + slutknude);
+		//						ekstra.addTerm(1, y[i][j]);
+		//					}
+		//				}		
+		//			}
+		//		}
+		//			ekstra.addTerm(-max[0], x[k]);
+		//			//int index1=k*antalKunder+i;
+		//			rng7[k]=cplex.addLe(ekstra,0);
+		//	}
+		//	//Capacitetsbegr. på kanter
+		//	IloRange[] rng8 = new IloRange[antalKanterBruges]; //ny bibetingelse rng6, som har antalKanter som antal bibetingelser
+		//	for (int k=0; k<antalKanterBruges; k++){
+		//		IloLinearNumExpr ekstra = cplex.linearNumExpr(); //Laver nyt udtryk ekstra
+		//			for(int i=mobilKunder[0][0]; i<mobilKunder[0][mobilKunder[0].length-1];i++){
+		//			for(int j=0; j<antalStier[i]; j++){
+		//				for(int l=0; l<maxAntalKanter; l++){
+		//					if(kanterSti[i][j][l]==kanterBruges[k]){	
+		//						int slutknude= kanterSti[i][j][l]%antalKnuder;
+		//						int startknude= (kanterSti[i][j][l]-slutknude)/antalKnuder;
+		//						//System.out.println("kunde " + i + " bruger kant " + kanterBruges[k] + " dvs startknude " + startknude + " slutknude " + slutknude);
+		//						ekstra.addTerm(1, y[i][j]);
+		//					}
+		//				}		
+		//			}
+		//		}
+		//			ekstra.addTerm(-max[1], x[k]);
+		//			//int index1=k*antalKunder+i;
+		//			rng8[k]=cplex.addLe(ekstra,0);
+		//	}			//Capacitetsbegr. på kanter
+		//	IloRange[] rng9 = new IloRange[antalKanterBruges]; //ny bibetingelse rng6, som har antalKanter som antal bibetingelser
+		//	for (int k=0; k<antalKanterBruges; k++){
+		//		IloLinearNumExpr ekstra = cplex.linearNumExpr(); //Laver nyt udtryk ekstra
+		//			for(int i=netKunder[0][0]; i<netKunder[0][netKunder[0].length-1];i++){
+		//			for(int j=0; j<antalStier[i]; j++){
+		//				for(int l=0; l<maxAntalKanter; l++){
+		//					if(kanterSti[i][j][l]==kanterBruges[k]){	
+		//						int slutknude= kanterSti[i][j][l]%antalKnuder;
+		//						int startknude= (kanterSti[i][j][l]-slutknude)/antalKnuder;
+		//						//System.out.println("kunde " + i + " bruger kant " + kanterBruges[k] + " dvs startknude " + startknude + " slutknude " + slutknude);
+		//						ekstra.addTerm(1, y[i][j]);
+		//					}
+		//				}		
+		//			}
+		//		}
+		//			ekstra.addTerm(-max[2], x[k]);
+		//			//int index1=k*antalKunder+i;
+		//			rng9[k]=cplex.addLe(ekstra,0);
+		//	}
+		//	//Capacitetsbegr. på kanter
+		//	IloRange[] rng10 = new IloRange[antalKanterBruges]; //ny bibetingelse rng6, som har antalKanter som antal bibetingelser
+		//	for (int k=0; k<antalKanterBruges; k++){
+		//		IloLinearNumExpr ekstra = cplex.linearNumExpr(); //Laver nyt udtryk ekstra
+		//			for(int i=dslamKunder[0][0]; i<dslamKunder[0][dslamKunder[0].length-1];i++){
+		//			for(int j=0; j<antalStier[i]; j++){
+		//				for(int l=0; l<maxAntalKanter; l++){
+		//					if(kanterSti[i][j][l]==kanterBruges[k]){	
+		//						int slutknude= kanterSti[i][j][l]%antalKnuder;
+		//						int startknude= (kanterSti[i][j][l]-slutknude)/antalKnuder;
+		//						//System.out.println("kunde " + i + " bruger kant " + kanterBruges[k] + " dvs startknude " + startknude + " slutknude " + slutknude);
+		//						ekstra.addTerm(1, y[i][j]);
+		//					}
+		//				}		
+		//			}
+		//		}
+		//			ekstra.addTerm(-max[3], x[k]);
+		//			//int index1=k*antalKunder+i;
+		//			rng10[k]=cplex.addLe(ekstra,0);
+		//	}
+
+
+
+			cplex.exportModel("java18MajNyMatrix.lp"); //Eksporterer modellen til filen java13Apr.lp
+			cplex.solve();
+			cplex.getStatus();
+			if(cplex.solve()){
+				System.out.println("Obj value " + cplex.getObjValue());
+				objValue=cplex.getObjValue();
+				//Printer loesningen for x-variablene
+				for (int k=0; k<antalKanterBruges; k++){
+					if(cplex.getValue(x[k])!=0){ //printer ikke for de x'er der er lig 0
+						int kk=kanterBruges[k];
+						int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+						int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+						if(dist[(startknude)][slutknude]!=0){
+						System.out.println("x[" + k + "], " + "kanterBruges[k] " + kanterBruges[k] +" startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getValue(x[k]) + ", vægt d: " + (dist[(startknude)][slutknude]));
+						}
+					}
+					xLoesning[k]=cplex.getValue(x[k]);
+					
+				}
+				//Printer loesningen for y-variablene
+				for (int i=0; i<antalKunder; i++){
+					for (int j=0; j<antalStier[i]; j++){
+						if(cplex.getValue(y[i][j])!=0){ //printer ikke for de x'er der er lig 0
+						//System.out.println("y[" + (i) + "," + (j) + "]" + cplex.getValue(y[i][j]));
+						}
+						yLoesning[i][j]=cplex.getValue(y[i][j]);
+					}
+
+					if(cplex.getDual(rng1[i])!=0){
+						//System.out.println("dual variabel til sum over y=1: " + (i) + " vaerdi: " + cplex.getDual(rng1[i]));
+					}
+					pi[i]=cplex.getDual(rng1[i]);
+					for (int k=0; k<antalKanterBruges; k++){					
+						int kk=kanterBruges[k];
+						int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+						int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+						int index=k*antalKunder+i;
+						if(cplex.getDual(rng6[i][k])!=0){
+							//System.out.println("gamma, kunde: " + i + " kant " + kanterBruges[k] + " startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getDual(rng6[i][k]));
+						}
+						gamma[i][k]=cplex.getDual(rng6[i][k]);
+					}
+				}	
+				//Printer duale variable svarende til betingelserne rng1, dvs. sumY, altsaa at der skal vaere netop en sti mellem ethvert kundepar
+				//for (int i=0; i<antalKunder; i++){
+					//if(cplex.getDual(rng1[i])!=0){
+					//System.out.println("dual variabel til sum over y=1: " + (i) + " vaerdi: " + cplex.getDual(rng1[i]));
+					//}
+					//pi[i]=cplex.getDual(rng1[i]);
+				//}
+				//System.out.println("printer sigma");
+				//Printer duale variable svarende til betingelserne betingelseKnude0, dvs. maxCap, altsaa at ikke flere end max stier maa bruge en knude for foerste kundetype
+				for(int t=0; t<max.length; t++){
+					for (int n=0; n<antalKnuder; n++){
+						int erOrigin=0;
+						for(int i=0; i<antalFeeders; i++){
+							if(n==feeders[0][i]){
+								erOrigin=1;
+							}
+						}
+						if(erOrigin!=1){ 
+							if(t==0){
+								if(cplex.getDual(betingelseKnude0[n])!=0){
+									//System.out.println("dual variabel til betingelse for erhvervskunder om maxCapacity i knuder: " + (n) + " vaerdi: " + cplex.getDual(betingelseKnude0[n]));
+								}
+								sigma[t][n]=cplex.getDual(betingelseKnude0[n]);
+							}
+							if(t==1){
+								if(cplex.getDual(betingelseKnude1[n])!=0){
+									//System.out.println("dual variabel til betingelse for mobilkunder om maxCapacity i knuder: " + (n) + " vaerdi: " + cplex.getDual(betingelseKnude1[n]));
+								}
+								sigma[t][n]=cplex.getDual(betingelseKnude1[n]);
+							}
+							if(t==2){
+								if(cplex.getDual(betingelseKnude2[n])!=0){
+									//System.out.println("dual variabel til betingelse for erhvervskunder om maxCapacity i knuder: " + (n) + " vaerdi: " + cplex.getDual(betingelseKnude2[n]));
+								}
+								sigma[t][n]=cplex.getDual(betingelseKnude2[n]);
+							}
+							if(t==3){
+								if(cplex.getDual(betingelseKnude3[n])!=0){
+									//System.out.println("dual variabel til betingelse for erhvervskunder om maxCapacity i knuder: " + (n) + " vaerdi: " + cplex.getDual(betingelseKnude3[n]));
+								}
+								sigma[t][n]=cplex.getDual(betingelseKnude3[n]);
+							}
+							
+							//System.out.println("dual variabel til betingelse om maxCapacity i knuder: " + (n) + " vaerdi: " + cplex.getDual(rng3[n]));
+							//sigma[t][n]=cplex.getDual(betingelseKnude0[n]);							
+						}
+					}
+				}
+
+				//System.out.println("printer gamma");
+				//for (int i=0; i<antalKunder; i++){
+					//for (int k=0; k<antalKanterBruges; k++){					
+						//int kk=kanterBruges[k];
+						//int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+						//int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+						//int index=k*antalKunder+i;
+						//if(cplex.getDual(rng6[i][k])!=0){
+							//System.out.println("gamma, kunde: " + i + " kant " + kanterBruges[k] + " startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getDual(rng6[i][k]));
+						//}
+						//gamma[i][k]=cplex.getDual(rng6[i][k]);
+					//}
+				//}
+
+
+
+
+
+//			IloRange[]  rng5 = new IloRange[antalKanterBruges]; //ny bibetingelse rng3, som har antalKanter som antal bibetingelser			
+//			for(int k=0; k<antalKanterBruges; k++){
+//				if(branchingVector[2][k]>0){
+//					System.out.println("branchingVector>0 kanter " + branchingVector[1][k] + " vaerdi " + branchingVector[2][k]);
+//					IloLinearNumExpr xBranch = cplex.linearNumExpr(); //Laver nyt udtryk xBound
+//					for(int i=0; i<antalKanterBruges; i++){
+//						if(kanterBruges[i]==branchingVector[1][k]){
+//							xBranch.addTerm(1,x[i]);
+//							rng5[i]=cplex.addEq(xBranch,1);
+//						}
+//					}
+//					
+//				}
+//				if(branchingVector[2][k]<0){
+//					System.out.println("branchingVector<0 kant " + branchingVector[1][k] + " vaerdi " + branchingVector[2][k]);
+//					IloLinearNumExpr xBranch = cplex.linearNumExpr(); //Laver nyt udtryk xBound
+//					for(int i=0; i<antalKanterBruges; i++){
+//						if(kanterBruges[i]==branchingVector[1][k]){
+//							xBranch.addTerm(1,x[i]);
+//							rng5[i]=cplex.addEq(xBranch,0);
+//						}
+//					}
+//				}
+//			}
+			
+				//System.out.println("printer rho");
+				for(int k=0; k<antalKanterBruges; k++){
+					int kk=kanterBruges[k];
+					int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+					int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+					if(branchingVector[2][k]!=0){
+						for(int i=0; i<antalKanterBruges; i++){//**tilfoejet d. 17juni kl21.23
+						if(kanterBruges[i]==branchingVector[1][k]){ //**tilfoejet d. 17juni kl21.23
+						if(cplex.getDual(rng5[i])!=0){
+							//int kk=kanterBruges[k];
+							//int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+							//int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+							//System.out.println("rho, kant: " + kanterBruges[k] + " kant " + kk + " startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getDual(rng5[k]));
+							//int kk=kanterBruges[i];
+							//int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+							//int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+							//System.out.println("rho, kant: " + kanterBruges[i] + " kant " + kk + " startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getDual(rng5[i]));
+						}
+						rho[k]=cplex.getDual(rng5[i]);
+						} //**tilfoejet d. 17juni kl21.23
+						}//**tilfoejet d. 17juni kl21.23
+					}
+
+
+					
+					if(cplex.getDual(rng4[k])!=0){
+						//System.out.println("delta, kant: " + kanterBruges[k] +" startknude: " + startknude + " slutknude " + slutknude + " vaerdi: "+ cplex.getDual(rng4[k])+" ");
+					}
+					delta[k]=cplex.getDual(rng4[k]);
+				}	
+
+			//	System.out.println("printer omega for erhvervsKunder");
+			//	for (int k=0; k<antalKanterBruges; k++){					
+			//		int kk=kanterBruges[k];
+			//		int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+			//		int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+			//		if(cplex.getDual(rng7[k])!=0){
+			//				System.out.println("omega kant " + kanterBruges[k] + " startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getDual(rng7[k]));
+			//			}
+			//			omega[0][k]=cplex.getDual(rng7[k]);		
+			//	}
+
+			//	System.out.println("printer omega for mobilKunder");
+			//	for (int k=0; k<antalKanterBruges; k++){					
+			//		int kk=kanterBruges[k];
+			//		int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+			//		int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+			//		if(cplex.getDual(rng8[k])!=0){
+			//				System.out.println("omega kant " + kanterBruges[k] + " startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getDual(rng8[k]));
+			//			}
+			//			omega[1][k]=cplex.getDual(rng8[k]);					
+			//	}
+
+
+			//	System.out.println("printer omega for netKunder");
+			//	for (int k=0; k<antalKanterBruges; k++){					
+			//		int kk=kanterBruges[k];
+			//		int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+			//		int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+			//		if(cplex.getDual(rng9[k])!=0){
+			//				System.out.println("omega kant " + kanterBruges[k] + " startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getDual(rng9[k]));
+			//			}
+			//			omega[2][k]=cplex.getDual(rng9[k]);	
+			//	}
+
+			//	System.out.println("printer omega for dslamKunder");
+			//	for (int k=0; k<antalKanterBruges; k++){					
+			//		int kk=kanterBruges[k];
+			//		int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+			//		int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+			//		if(cplex.getDual(rng10[k])!=0){
+			//				System.out.println("omega kant " + kanterBruges[k] + " startknude: " + startknude + " slutknude: " + slutknude + " vaerdi: " + cplex.getDual(rng10[k]));
+			//			}
+			//			omega[3][k]=cplex.getDual(rng10[k]);		
+			//	}
+				//System.out.println("printer delta");
+				//Duale variable til betingelse om x'er mindre lig 1
+				//for (int n=0; n<antalKanterBruges; n++){
+					//int kk=kanterBruges[n];
+					//int slutknude= (kk)%antalKnuder; //finder ud af hvilken knude, kant k slutter ved
+					//int startknude=(kk-slutknude)/(antalKnuder);// finder ud af hvilken knude, kant k starter ved
+					//if(cplex.getDual(rng4[n])!=0){
+						//System.out.println("kant: " + kanterBruges[n] +" startknude: " + startknude + " slutknude " + slutknude + " vaerdi: "+ cplex.getDual(rng4[n])+" ");
+					//}
+					//delta[n]=cplex.getDual(rng4[n]);
+				//}
+				
+			}
+			else{
+				System.out.println("kan ikke loese problemet");
+			}
+			//if(antalStier[1]>2){
+			//IloCplex.BasisStatus test;
+			//test = cplex.getBasisStatus(y[1][2]);
+			//System.out.println(test.toString());
+			//}
+		cplex.end();
+
+		}
+		catch (IloException e) {
+			System.err.println("Concert exception caught: " + e);
+		}
+
+		//ReturnValuesDoublesCplexHeltal t = new ReturnValuesDoublesCplexHeltal(gamma, yLoesning, xLoesning, pi, sigma, omega, delta, objValue);
+		ReturnValuesDoublesCplex t = new ReturnValuesDoublesCplex(gamma, yLoesning, xLoesning, pi, sigma, omega, delta, objValue, rho);
+		return t;
+	}
+}

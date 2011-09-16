@@ -1,0 +1,80 @@
+;; Changes made by the custom functionality are stored in custom.el
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
+
+;; Make sure all backup files only live in one place
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+
+;; Add .emacs.d/ to load-path
+(add-to-list 'load-path "~/.emacs.d/")
+
+;; Load various stuff
+(load "colors.el")
+(load "diff.el")
+(load "bindings.el")
+(load "skeletons.el")
+(load "orgmode.el")
+(load "tabs.el")
+(load "emacs_abbrev.el") ;; Xah Lee's abbrevs.
+(load "latexstuff.el")
+
+;; yasnippet
+(require 'yasnippet-bundle)
+
+;; Magit
+(require 'magit)
+
+;; Gnus Stuff
+(setq gnus-select-method '(nntp "news.gmane.org"))
+(setq gnus-use-full-window nil)         ;Makes sure that gnus doesn't
+                                        ;steel the hole frame
+
+;; Set font
+(set-default-font "Monaco-10")
+;; (set-default-font "DejaVu Sans Mono-10")
+
+;; Explicitly show the end of a buffer
+(set-default 'indicate-empty-lines t)
+
+;; No bars
+(when (fboundp 'toggle-scroll-bar)
+  (toggle-scroll-bar -1)
+  (tool-bar-mode -1))
+
+;; Don’t blink the cursor
+(blink-cursor-mode 0)
+
+;; Display line and column numbers
+(setq line-number-mode    t)
+(setq column-number-mode  t)
+
+;; Avoid mouse!!
+(mouse-avoidance-mode 'banish)
+
+;; "y or n" instead of "yes or no"
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; See matching paranthesis
+(show-paren-mode t)
+
+;; Doc-View auto revert
+(add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+;; w3m stuff
+(setq w3m-use-cookies t)
+(setq mm-w3m-safe-url-regexp nil)
+(require 'mime-w3m)
+
+;; Set default browser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "chromium-browser")
+
+;; Auto-new-line
+(add-hook 'c-mode-common-hook
+          (lambda () (c-toggle-auto-newline 1)))
+
+;; Trailing whitespace is unnecessary
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
+;; Default etags name
+(setq tags-file-name "TAGS")

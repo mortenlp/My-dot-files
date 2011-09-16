@@ -1,0 +1,90 @@
+void initialize_sub(struct mip_struct *problem,
+                    struct mip_struct *sub_problem,
+                    int *colstat,int *rowstat,int *rowstat_sub,
+                    int *colstat_sub)
+{
+
+  int ncol=(*problem).ccnt;
+  int nrow=(*problem).rcnt;
+
+  int row,col;
+  int startcol,endcol,plcol;
+  int nz=0;
+
+  int objsen=1;
+  int status;
+
+  (*sub_problem).rcnt=nrow;
+  (*sub_problem).ccnt=ncol;
+
+  for(col=0;col<ncol;col++) {
+
+    (*sub_problem).ctype[col]=(*problem).ctype[col];
+    (*sub_problem).obj[col]=(*problem).obj[col];
+    (*sub_problem).matbeg[col]=(*problem).matbeg[col];
+    (*sub_problem).matcnt[col]=(*problem).matcnt[col];
+    colstat_sub[col]=colstat[col];
+
+    startcol=(*problem).matbeg[col];
+    endcol=startcol+(*problem).matcnt[col];
+
+    for(plcol=startcol;plcol<endcol;plcol++) {
+      (*sub_problem).matind[plcol]=(*problem).matind[plcol];
+      (*sub_problem).matval[plcol]=(*problem).matval[plcol];
+      nz++;
+    }
+
+    (*sub_problem).lb[col]=(*problem).lb[col];
+    (*sub_problem).ub[col]=(*problem).ub[col];
+
+    if( colstat[col] == 0 ) {
+      (*sub_problem).lb[col]=(*problem).lb[col];
+      (*sub_problem).ub[col]=1.0e+20;
+    }
+    else if( colstat[col] == 2 ) {
+      (*sub_problem).lb[col]=-1.0e+20;
+      (*sub_problem).ub[col]=(*problem).ub[col];
+    }
+    else {
+      (*sub_problem).lb[col]=-1.0e+20;
+      (*sub_problem).ub[col]=1.0e+20;
+    }
+
+  }
+
+  for(row=0;row<nrow;row++) {
+    (*sub_problem).rhs[row]=(*problem).rhs[row];
+    (*sub_problem).rtype[row]='I';
+    (*sub_problem).sense[row]='E';
+    rowstat_sub[row]=0;
+
+    (*sub_problem).matcnt[(*sub_problem).ccnt]=1;
+    (*sub_problem).matbeg[(*sub_problem).ccnt]=nz;
+    (*sub_problem).ctype[(*sub_problem).ccnt]=(*problem).rtype[row];
+    (*sub_problem).matind[nz]=row;
+    (*sub_problem).obj[(*sub_problem).ccnt]=0.0;
+    if( (*problem).sense[row] != 'G' )
+      (*sub_problem).matval[nz]=1.0;
+    else
+      (*sub_problem).matval[nz]=-1.0;
+
+    if( rowstat[row] == 1 ) {
+      (*sub_problem).ub[(*sub_problem).ccnt]=1.0e+20;
+      (*sub_problem).lb[(*sub_problem).ccnt]=-1.0e+20;
+
+      colstat_sub[(*sub_problem).ccnt]=1;
+
+    }
+    else {
+      (*sub_problem).lb[(*sub_problem).ccnt]=0.0;
+      if( (*problem).sense[row] != 'E' )
+        (*sub_problem).ub[(*sub_problem).ccnt]=1.0e+20;
+      else
+        (*sub_problem).ub[(*sub_problem).ccnt]=0.0;
+      colstat_sub[(*sub_problem).ccnt]=0;
+    }
+
+    ((*sub_problem).ccnt)++;
+    nz++;
+
+  }

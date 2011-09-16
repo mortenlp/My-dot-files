@@ -1,0 +1,39 @@
+h2 {color: #2D5073;
+    font-variant: small-caps;
+   }
+
+h1 {color: #2D5073;
+    font-variant: small-caps;
+    text-align: center;
+   }
+
+body {margin: 40px 200px 10px 200px;
+     }
+
+#container ul {
+  text-align: center;
+  list-style:none;
+  padding:0;
+  width:525px%;
+}
+
+#container ul li {
+  display:inline
+}
+
+#container ul li a {
+  text-decoration:none;
+  padding:5px 0;
+  width:100px;
+  background:#2D5073;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+
+#container ul li a:hover {
+  text-decoration: underline;
+}
+
+

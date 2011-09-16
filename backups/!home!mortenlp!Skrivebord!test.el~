@@ -1,0 +1,4 @@
+(defun multiply-by-10 (number)
+  "Gang et tal, number, med 10"
+  (* number 10)
+  )

@@ -1,0 +1,36 @@
+;; Language pattern rules, just names some common used words of the
+;; languages that will be guessed upon.
+(defvar guess-language-rules
+  '(("american" ;; "english"
+     . "\\<\\(of\\|the\\|and\\|or\\|how\\)\\>")
+    ("dansk"
+     . "\\<\\(er\\|og\\|den\\|det\\|der\\|vi\\|eller\\|være\\|nogle\\|kun\\)\\>")))
+
+;; main guess method
+(defun guess-buffer-language ()
+  "Guess language in the current buffer."
+  (save-excursion
+    (goto-char (point-min))
+    (let* ((count (map 'list (lambda (x)
+                               (let ((count (count-matches (cdr x))))
+                                 (cons (if (stringp count)
+                                           (string-to-number count) ;; emacs v21
+                                           count)                   ;; emacs v22
+                                       (car x))))
+                       guess-language-rules))
+           (key (car (sort (map 'list 'car count) '>))))
+      (if (number-or-marker-p key)
+          (cdr (assoc key count))
+          ;; return first language as default
+          (car (car guess-language-rules))))))
+
+;; hook the language guesser on to the flyspell mode
+(add-hook 'flyspell-mode-hook
+	  (lambda () (ispell-change-dictionary
+		      (guess-buffer-language))))
+
+;;; interactive wrapper
+(defun guess-language ()
+  "Set the language of this buffer by guess."
+  (interactive)
+  (ispell-change-dictionary (guess-buffer-language)))

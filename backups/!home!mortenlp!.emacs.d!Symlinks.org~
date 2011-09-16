@@ -1,0 +1,9 @@
+
+* Symbolic links to remember when setting up emacs
+  - .signature -> dotFiles/signature
+  - .newsrc.eld -> dotFiles/newsRCELD
+  - .newsrc -> dotFiles/newsRC
+  - News -> dotFiles/News
+  - .gnus -> dotFiles/gnus
+  - .emacs.d -> dotFiles/
+  -

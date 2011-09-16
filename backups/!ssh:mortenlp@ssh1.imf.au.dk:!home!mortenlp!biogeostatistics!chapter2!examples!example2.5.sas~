@@ -1,0 +1,189 @@
+FILENAME GSASFILE '/home/mortenlp/biogeostatistics/chapter2/examples/example25.ps'
+GOPTIONS DEV=xcolor    CTEXT=black GACCESS=gsasfile GSFMODE=replace;
+GOPTIONS TARGETDEVICE=PS300A4 ROTATE=landscape
+     /*  HORIGIN=2 cm VORIGIN=2 cm  */
+         CBACK=white GUNIT=pct HTITLE=4 HTEXT=2.7
+         FTEXT=swiss CTEXT=black CSYMBOL=black;
+OPTIONS NODATE PAGESIZE=45 PAGENO=1 LS=80;
+OPTIONS SASAUTOS= '/home/mortenlp/biogeostatistics/sasmacros'
+
+TITLE1 'Example 2.5';
+
+DATA reac;
+INPUT group reactime ;
+DATALINES;
+1   3
+1   5
+1   5
+1   7
+1   9
+1   9
+1  10
+1  12
+1  20
+1  24
+1  24
+1  34
+1  43
+1  46
+1  58
+1 140
+2   2
+2   5
+2   5
+2   7
+2   8
+2   9
+2  14
+2  18
+2  24
+2  26
+2  26
+2  34
+2  37
+2  42
+2  90
+;
+RUN;
+
+DATA reac;
+SET reac;
+lnreac   = LOG(reactime);
+lnreac3d = ROUND(lnreac,0.001);
+/*
+LABEL lnreac   = 'log reaction time in minutes'
+      lnreac3d = 'log reaction time';
+*/
+RUN;
+
+
+TITLE1 ' ';
+
+DATA ex2_5;
+SET reac;
+RUN;
+
+
+/* FIGURE 2.16 */
+SYMBOL1;
+SYMBOL2;
+/* It can be necessary to reset the symbols before
+   using the macro normgraph so that SAS automatically
+   chooses different symbols for the different groups
+   in the common plot */
+
+AXIS2 LABEL=(H=3 'reactime') VALUE=(H=2.7)
+      ORDER=0 TO 140 BY 10 WIDTH=2;
+/* AXIS2 controls the appearence of the data axis in %normgraph */
+%normgraph(data=reac,var=reactime,bygroup=group,graphics=yes);
+/* FIGURE 2.16 END */
+
+/* FIGURE 2.17 */
+AXIS2 LABEL=(H=3 'lnreac') VALUE=(H=2.7)
+      ORDER=0 TO 5 BY 1 WIDTH=2;
+%normgraph(data=reac,var=lnreac,bygroup=group,graphics=yes);
+RUN;
+/* FIGURE 2.17 END*/
+
+/* The program segments below illustrate some of the possibilities
+   of PROC CAPABILITY for drawing the empirical distribution function
+   and fractile diagrams*/
+
+/* PROC CAPABILITY: Empirical distribution function */
+AXIS1 LABEL=(H=3 angle=90 'relative frequency in %') VALUE=(H=2.7)
+      WIDTH=2 ORDER=0 TO 100 BY 10 ;
+AXIS2 LABEL=(H=3 'reaction time in minutes') VALUE=(H=2.7) WIDTH=2
+      ORDER=0 TO 140 BY 10;
+PROC CAPABILITY DATA=ex2_5 ;
+   CDFPLOT reactime/HAXIS=axis2
+                    VAXIS=axis1
+                    NOFRAME;
+RUN;
+
+/* Here the estimated distribution function of the
+   log-normal distribution is added        */
+PROC CAPABILITY DATA=ex2_5 ;
+   CDFPLOT reactime/LOGNORMAL (THETA=0)
+                    HAXIS=axis2
+                    VAXIS=axis1
+                    NOFRAME;
+   BY group;
+RUN;
+
+/* PROC CAPABILITY: Q-Q plot */
+
+AXIS1 LABEL=(H=3 ANGLE=90 'Fraktiles of N(0,1)') VALUE=(H=2.7)
+      WIDTH=2 ORDER=-3 TO 3 BY 1 ;
+AXIS2 LABEL=(H=3 'reaction time in minutes') VALUE=(H=2.7) WIDTH=2
+      ORDER=0 TO 140 BY 10;
+TITLE1 'Fractile diagram for reaction times';
+PROC CAPABILITY DATA=ex2_5 ;
+   QQPLOT reactime/NORMAL (MU=EST SIGMA=EST)
+                   ROTATE
+                   HAXIS=axis2
+                   VAXIS=axis1
+                   NOFRAME;
+  BY group;
+RUN; QUIT;
+
+AXIS1 LABEL=(H=3 ANGLE=90 'Fraktiles of N(0,1)') VALUE=(H=2.7)
+      WIDTH=2 ORDER=0 TO 6 BY 1 ;
+AXIS2 LABEL=(H=3 'log reaction time') VALUE=(H=2.7) WIDTH=2.0
+      ORDER=0 TO 5 BY 1;
+TITLE1 'Fractile diagram for log reaction times';
+PROC CAPABILITY DATA=ex2_5 ;
+   QQPLOT lnreac/NORMAL (MU=EST SIGMA=EST)
+                 ROTATE
+                 HAXIS=axis2
+                 VAXIS=axis1
+                 NOFRAME;
+   BY group;
+RUN; QUIT;
+
+
+/* PROC CAPABILITY: PROBPLOT */
+
+AXIS2 LABEL=(H=3 'reaction time in mimutes') VALUE=(H=2.7) WIDTH=2
+      ORDER=0 TO 140 BY 10;
+TITLE1 'Fractile diagram for reaction times';
+PROC CAPABILITY DATA=ex2_5 ;
+   PROBPLOT reactime/NORMAL (MU=EST SIGMA=EST)
+                     ROTATE
+                     HAXIS=axis2
+                     NOFRAME;
+   BY group;
+RUN; QUIT;
+
+
+AXIS2 LABEL=(H=3 'log reaction time') VALUE=(H=2.7) WIDTH=2.0
+      ORDER=0 TO 5 BY 1;
+TITLE1 'Fractile diagram for log reaction times';
+PROC CAPABILITY DATA=ex2_5 ;
+   PROBPLOT lnreac/NORMAL (MU=EST SIGMA=EST)
+                   ROTATE
+                   HAXIS=axis2
+                   NOFRAME;
+  BY group;
+RUN; QUIT;
+
+/* PROC CAPABILITY: PPPLOT */
+/* PPPLOTs have not been discussed.
+   Sort the sample: x(1) <=..,=x(i)<=...x(n)
+   The points plotted are (F(x(i)),F_n(i/n))=(F(x(i)),i/n)).
+   Here F is the specified distribution which is compared with
+   the empirical distribution function F_n.
+*/
+
+TITLE1 'Fractil diagram for reaction times';
+PROC CAPABILITY DATA=ex2_5 ;
+   PPPLOT reactime/NORMAL (MU=EST SIGMA=EST)
+                   NOFRAME;
+   BY group;
+RUN; QUIT;
+
+TITLE1 'Fractile diagram for log reaction times';
+PROC CAPABILITY DATA=ex2_5 ;
+   PPPLOT lnreac/NORMAL (MU=EST SIGMA=EST)
+                 NOFRAME;
+   BY group;
+RUN; QUIT;

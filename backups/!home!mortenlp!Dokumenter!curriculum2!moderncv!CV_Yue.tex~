@@ -1,0 +1,109 @@
+% --------------------------------------------------------------------------
+% Tyvstjålet fra http://www.math.uic.edu/~hurder/math589/vita.html
+% --------------------------------------------------------------------------
+\documentclass[11pt,a4paper]{moderncv}
+
+\moderncvtheme[black]{classic}
+
+\usepackage[utf8]{inputenc}
+
+% personal data
+\firstname{Morten}
+\familyname{Petersen}
+\title{}
+%\address{Office 719 SEO\\ 851 S. Morgan St.}{Chicago, IL}
+\extrainfo{Silkeborgvej 132, 2.tv. \\ 8000 Aarhus C}
+\phone{(+45) 28 89 20 87}
+\email{mortenlp2@gmail.com}
+% \photo[64pt]{me}
+
+\newcommand{\up}[1]{\ensuremath{^\textrm{\scriptsize#1}}}
+
+% the ConTeXt symbol
+\def\ConTeXt{%
+  C%
+  \kern-.0333emo%
+  \kern-.0333emn%
+  \kern-.0667em\TeX%
+  \kern-.0333emt}
+\definecolor{web}{rgb}{0.2,0.2,0.2}
+%\definecolor{web}{rgb}{0.5,0.5,0.5}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+\section{\textbf{Education}}
+\cventry{2009--Present}{\textbf{Master of Science in
+    Mathematics-Economics}}{University of Aarhus}{Denmark}{}{ -
+  Expected in Autumn 2011.\newline - Concentrate in Operations
+  Research} \cventry{2006--2009}{\textbf{Bachelor of Science in
+    Mathematics-Economics}}{University of Aarhus}{Denmark}{}{}
+\cvitem{---}{\textsc{Bachelor Project}}
+\cvitem{title}{\textit{Simulation of SM Electronics}}
+\cvitem{description}{Simulating a conveyor belt problem at a
+  ficticious company called SM Electronics. The simulation was done
+  using the program ARENA}
+\cventry{2002--2005}{\textbf{High School Exam}}{Sønderborg Handelsskole}{Denmark}{}{}
+
+\section{\textbf{Experience}}
+\subsection{\textbf{Working}}
+\cventry{2009}{\textbf{Research Assistant}}{Technology Resources/Statistics, Epidemiology \& Surveillance}{Baxter Healthcare Corporation, Round Lake, IL}{}
+{ - Serve as a contractor full time during summer and half time during the semester schedule.\newline
+ - Perform under supervision for adverse event/product complaint surveillance; for R\&D animal studies, stability studies, reliability studies, manufacturing quality control studies; and for data analyses for clinical studies and related activities.}
+\subsection{\textbf{Research}}
+\cventry{2008}{\textbf{Statistical Lab}}{UIC}{}{}{
+- Provid statistical consulting service for faculty, staff and graduate students inside or
+outside the university.\newline
+- Webpage: {\color{web} \weblink{http://www.math.uic.edu/\textasciitilde jyang06/statlab/StatLab.html}}}
+\cventry{2007}{\textbf{Parallel Computing Lab}}{Fudan University}{}{}{
+- Develop a parallel block reduction method for solving multiscale linear systems, use LAPACK and MPI
+to build a package to perform the algorithm and evaluate its performance.}
+%\cventry{Oct, 2006}{\textbf{L'Or$\mathbf{\acute{e}}$al e-Strat Challenge}}{China}{}{}{
+%- Construct the main framework, and analyze R\&D segment, differentiate strategy for high--end and low--end product.}
+\cventry{2004--2006}{\textbf{Mathematical Modeling Team Leader}}{Fudan University}{}{}{
+- Lead a group of students with some Mathematical Modeling projects, make a two--hour presentation each season.}
+\subsection{\textbf{Academia}}
+\cventry{Oct. 2008}{\textbf{Fifth Midwest Database Research
+Symposium}}{Chicago, Illinois}{}{}{} \cventry{May.
+2008}{\textbf{The 31st Midwest Biopharmaceutical Statistics
+Workshop}}{Muncie, Indiana}{}{}{}
+\subsection{\textbf{Teaching}}
+\cventry{2007--2008}{\textbf{Teaching Assistant}}{Department of Math, Stat, and CS}{\textit{UIC}}{}{
+- Teach discussion sections for Math 121 -- Precalculus.}
+%\cventry{2004}{\textbf{Volunteer Teacher}}{China}{}{}{
+%- Two monthes volunteer teacher for rural ShanDong Province.}
+
+%\cventry{2006}{Translator}{}{}{}{Translated Ananth Grama lecture slides of \emph{Introduction to Parallel Computing}}
+%\cventry{2003--2005}{Vice Chairman}{Visions of Science society}{Fudan University}{}{Manage the funds of the society and organize the %society's activities.}\\[-2pt]
+%\cventry{2004}{Volunteer teacher}{}{}{}{Two monthes volunteer teacher for rural ShanDong Province.}
+%\cventry{2004--2006}{Mathematics tutor}{}{}{}{Teaching seven high school students basic mathematics, answering any of their questions.}
+
+\section{\textbf{Completion Actuarial Exams}}
+\cventry{Nov, 2007}{\textbf{Exam P/1}}{Society of Actuaries}{}{}{}
+\cventry{May, 2008}{\textbf{Exam FM/1}}{Society of Actuaries}{}{}{}
+
+\section{\textbf{Languages}}
+\cvlanguage{Chinese}{Native}{}
+\cvlanguage{English}{Fluent}{
+TOEFL(PBT) Score: 633/677, Essay rating: 4.5/6.0;\\
+GRE Score: Verbal 540/800, Quantitive 800/800;\\
+GRE Analytical Writing: 4.0/6.0.
+}
+
+\section{\textbf{Computer skills}}
+\cvcomputer{OS}{Linux/Unix, Windows, DOS} {programming}{C/C++, Java, MPI,
+Python, SQL}
+\cvcomputer{job-related}{SAS, SAS Enterprise Guide, Minitab}{typography}{\LaTeX, Microsoft Office}
+\cvcomputer{scientific}{Matlab, Maple, R, Lingo} {}{}
+
+\section{\textbf{Scientific Interests}}
+\cvlistitem{Statistical Learning}
+\cvlistitem{Time Series Analysis}
+\cvlistitem{Spatial Statistics}
+\cvlistitem{Stochastic Process}
+\cvlistitem{Data/Text Mining}
+%\cvlistitem{Boundary Value Problems}
+%\cvlistitem{Numerical Analysis}
+%\cvlistitem{Parallel Computing}
+\end{document}

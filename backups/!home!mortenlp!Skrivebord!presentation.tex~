@@ -1,0 +1,193 @@
+
+\documentclass[handout, xcolor=dvipsnames]{beamer}
+\usepackage[latin1]{inputenc}
+\usepackage[danish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{multirow, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{verbatim}
+
+\usepackage{natbib}
+\bibliographystyle{chicago}
+
+\usetheme{Copenhagen}
+\useoutertheme[subsection=false]{smoothbars}
+\usecolortheme[RGB={95,158,160}]{structure}
+
+\title[Aarhus University, Business and Social Sciences]{Iterated local search and record-to-record travel applied to the fixed charge transportation problem}
+\author[Jeanne Andersen]{Andreas Klose and Jeanne Andersen}
+\institute[]{Department of Mathematical Sciences
+  and \\Department of Economics and Business, Business and Social
+  Sciences\\ Aarhus University}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overview}
+  \tableofcontents
+\end{frame}
+
+\section{The basic heuristics}
+
+\subsection{}
+
+\begin{frame}
+  \frametitle{Iterated local search (ILS)}
+\begin{columns}
+\column{.5\textwidth}
+\begin{enumerate}[{Step} 1]
+\item Let a start solution $x_B$ be given and let $x_C=x_B$.
+\item Make a local search and update $x_B$. If the stop criterion
+  has been reached, then STOP.
+\item Else, reset $x_C$ if necessary. Make a perturbation of $x_C$ and
+  return to Step 2.
+\end{enumerate}
+\column{.5\textwidth}
+\begin{figure}[htpb]
+\centering
+\includegraphics[scale=0.27]{ils.pdf}
+\caption{Iterated local search. Picture taken from \cite{Congram}.
+}
+\end{figure}
+
+\end{columns}
+
+\end{frame}
+
+\subsection{}
+
+\begin{frame}
+  \frametitle{Record-to-record travel (RTR)}
+
+\end{frame}
+
+\section{Combined procedures}
+
+\subsection{}
+
+\begin{frame}
+  \frametitle{ILS with RTR as a subroutine}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{RTR with ILS as a subroutine}
+
+\end{frame}
+
+\section{The problem}
+
+\subsection{}
+
+\begin{frame}
+  \frametitle{Fixed charge transportation problem (FCTP)}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The parametric ghost image processes procedure (PGIP)}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{The test instances}
+
+\end{frame}
+
+
+\section{Computational results}
+
+\subsection{}
+
+\begin{frame}
+  \frametitle{Results - Easy instances}
+\begin{center}
+\includegraphics[scale=0.35]{easy.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - Diff-A instances}
+\begin{center}
+\includegraphics[scale=0.35]{Diff-A.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - Diff-B instances}
+\begin{center}
+\includegraphics[scale=0.35]{Diff-B.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - Diff-C instances}
+\begin{center}
+\includegraphics[scale=0.35]{Diff-C.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - Diff-D instances}
+\begin{center}
+\includegraphics[scale=0.35]{Diff-D.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - Diff-E instances}
+\begin{center}
+\includegraphics[scale=0.35]{Diff-E.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - Diff-F instances}
+\begin{center}
+\includegraphics[scale=0.35]{Diff-F.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - Diff-G instances}
+\begin{center}
+\includegraphics[scale=0.35]{Diff-G.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - Diff-H instances}
+\begin{center}
+\includegraphics[scale=0.35]{Diff-H.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results - }
+\begin{center}
+\includegraphics[scale=0.4]{results.pdf}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Literature}
+\bibliography{ref}
+\end{frame}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% coding: iso-8859-1-dos
+%%% End:

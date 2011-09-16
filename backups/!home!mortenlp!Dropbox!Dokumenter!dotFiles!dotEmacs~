@@ -1,0 +1,137 @@
+;; Changes made by the custom functionality are stored in custom.el
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
+
+;; Make sure all backup files only live in one place
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+
+;; Add .emacs.d/ to load-path
+(add-to-list 'load-path "~/.emacs.d/")
+
+;; Server
+(server-start)
+
+;; Load various stuff
+(load "colors.el")
+(load "diff.el")
+(load "bindings.el")
+(load "skeletons.el")
+(load "orgmode.el")
+(load "tabs.el")
+(load "emacs_abbrev.el") ;; Xah Lee's abbrevs.
+(load "latexstuff.el")
+
+;; Easy window management
+(winner-mode t)
+
+;; yasnippet
+(require 'yasnippet-bundle)
+
+;; Magit
+(require 'magit)
+
+;; Google maps
+(require 'google-maps)
+
+;; Gnus Stuff
+(add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
+(setq gnus-select-method '(nntp "news.gmane.org"))
+(setq gnus-use-full-window nil)         ;Makes sure that gnus doesn't
+                                        ;steel the hole frame
+(require 'bbdb)
+(bbdb-initialize)
+(add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
+(add-hook 'gnus-startup-hook 'bbdb-insinuate-message)
+(add-hook 'message-setup-hook 'bbdb-define-all-aliases)
+
+;; Set font
+(set-default-font "Monaco-10")
+;; (set-default-font "DejaVu Sans Mono-10")
+;; (set-default-font "Inconsolata-12")
+;; (set-default-font "Droid Sans Mono-10")
+;; (set-default-font "Anonymous-9")
+;; (set-default-font "Bitstream Vera Sans Mono-10")
+
+;; Don't show startup screen
+(setq inhibit-startup-screen t)
+
+;; Enable transient-mark-mode
+(transient-mark-mode t)
+
+;; Explicitly show the end of a buffer
+(set-default 'indicate-empty-lines t)
+
+;; No bars
+(when (fboundp 'toggle-scroll-bar)
+  (toggle-scroll-bar -1)
+  (tool-bar-mode -1)
+  (menu-bar-mode -1))
+
+;; Don’t blink the cursor
+(blink-cursor-mode 0)
+
+;; Display line and column numbers
+(setq line-number-mode    t)
+(setq column-number-mode  t)
+
+;; Avoid mouse!!
+(mouse-avoidance-mode 'banish)
+
+;; "y or n" instead of "yes or no"
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; See matching paranthesis
+(show-paren-mode t)
+
+;; Highlight paren's sorrounding point
+(require 'highlight-parentheses)
+
+;; Doc-View auto revert
+(add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+;; w3m stuff
+(setq w3m-use-cookies t)
+(setq mm-w3m-safe-url-regexp nil)
+(require 'mime-w3m)
+
+;; Set default browser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "firefox")
+
+;; Auto-new-line
+(add-hook 'c-mode-common-hook
+          (lambda () (c-toggle-auto-newline 1)))
+
+;; Switch between header and source file
+(add-hook 'c-mode-common-hook
+          (lambda()
+            (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+
+;; Compile command
+(setq compile-command "make -f ")
+
+;; Abbrevs
+(setq default-abbrev-mode t)
+
+;; Trailing whitespace is unnecessary
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
+;; Default etags name
+(setq tags-file-name "TAGS")
+
+;; full screen toggle using command+[RET]
+(defun toggle-fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
+                                           nil
+                                         'fullboth)))
+(global-set-key [(f11)] 'toggle-fullscreen)
+
+;; google-region
+(defun google-region (&optional flags)
+  "Google the selected region"
+  (interactive)
+  (let ((query (buffer-substring (region-beginning) (region-end))))
+    (browse-url (concat "http://www.google.com/search?ie=utf-8&oe=utf-8&q=" query))))
+;; press control-c g to google the selected region
+(global-set-key (kbd "C-c g") 'google-region)

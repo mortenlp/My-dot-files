@@ -1,0 +1,33 @@
+% Dokumentklassen sÃ¦ttes til memoir
+\documentclass[a4paper,11pt,article,oneside]{memoir}
+
+% Sproget sÃ¦ttes til dansk og orddeling indlÃ¦ses
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+
+% Matematiske symboler og fede tegn i ligninger
+\usepackage{amsmath, amssymb, bm, mathtools}
+
+% Tabeller og sÃ¸jler
+\usepackage{array, booktabs, dcolumn}
+\newcolumntype{d}[1]{D{,}{,}{#1}} % Justering under komma
+
+% Figurer
+\usepackage{graphicx, caption, subfig}
+%vref til figurer
+\usepackage[danish]{varioref}
+\captionsetup{font=small,labelfont=bf}
+\begin{document}
+\chapter{Analyse af kombinationer af modifikation 1 og 2}
+Ved at se på figur \vref{fig:pan2} ses det, at hvis batch størrelsen er 1, hvilket stort set svarer til grundmodellen kan der spares ca. 16 dollars pr. uge. Det kan stadig ikke betale sig at investere i flere palletter på transportbåndet. Ud fra figur \vref{fig:pan2} er største ændring i lost cost som følge af ekstra palletter, når batchstørrelsen er større end en, når batchstørrelsen er fem. Her ses det at der kan spares ca. 37 dollars om ugen. Ligesom under vurderingen af om modifikation 1 kan betale sig, kan den maksimale nutidsværdi, givet en årlig rente på 3 \% udregnes: $\ \frac{37}{0,0005686}\approx 65072,1$. Dvs. nutidsværdien ikke kan overstige 65072,1 dollars med denne rente, og da investeringsomkosningen ved denne besparelse som tidligere er 89000 dollars, vil det ikke kunne betale sig at investere både i modifikation 1 og 2.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{pan2.jpg}
+\caption{output fra Process Analyzer}
+\label{fig:pan2}
+\end{figure}
+Ligesom under overvejelserne for modifikation 1 alene, må det derfor klart konkluderes, at det ikke vil kunne betale sig at lave begge investeringer.
+
+Vi har valgt at vurdere investeringerne, ved at se på hvor mange år der skal gå før nutidsværdien af vores besparelse er lige så stor som prisen på investeringen. Denne løsning tager naturligvis ikke hensyn til afskrivninger og lign., men for at undgå at skulle lave antagelser, som vi egentlig ikke noget hold i, har vi alligevel valgt denne løsning. Denne metode kan godt bruges til at afgøre om en enkelt investering kan betale sig, men er ikke god til sammenligning af alternativer, og da vi direkte kan afvise modifikation 1 og en kombination af 1 og 2, vha. denne metode, kommer vi ikke ud i problemer, hvor vi skal sammenligne hvilken investering der er bedst. 
+\end{document}

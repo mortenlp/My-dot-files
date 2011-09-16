@@ -1,0 +1,197 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/outputFiles/" . "output_speed/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/" . "outputFiles/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/Papers/" . "fromCourse/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/TeXFiles/" . "brainstorms/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/" . "TeXFiles/")
+ ("/mortenlp@boromir.imf.au.dk:" . "bachelor/")
+ ("/home/mortenlp/Dropbox/Dokumenter/" . "dotFiles/")
+ ("/home/mortenlp/Dropbox/" . "Dokumenter/")
+ ("/home/mortenlp/Skrivebord/" . "git-git-4b5eac7/")
+ ("/home/mortenlp/.emacs.d/3rd-party/org-7.7/contrib/" . "lisp/")
+ ("/home/mortenlp/.emacs.d/3rd-party/org-7.7/" . "contrib/")
+ ("/home/mortenlp/.emacs.d/3rd-party/" . "magit-1.0.0/")
+ ("/home/mortenlp/.emacs.d/" . "3rd-party/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/Papers/" . "fromCourse/")
+ ("/home/mortenlp/News/" . "rss/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/TeXFiles/" . "brainstorms/")
+ ("/home/mortenlp/Dropbox/Dokumenter/AU/MasterThesis/" . "miplib3/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/outputFiles/" . "output_speed/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/" . "outputFiles/")
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/" . "Papers/")
+ ("/home/mortenlp/Dokumenter/AU/" . "MasterThesis-git/")
+ ("/home/mortenlp/Dokumenter/" . "AU/")
+ ("/home/mortenlp/" . "Dokumenter/")
+ ("/home/" . "mortenlp/")
+ ("/" . "home/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/mortenlp/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/TeXFiles/"
+ "/home/mortenlp/.emacs.d/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/outputFiles/output_speed/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/Agenda/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/outputFiles/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/Papers/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/Papers/fromCourse/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/miplib3/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/trunk/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/.git/"
+ "/home/mortenlp/Dokumenter/VersionControl/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis-git/TeXFiles/brainstorms/"
+ "/home/mortenlp/Skrivebord/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/Papers/fromCourse/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/TeXFiles/brainstorms/"
+ "/home/mortenlp/Dropbox/Dokumenter/dotFiles/"
+ "/home/mortenlp/Dokumenter/OrgMode/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/TeXFiles/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/miplib3/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/outputFiles/output_speed/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/Papers/"
+ "/home/mortenlp/Dokumenter/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/trunk/"
+ "/mortenlp@boromir.imf.au.dk:bachelor/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/Agenda/"
+ "/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/outputFiles/"
+ "/home/mortenlp/Dokumenter/PreviewLaTeXFix/"
+ "/home/mortenlp/Skrivebord/thesis/"
+ "/home/mortenlp/.emacs.d/3rd-party/org-7.7/contrib/lisp/"
+ "/home/mortenlp/.emacs.d/3rd-party/org-7.7/"
+ "/home/mortenlp/Dropbox/Dokumenter/AU/MasterThesis/miplib3/"
+ "/home/mortenlp/Dokumenter/Scripts/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ ".gnus"
+ "compExp.tex"
+ "my-bindings.el"
+ "vpm2.txt"
+ "vpm1.txt"
+ "set1ch.txt"
+ "rout.txt"
+ "rgn.txt"
+ "qnet1_o.txt"
+ "qnet1.txt"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/mortenlp/" (20082 9286) ".hplip/" "./" ".emacs.bmk" ".macromedia/" "Billeder/" ".gtk-bookmarks" ".esd_auth" ".aspell.en.prepl" ".gnus" ".bashrc" ".bash_history" "Skrivebord/" ".newsrc" ".thunderbird/" ".thumbnails/" ".dmrc" ".gnupg/" ".gconf/" ".gvfs/" ".ICEauthority" ".compiz/" ".mozilla/" ".xsession-errors.old" ".fontconfig/" ".icons/" "Dokumenter/" ".emacs" ".emacs.d/" ".pulse/" ".local/" "../" ".icedtea/" ".nautilus/" ".subversion/" "cplex.log" "examples.desktop" ".cache/" ".oces2/" ".adobe/" "Offentligt/" ".w3m/" ".config/" ".xsession-errors" "News/" ".bash_logout" "missfont.log" ".fluxbox/" ".gnome/" ".texlive2011/" "Hentede filer/" ".sudo_as_admin_successful" ".gstreamer-0.10/" "Mail/" "Skabeloner/" ".gnome2_private/" ".newsrc.eld" ".aspell.en.pws" ".dbus/" ".profile" ".pki/" "atom2rss.xsl" ".ssh/" ".gksu.lock" ".ido.last" ".pulse-cookie" "danid.log" "Musik/" "Videoklip/" ".gnome2/" ".themes/" ".gconfd/")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/TeXFiles/" (20081 60897) "./" "waste.aux" "compExp.aux" "forside.tex" "intro.tex" "ref.bib" "master.dvi" "master.thm" "compExp.tex" "../" "splitcuts.tex" "master.tex" "intro.aux" "sc-characterization.tex" "brainstorms/" "master.pdf" "master.log" "master.aux" "waste.tex" "segla1s.pdf" "high_dim_rep.tex" "sc-characterization.aux" "master.toc" "high_dim_rep.aux" "master.blg" "forside.aux" "splitcuts.aux" "master.brf" "master.bbl" "master.out")
+
+ ("/home/mortenlp/.emacs.d/" (20081 55481) "./" "url/" "auto-save-list/" "custom.el" "my-dot-emacs.el" "backups/" "my-tabs.el" "my-latexstuff.el" "my-colors.el" "../" "my-bindings.el" "tramp" "my-orgmode.el" "my-diff.el" "abbrev_defs" "my-skeletons.el" "my-dot-gnus.el" "my-general.el" "my-feeds.opml" "Setup.org" "3rd-party/" "emacs_abbrev.el")
+
+ ("/home/mortenlp/Dropbox/" (20080 46074) "./" "Photos/" "Public/" ".dropbox" "Morten og Jeanne/" "../" "arki001/" "atom2rss.xsl" "Morten og Lene/" ".dropbox.cache/")
+
+ ("/home/mortenlp/Dokumenter/OrgMode/" (20081 59543) "./" "budget.org" ".#Notes.org" "../" "Duo.org" "Notes.org" "contacts.org" "Journal.org")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/Agenda/" (20081 57253) "./" "problems.org" "../" "notesAndThoughts.org" "QandA.org" "schedule.org")
+
+ ("/home/mortenlp/Skrivebord/" (20081 56586) "./" "../" "dsbmip.txt")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/outputFiles/output_speed/" (20081 56399) "p0033.txt" "./" "air05.txt" "lseu.txt" "air03.txt" "fixnet6.txt" "misc03.txt" "rgn.txt" "fiber.txt" "p2756.txt" "gen.txt" "vpm1.txt" "qnet1_o.txt" "flugpl.txt" "gt2.txt" "../" "l152lav.txt" "gesa2_0.txt" "p0201.txt" "p0282.txt" "vpm2.txt" "rout.txt" "gesa3_0.txt" "set1ch.txt" "qnet1.txt" "10teams.txt" "pp08a.txt" "p0548.txt" "egout.txt" "misc07.txt" "gesa3.txt" "mod010.txt" "danoint.txt" "pp08aCUTS.txt" "dcmulti.txt" "air04.txt" "gesa2.txt" "modglob.txt" "misc06.txt" "khb05250.txt" "mod008.txt" "mkc.txt")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/trunk/" (20081 56527) "./" "splitcut.c" "lp_stuff.h" "hackTest/" "TAGS" "cut_plane_alg" "cut.lp" "Makefile-32BIT" "cut_plane_alg.c" "splitcut.h" "../" "cut_stuff.c" "TestStuff/" "Makefile-64BIT" "pmilp.lp" "lp_stuff.c" "cut_stuff.h" "or_lp.lp")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/outputFiles/" (20081 56387) "./" "gt2test1.txt" "vpm1.txt" "flugpl.txt" "gt2.txt" "../" "gt2_evidence_of_pos_coef.txt" "output_speed/" "pp08aCUTS.txt" "dcmulti.txt" "misc06.txt" "khb05250.txt" "mod008.txt")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/.git/" (20081 51155) "./" "branches/" "logs/" "index" "objects/" "description" "../" "config" "packed-refs" "info/" "hooks/" "COMMIT_EDITMSG" "refs/" "HEAD")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/" (20081 50210) "./" "ExampleCoin-Or/" "miplib3/" ".git/" ".gitignore" "../" "Agenda/" "Papers/" "CutPlaneAlgo/" "Algorithm/" "TeXFiles/")
+
+ ("/home/mortenlp/Dokumenter/AU/" (20081 40570) "./" "Instruktion/" "Matematisk modellering 1/" "Finansiering/" "MØF/" "Geometri/" "MasterThesis-git/" "Mat. analyse/" "dynamicPricing/" "SandSynlighedsTeori 1.1/" "../" "Vehicle Routing/" "markov/" "prog2 (Case Conflict 1)/" "JavaCplex/" "Målteori/" "grafteori/" "Konvekse/" "MSA/" "Lineær Algebra/" "MICRO/" "Omkostninger og Regnskab/" "Mat. Prog/" "metaHeuristics/" "intProg/" "gameTheory/" "Perspektiver i MØK/" "Algebra/" "Statistiske Modeller 2/" "LocPlan/" "R/" "Makro/")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/miplib3/" (20080 47684) "./" "mod008" "pk1" "mas74" "references" "mod010" "markshare2" "stein27" "danoint" "set1ch" "gen" "air04" "pp08a" "l152lav" "bell5" "mps_format" "gt2" "gesa3_o" "p0282" "misc06" "gesa3" "flugpl" "rentacar" "gesa2_o" "mas76" "cap6000" "p0548" "stein45" "../" "dcmulti" "mitre" "10teams" "qiu" "cplex.log" "swath" "dsbmip" "vpm1" "p0201" "pp08aCUTS" "rout" "vpm2" "khb05250" "rgn" "fast0507" "dano3mip" "arki001" "blend2" "fiber" "markshare1" "misc07" "qnet1_o" "egout" "mkc" "miplib.cat" "qnet1" "misc03" "enigma" "modglob" "p2756" "seymour" "air05" "bell3a" "air03" "mod011" "harp2" "noswot" "nw04" "p0033" "gesa2" "lseu" "fixnet6")
+
+ ("/home/mortenlp/Dokumenter/Scripts/" (20080 45820) "./" "my-install.sh" "../" "vedligehold_menu.sh" "setupConfig.sh" "cleanTilde.sh")
+
+ ("/home/mortenlp/.emacs.d/3rd-party/org-7.7/" (20080 45853) "./" "contrib/" "request-assign-future.txt" "../" "doc/" "lisp/" "README" "Makefile")
+
+ ("/home/mortenlp/.emacs.d/3rd-party/org-7.7/contrib/lisp/" (20080 45854) "./" "org-mac-link-grabber.el" "org-collector.el" "org-eval-light.el" "orgtbl-sqlinsert.el" "org-choose.el" "htmlize.el" "org-interactive-query.el" "org-jira.el" "org-secretary.el" "org-registry.el" "org-notmuch.el" "org-lparse.el" "org-mtags.el" "org-odt.el" "org-track.el" "org-velocity.el" "org-toc.el" "org-mac-iCal.el" "org-wikinodes.el" "test-org-export-preproc.el" "org-elisp-symbol.el" "../" "org-depend.el" "org-contribdir.el" "org-export-generic.el" "org-git-link.el" "org-static-mathjax.el" "org-bookmark.el" "org-invoice.el" "org-mime.el" "org2rem.el" "org-screen.el" "org-contacts.el" "org-exp-bibtex.el" "org-drill.el" "org-eshell.el" "org-xhtml.el" "org-expiry.el" "org-checklist.el" "org-panel.el" "org-mairix.el" "org-man.el" "org-eval.el" "org-annotate-file.el" "org-learn.el")
+
+ ("/home/mortenlp/Dokumenter/PreviewLaTeXFix/" (20080 45819) "./" "../" "fix.org")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/outputFiles/" (20080 45840) "./" ".svn/" "gt2test1.txt" "vpm1.txt" "flugpl.txt" "gt2.txt" "../" "gt2_evidence_of_pos_coef.txt" "output_speed/" "pp08aCUTS.txt" "misc06.txt" "khb05250.txt" "mod008.txt")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/Agenda/" (20080 45843) "./" ".svn/" "problems.org" "../" "notesAndThoughts.org" "QandA.org" "schedule.org")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/trunk/" (20080 45840) "./" "splitcut.c" "lp_stuff.h" "hackTest/" "TAGS" "cut_plane_alg" ".svn/" "cut.lp" "Makefile-32BIT" "cut_plane_alg.c" "splitcut.h" "../" "cut_stuff.c" "TestStuff/" "Makefile-64BIT" "pmilp.lp" "lp_stuff.c" "cut_stuff.h" "or_lp.lp")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/Papers/" (20080 45843) "./" "OptOverSplitCl.pdf" "intersectioncuts.pdf" "splitClosureAndIntersectioncuts.pdf" "eclosure.pdf" ".svn/" "DisjProgPropOfConvHull.pdf" "OptOverChvatal.pdf" "homotopyPrincipleAndAlgosForLP.pdf" "chvatalClosuresForMIP.pdf" "ConstructiveCharacterizationOfSplitCl.pdf" "IneqFromTwoRows.pdf" "OnTheSeparartionOfSplitCuts.pdf" "../" "LiftAndProjectCutPlaneAlgo.pdf" "DisjProgHierachyOfRelaxForDiscOpt.pdf" "ValidIneqForMILP.pdf" "fromCourse/" "An_Analysis.pdf" "reduceAndSplitCuts.pdf" "eorms.pdf" "MIRclosuresOfPolyhedra.pdf" "aPreciseCorrespondence.pdf" "TwoRowsFromTwoBases.pdf" "StrengtheningCuts.pdf" "LiftAndProjectForMixedRecentProgress.pdf")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/outputFiles/output_speed/" (20080 45840) "p0033.txt" "./" "air05.txt" "lseu.txt" "air03.txt" "fixnet6.txt" "misc03.txt" ".svn/" "rgn.txt" "fiber.txt" "p2756.txt" "gen.txt" "vpm1.txt" "qnet1_o.txt" "flugpl.txt" "gt2.txt" "../" "l152lav.txt" "gesa2_0.txt" "p0201.txt" "p0282.txt" "vpm2.txt" "rout.txt" "gesa3_0.txt" "set1ch.txt" "qnet1.txt" "10teams.txt" "pp08a.txt" "p0548.txt" "egout.txt" "misc07.txt" "gesa3.txt" "mod010.txt" "danoint.txt" "pp08aCUTS.txt" "dcmulti.txt" "air04.txt" "gesa2.txt" "modglob.txt" "misc06.txt" "khb05250.txt" "mod008.txt" "mkc.txt")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/miplib3/" (20080 45851) "./" "mod008" "pk1" "mas74" "references" "mod010" "markshare2" "stein27" "danoint" "set1ch" "gen" "air04" "pp08a" "l152lav" "bell5" ".svn/" "mps_format" "gt2" "gesa3_o" "p0282" "misc06" "gesa3" "flugpl" "rentacar" "gesa2_o" "mas76" "cap6000" "p0548" "stein45" "../" "dcmulti" "mitre" "10teams" "qiu" "cplex.log" "swath" "dsbmip" "vpm1" "p0201" "pp08aCUTS" "rout" "vpm2" "khb05250" "rgn" "fast0507" "dano3mip" "arki001" "blend2" "fiber" "markshare1" "misc07" "qnet1_o" "egout" "mkc" "miplib.cat" "qnet1" "misc03" "enigma" "modglob" "p2756" "seymour" "air05" "bell3a" "air03" "mod011" "harp2" "noswot" "nw04" "p0033" "gesa2" "lseu" "fixnet6")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/TeXFiles/" (20080 45837) "./" "waste.aux" "compExp.aux" "forside.tex" "intro.tex" "ref.bib" ".svn/" "master.dvi" "master.thm" "compExp.tex" "../" "splitcuts.tex" "master.tex" "intro.aux" "sc-characterization.tex" "brainstorms/" "#high_dim_rep.tex#" "master.pdf" "master.log" "master.aux" "waste.tex" ".#high_dim_rep.tex" "segla1s.pdf" "high_dim_rep.tex" "sc-characterization.aux" "master.toc" "high_dim_rep.aux" "master.blg" "forside.aux" "splitcuts.aux" "master.brf" "master.bbl" "master.out")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/TeXFiles/brainstorms/" (20080 45837) "./" "outline.org" ".svn/" "../")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/Papers/fromCourse/" (20080 45841) "./" "splitcuts.pdf" ".svn/" "split_cuts_from_bases.pdf" "../" "Non_violated_split_disjunctions.pdf" "Disjunctive_hull_in_higher_dimensions.pdf" "Basic_polyhedra.pdf")
+
+ ("/home/mortenlp/Dokumenter/VersionControl/" (20080 48802) "./" "../" "gitTutorial.pdf" "git-book.pdf" "magit.html" "svn-book.pdf")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/CutPlaneAlgo/" (20080 47684) "./" "trunk/" "outputFiles/" "../")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/Papers/fromCourse/" (20080 47684) "./" "splitcuts.pdf" "split_cuts_from_bases.pdf" "../" "Non_violated_split_disjunctions.pdf" "Disjunctive_hull_in_higher_dimensions.pdf" "Basic_polyhedra.pdf")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/Papers/" (20080 47684) "./" "OptOverSplitCl.pdf" "intersectioncuts.pdf" "splitClosureAndIntersectioncuts.pdf" "eclosure.pdf" "DisjProgPropOfConvHull.pdf" "OptOverChvatal.pdf" "homotopyPrincipleAndAlgosForLP.pdf" "chvatalClosuresForMIP.pdf" "ConstructiveCharacterizationOfSplitCl.pdf" "IneqFromTwoRows.pdf" "OnTheSeparartionOfSplitCuts.pdf" "../" "LiftAndProjectCutPlaneAlgo.pdf" "DisjProgHierachyOfRelaxForDiscOpt.pdf" "ValidIneqForMILP.pdf" "fromCourse/" "An_Analysis.pdf" "reduceAndSplitCuts.pdf" "eorms.pdf" "MIRclosuresOfPolyhedra.pdf" "aPreciseCorrespondence.pdf" "TwoRowsFromTwoBases.pdf" "StrengtheningCuts.pdf" "LiftAndProjectForMixedRecentProgress.pdf")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis-git/TeXFiles/brainstorms/" (20080 47684) "./" "outline.org" "../")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/" (20080 45851) "./" "ExampleCoin-Or/" "miplib3/" ".svn/" "testBasicPolyBranch/" "../" "Agenda/" "Papers/" "CutPlaneAlgo/" "Algorithm/" "TeXFiles/")
+
+ ("/home/mortenlp/.emacs.d/3rd-party/magit-1.0.0/" (20080 45854) "./" "magit-svn.el" "magit-pkg.el.in" "magit-topgit.el" "../" "50magit.el" "README.md" "magit-key-mode.el" "Makefile" "magit.el" "magit.texi" "magit.spec.in")
+
+ ("/home/mortenlp/.emacs.d/3rd-party/" (20080 45854) "./" "themes/" "magit-1.0.0/" "../" "color-theme.el" "org-7.7/" "yasnippet-bundle.el" "folding.el" "browse-kill-ring.el")
+
+ ("/home/mortenlp/Dokumenter/" (20080 45852) "./" "dotFiles/" "FontConfig/" "CV_og_ansøgning/" "Hjemmeside/" "opsætning.org.save" "AU/" "../" "LaTeX/" "GymnasieUndervisning/" "biler.org" "Scripts/" "Modtagne filer/" "Kina/" "opsætning.org" "Sjov og spas/" "PreviewLaTeXFix/" "VersionControl/" "programmering/" "gave_til_Anders.org" "Skak/" "opskrift/" "Fars_fødselsdag/" "Budget/" "OrgMode/" "Opsætning/" "kaffealgoritme/" "DaleifEmacs.pdf")
+
+ ("/home/mortenlp/Dropbox/Dokumenter/dotFiles/" (20080 44539) "./" "url/" "auto-save-list/" "custom.el" "my-dot-emacs.el" "backups/" "my-tabs.el" "my-latexstuff.el" "my-colors.el" "../" "my-bindings.el" "tramp" "my-orgmode.el" "my-diff.el" "abbrev_defs" "my-skeletons.el" "my-dot-gnus.el" "my-general.el" "my-feeds.opml" "Setup.org" "3rd-party/" "emacs_abbrev.el")
+
+ ("/home/mortenlp/Dropbox/Dokumenter/" (20079 7987) "./" "dotFiles/" "FontConfig/" "CV_og_ansøgning/" "Hjemmeside/" "opsætning.org.save" "AU/" "../" "LaTeX/" "GymnasieUndervisning/" "biler.org" "Scripts/" "Modtagne filer/" "Kina/" "opsætning.org" "Sjov og spas/" "PreviewLaTeXFix/" "VersionControl/" "programmering/" "gave_til_Anders.org" "Skak/" "opskrift/" "Fars_fødselsdag/" "Budget/" "OrgMode/" "Opsætning/" "kaffealgoritme/" "DaleifEmacs.pdf")
+
+ ("/usr/share/" (20079 50400) "pycentral-data/" "language-support/" "vpnc/" "omf-langpack/" "gnupg/" "gst-python/" "omf/" "update-manager/" "vinagre/" "libgweather/" "gnome-user-share/" "NetworkManager/" "pkgconfig/" "backgrounds/" "GConf/" "pyshared-data/" "base-files/" "transmission/" "defoma/" "alsa-base/" "software-properties/" "gnome/" "debhelper/" "language-selector/" "games/" "librarian/" "ca-certificates/" "enchant/" "gnome-about/" "gtk-engines/" "evolution-data-server-2.32/" "shotwell/" "initscripts/" "quvi/" "fonts/" "gtkhtml-3.14/" "common-licenses/" "tomboy/" "pnm2ppa/" "recovery-mode/" "farsight2/" "kde4/" "foo2hiperc/" "icedtea-web/" "xul-ext/" "brasero/" "ghostscript/" "libgksu/" "gnome-menus/" "compiz/" "consoletrans/" "binfmts/" "dpkg/" "brltty/" "gnome-utils/" "apt/" "popularity-contest/" "thunderbird-locale-da/" "liblouis/" "vte/" "nm-applet/" "themes/" "dconf-editor/" "onboard/" "guile/" "hwdata/" "mono-1.0/" "calendar/" "gnome-control-center/" "grub/" "gnome-keyring/" "locale/" "idl/" "grub-gfxpayload-lists/" "djvu/" "rsyslog/" "evolution-exchange/" "javazi/" "purple/" "X11/" "xscreensaver/" "hunspell/" "aspell/" "gnome-2.0/" "nano/" "gnome-screensaver/" "gcr0/" "gdb/" "gnome-screenshot/" "foo2oak/" "man-db/" "foomatic/" "tabset/" "xml/" "mythes/" "lftp/" "snmp/" "gnome-bluetooth/" "aclocal/" "libindicator/" "hal/" "synaptic/" "une/" "cli-common/" "gksu/" "directfb-1.2.10/" "os-prober/" "pygtk/" "gnome-mag/" "telepathy/" "ppp/" "gstreamer-properties/" "empathy/" "polkit-1/" "pam-configs/" "w3m/" "ibus/" "ginn/" "gnome-settings-daemon/" "bug/" "myspell/" "evolution/" "gedit-2/" "unity/" "nautilus-share/" "base-passwd/" "adium/" "sgml-data/" "totem/" "example-content/" "javascript/" "simple-scan/" "misc/" "python-apt/" "file-roller/" "foo2qpdl/" "nvidia-common/" "gnome-vpn-properties/" "gnome-media/" "gdict-1.0/" "gnome-nettool/" "geoclue-providers/" "libgphoto2/" "ibus-pinyin/" "apport/" "build-essential/" "sgml/" "libtextcat/" "pixmaps/" "speech-dispatcher/" "jockey/" "alacarte/" "libparse-debianchangelog-perl/" "compizconfig/" "ca-certificates-java/" "computer-janitor/" "mono/" "mimelnk/" "debianutils/" "mousetweaks/" "acpi-support/" "info/" "doc/" "xsessions/" "hplip/" "gstreamer-0.10/" "vim/" "groff/" "insserv/" "banshee/" "gnome-system-tools/" "man/" "libthai/" "ubuntuone-client/" "ifupdown/" "mibs/" "dict/" "lintian/" "ubuntu-docs/" "gconf-editor/" "baobab/" "media-player-info/" "gutenprint/" "webkitgtk-1.0/" "apturl/" "gnome-sudoku/" "rdesktop/" "nux/" "cups/" "glade3/" "icons/" "dictionaries-common/" "pam/" "midi/" "gnome-games-common/" "pulseaudio/" "pitivi/" "initramfs-tools/" "menu/" "emacs/" "ppd/" "computerjanitor/" "dbus-1/" "espeak-data/" "gtksourceview-2.0/" "unattended-upgrades/" "apt-xapian-index/" "foo2hp/" "java/" "application-registry/" "gconf/" "gnome-doc-utils/" "libubuntuone/" "software-center/" "ubuntu-artwork/" "indicators/" "zoneinfo/" "alsa/" "sgml-base/" "ufw/" "xmodmap/" "images/" "sounds/" "debconf/" "mozilla/" "libreoffice/" "gettext/" "desktop-directories/" "locales/" "aptdaemon/" "libgnomekbd/" "gnome-session/" "im-switch/" "perl/" "foo2slx/" "i18n/" "gnome-applets/" "zeitgeist/" "update-notifier/" "gnome-sound-recorder/" "indicator-application/" "nautilus-dropbox/" "gnome-background-properties/" "gnome-panel/" "gdm/" "foo2lava/" "consolefonts/" "ibus-table/" "xml-core/" "vinagre-1/" "ubuntu-sso-client/" "apps/" "yelp/" "sane/" "system-config-printer/" "mime-info/" "glib-2.0/" "vino/" "gnome-terminal/" "yelp-xsl/" "ssl-cert/" "mime/" "iptables/" "orca/" "file/" "console-setup/" "linux-sound-base/" "applications/" "sysv-rc/" "gwibber/" "pyshared/" "dotnet/" "python-support/" "gnome-games/" "GeoIP/" "adduser/" "nautilus-sendto/" "hyphen/" "git-core/" "tcltk/" "notify-osd/" "emacs23/" "keyrings/" "gvfs/" "eog/" "mobile-broadband-provider-info/" "foo2xqx/" "perl5/" "ubuntuone-control-panel/" "terminfo/" "opencc/" "locale-langpack/" "gnome-power-manager/" "launchpad-integration/" "ccsm/" "intltool-debian/" "gitweb/" "evince/" "usb_modeswitch/" "zenity/" "samba/" "nautilus/" "system-tools-backends-2.0/" "gtk-doc/" "metacity/" "checkbox/" "ubufox/" "readline/" "libvisual-plugins-0.4/" "usb-creator/" "branding/" "command-not-found/" "m17n/" "seahorse/" "gir-1.0/" "indicator-datetime/" "gcalctool/" "avahi/" "app-install/" "doc-base/" "foo2zjs/" "python/" "libsensors4/" "../" "./")
+
+ ("/usr/share/info/" (20079 44811) "./" "ssip.info.gz" "libc.info-8.gz" "nano.info.gz" "gdbm.info.gz" "spd-say.info.gz" "wget.info.gz" "mime-en.info.gz" "libc.info-3.gz" "dir.old" "grep.info.gz" "libc.info-2.gz" "gzip.info.gz" "libc.info-5.gz" "emacs-23/" "emacs-w3m.info.gz" "bc.info.gz" "autosprintf.info.gz" "sed.info.gz" "grub.info.gz" "libc.info.gz" "cpio.info.gz" "gnupg1.info.gz" "../" "speech-dispatcher.info.gz" "gettext.info.gz" "time.info.gz" "mime-ja.info.gz" "ed.info.gz" "libc.info-10.gz" "coreutils.info.gz" "rluserman.info.gz" "libc.info-7.gz" "mtools.info.gz" "dc.info.gz" "libc.info-1.gz" "emacs-w3m-ja.info.gz" "dir" "libc.info-6.gz" "ipc.info.gz" "libc.info-4.gz" "libc.info-11.gz" "find.info.gz" "libc.info-9.gz")
+
+ ("/usr/" (20064 50060) "./" "games/" "lib64/" "local/" "../" "include/" "bin/" "src/" "lib32/" "lib/" "share/" "sbin/")
+
+ ("/usr/share/info/emacs-23/" (20064 51420) "./" "elisp-9.gz" "calc.gz" "epa.gz" "gnus.gz" "smtpmail.gz" "gnus-3.gz" "emacs-7.gz" "elisp.gz" "ede.gz" "efaq.gz" "eintr-1.gz" "message.gz" "mh-e-2.gz" "eshell.gz" "emacs-6.gz" "pcl-cvs.gz" "calc-3.gz" "semantic.gz" "sasl.gz" "org-1.gz" "autotype.gz" "tramp.gz" "rcirc.gz" "sieve.gz" "gnus-2.gz" "calc-1.gz" "viper.gz" "ada-mode.gz" "mh-e-1.gz" "emacs-2.gz" "remember.gz" "erc.gz" "pgg.gz" "org-2.gz" "../" "ccmode-1.gz" "ccmode.gz" "org-3.gz" "elisp-8.gz" "emacs-1.gz" "sc.gz" "newsticker.gz" "elisp-1.gz" "mh-e.gz" "vip.gz" "org.gz" "elisp-2.gz" "elisp-4.gz" "elisp-3.gz" "speedbar.gz" "eudc.gz" "emacs.gz" "emacs-3.gz" "calc-5.gz" "cl.gz" "dbus.gz" "elisp-6.gz" "emacs-mime.gz" "elisp-7.gz" "elisp-10.gz" "gnus-1.gz" "url.gz" "widget.gz" "ccmode-2.gz" "eintr-2.gz" "calc-6.gz" "gnus-4.gz" "reftex.gz" "emacs-5.gz" "dired-x.gz" "calc-4.gz" "eieio.gz" "nxml-mode.gz" "emacs-4.gz" "forms.gz" "mairix-el.gz" "flymake.gz" "eintr.gz" "eintr-3.gz" "emacs-8.gz" "info.gz" "auth.gz" "idlwave.gz" "edt.gz" "woman.gz" "elisp-5.gz" "ebrowse.gz" "elisp-11.gz" "gnus-5.gz" "calc-2.gz" "ediff.gz" "ses.gz")
+
+ ("/home/mortenlp/Dropbox/Dokumenter/AU/" (20064 51243) "./" "Instruktion/" "MasterThesis/" "Matematisk modellering 1/" "Finansiering/" "MØF/" "Geometri/" "Mat. analyse/" "dynamicPricing/" "SandSynlighedsTeori 1.1/" "../" "Vehicle Routing/" "markov/" "prog2 (Case Conflict 1)/" "JavaCplex/" "Målteori/" "grafteori/" "Konvekse/" "MSA/" "Lineær Algebra/" "MICRO/" "Omkostninger og Regnskab/" "Mat. Prog/" "metaHeuristics/" "intProg/" "gameTheory/" "Perspektiver i MØK/" "Algebra/" "Statistiske Modeller 2/" "LocPlan/" "R/" "Makro/")
+
+ ("/home/mortenlp/Dropbox/Dokumenter/AU/MasterThesis/" (20073 47581) "./" "ExampleCoin-Or/" "miplib3/" ".svn/" "testBasicPolyBranch/" "../" "Agenda/" "Papers/" "CutPlaneAlgo/" "Algorithm/" "TeXFiles/")
+
+ ("/home/mortenlp/Dropbox/Dokumenter/AU/MasterThesis/CutPlaneAlgo/trunk/" (20077 51158) "./" "splitcut.c" "lp_stuff.h" "hackTest/" "TAGS" "cut_plane_alg" ".svn/" "cut.lp" "Makefile-32BIT" "cut_plane_alg.c" "splitcut.h" "../" "cut_stuff.c" "TestStuff/" "Makefile-64BIT" "pmilp.lp" "lp_stuff.c" "cut_stuff.h" "or_lp.lp")
+
+ ("/home/mortenlp/Skrivebord/git-git-4b5eac7/" (20061 15255) "sideband.h" "date.c" "git-web--browse.sh" "diff-no-index.c" "tree-walk.h" "symlinks.c" "mergetools/" "tree.c" "preload-index.c" "pretty.c" "strbuf.c" "read-cache.c" "bundle.h" "patch-ids.c" "resolve-undo.c" "cache-tree.c" "builtin.h" "test-svn-fe.c" "tree-diff.c" "git-send-email.perl" "bundle.c" "git-merge-octopus.sh" "git-archimport.perl" "exec_cmd.c" "show-index.c" "notes.h" "streaming.h" "git-am.sh" "git-gui/" "Documentation/" "editor.c" "shallow.c" "advice.c" "test-line-buffer.c" "test-index-version.c" "git-stash.sh" "attr.c" "grep.h" "git-rebase--interactive.sh" "compat/" "fetch-pack.h" "decorate.c" "notes-cache.h" "levenshtein.h" "git-request-pull.sh" "ppc/" "sh-i18n--envsubst.c" "check-racy.c" "bisect.h" "http.c" "git-filter-branch.sh" "convert.c" "fsck.c" "parse-options.h" "diff.c" "block-sha1/" "walker.c" "test-dump-cache-tree.c" "hex.c" "test-run-command.c" "unpack-trees.h" "git-quiltimport.sh" "utf8.c" "fixup-builtins" "COPYING" "environment.c" "sha1-lookup.c" "revision.c" "branch.c" "http-push.c" "vcs-svn/" "generate-cmdlist.sh" "abspath.c" "submodule.c" "fast-import.c" "archive-zip.c" "merge-file.c" "list-objects.h" "refs.c" "notes-merge.h" "git-cvsserver.perl" "patch-ids.h" "diffcore-pickaxe.c" "check_bindir" "usage.c" "contrib/" "po/" "test-mktemp.c" "RelNotes" "upload-pack.c" "entry.c" "git-difftool.perl" "diffcore.h" "userdiff.h" "bisect.c" "delta.h" "merge-file.h" "merge-recursive.h" "http-walker.c" "quote.h" "advice.h" "url.h" "log-tree.c" "merge-recursive.c" "parse-options-cb.c" "pkt-line.h" "ll-merge.c" "git-bisect.sh" "test-string-pool.c" "string-list.h" ".gitignore" "test-genrandom.c" "test-sigchain.c" "git-relink.perl" "dir.h" "submodule.h" "git-pull.sh" "sigchain.c" "alloc.c" "wt-status.h" "command-list.txt" "pack-check.c" "ctype.c" "git-parse-remote.sh" "blob.h" "archive.c" "git-rebase--merge.sh" "git-add--interactive.perl" "tag.h" "transport-helper.c" "shell.c" "tar.h" "archive-tar.c" "pack-revindex.c" "cache-tree.h" "git-difftool--helper.sh" "replace_object.c" "color.h" "templates/" "git_remote_helpers/" "ws.c" "ll-merge.h" "path.c" "diffcore-delta.c" "test-treap.c" "dir.c" "reflog-walk.h" "git-rebase--am.sh" "tree-walk.c" "object.h" "unimplemented.sh" "git-repack.sh" "run-command.c" "sha1-lookup.h" "t/" "setup.c" "wt-status.c" "git-lost-found.sh" "patch-delta.c" "test-sha1.sh" "fsck.h" "xdiff/" "color.c" "test-sha1.c" "remote.c" "commit.c" "git-instaweb.sh" ".gitattributes" "copy.c" "progress.c" "reachable.c" "sha1-array.h" "reflog-walk.c" "remote.h" "remote-curl.c" "log-tree.h" "levenshtein.c" "diffcore-order.c" "diff.h" "git-sh-i18n.sh" "trace.c" "combine-diff.c" "INSTALL" "sha1_file.c" "gettext.h" "pack-write.c" "diffcore-break.c" "mailmap.c" "lockfile.c" "quote.c" "match-trees.c" "shortlog.h" "sha1_name.c" "gitk-git/" "thread-utils.c" "notes.c" "http-backend.c" "sha1-array.c" "zlib.c" "branch.h" "git-cvsexportcommit.perl" "pack.h" "git.c" "wrapper.c" "connect.c" "unpack-trees.c" "pager.c" "daemon.c" "refs.h" "sideband.c" "README" "LGPL-2.1" "string-list.c" "test-chmtime.c" "object.c" "perl/" "gettext.c" "git-cvsimport.perl" "progress.h" "commit.h" "convert.h" "test-path-utils.c" "thread-utils.h" "grep.c" "pack-revindex.h" "test-date.c" "git-sh-setup.sh" "decorate.h" "git-compat-util.h" "hash.c" "GIT-VERSION-GEN" "list-objects.c" "tag.c" "resolve-undo.h" "ident.c" "base85.c" "imap-send.c" "mailmap.h" "config.c" "git.spec.in" "url.c" "builtin/" "http.h" "csum-file.c" "tree.h" "test-obj-pool.c" "diffcore-rename.c" ".mailmap" "blob.c" "git-submodule.sh" "check-builtins.sh" "diff-lib.c" "xdiff-interface.c" "strbuf.h" "help.h" "name-hash.c" "Makefile" "transport.c" "walker.h" "cache.h" "csum-file.h" "exec_cmd.h" "test-delta.c" "git-mergetool--lib.sh" "test-subprocess.c" "userdiff.c" "attr.h" "parse-options.c" "git-merge-resolve.sh" "git-svn.perl" "configure.ac" "http-fetch.c" "config.mak.in" "git-merge-one-file.sh" "aclocal.m4" "utf8.h" "gitweb/" "sigchain.h" "notes-cache.c" "hash.h" "git-rebase.sh" "graph.c" "run-command.h" "help.c" "xdiff-interface.h" "server-info.c" "git-remote-testgit.py" "pkt-line.c" "write_or_die.c" "rerere.c" "pack-refs.h" "diff-delta.c" "pack-refs.c" "alias.c" "streaming.c" "test-match-trees.c" "git-mergetool.sh" "transport.h" "revision.h" "reachable.h" "wrap-for-bin.sh" "test-ctype.c" "notes-merge.c" "test-parse-options.c" "archive.h" "rerere.h" "graph.h" "send-pack.h" "../" "./")
+
+ ("/home/mortenlp/Skrivebord/thesis/" (20071 32261) "orbit-05.eps" "./" "cohomology-01.eps" "4T-04.eps" "Kauffman-01.eps" "frontstuff.tex" "4T-08.eps" "bibliography.tex" "orbit-06.eps" "abelian.tex" "regular_SL2C.tex" "4T-05.eps" "4T-07.eps" "thesis.bbl" "thesis-math.tex" "principal_bundles.tex" "4T-03.eps" "thesis.mp" "../" "mcg.tex" "orbit-01.eps" "ideas.tex" "orbit-02.eps" "mcg-04.eps" "Dehn.mp" "mcg-03.eps" "thesis.tex" "thesis-layout.tex" "thesis-misc.tex" "thesis-packages.tex" "mcg-01.eps" "4T-02.eps" "cohomology-02.eps" "compass.mp" "4T-01.eps" "moduli.tex" "cohomology-03.eps" "quantization.tex" "4T-09.eps" "thesis.zip" "groupcohomology.tex" "introduction.tex" "4T-06.eps" "Kauffman-02.eps" "mcg-02.eps" "orbit-03.eps" "orbit-04.eps" "Kauffman-03.eps")
+
+ ("/home/mortenlp/.emacs.d/3rd-party/org-7.7/contrib/" (20064 52633) "scripts/" "./" "babel/" "../" "doc/" "lisp/" "odt/" "README")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/miplib2003/" (20064 57462) "./" "rd-rplusc-21.mps" "net12.mps" "pp08aCUTS.mps" "disktom.mps" "protfold.mps" "cap6000.mps" "harp2.mps" "nw04.mps" "dano3mip.mps" "air05.mps" "pp08a.mps" "ds.mps" "p2756.mps" "atlanta-ip.mps" "aflow40b.mps" "timtab2.mps" "vpm2.mps" "momentum3.mps" "seymour.mps" "mas74.mps" ".svn/" "fiber.mps" "modglob.mps" "swath.mps" "stp3d.mps" "mas76.mps" "nsrand-ipx.mps" "mkc.mps" "markshare1.mps" "../" "sp97ar.mps" "gesa2-o.mps" "momentum2.mps" "mzzv11.mps" "noswot.mps" "roll3000.mps" "set1ch.mps" "tr12-30.mps" "fixnet6.mps" "timtab1.mps" "liu.mps" "mzzv42z.mps" "pk1.mps" "markshare2.mps" "mod011.mps" "a1c1s1.mps" "rout.mps" "opt1217.mps" "misc07.mps" "t1717.mps" "msc98-ip.mps" "arki001.mps" "glass4.mps" "aflow30a.mps" "air04.mps" "manna81.mps" "danoint.mps" "momentum1.mps" "10teams.mps" "gesa2.mps" "qiu.mps" "fast0507.mps")
+
+ ("/home/mortenlp/News/rss/" (20067 46191) "jonobacon@home.el" "./" "Linux Journal - The Original Magazine of the Linux Community.el" "Simplexify.el" "OR-Exchange - latest questions.el" "emacs-fu.el" "Michael Trick_s Operations Research Blog.el" "Twitter . e_d_andersen.el" "Computerworld - Nørderier.el" "TedRoden.com.el" "INFORMS Blog.el" "KanalTUX.el" "The Setup.el" "The Linux Mint Blog.el" "TV 2 Nyhederne.el" "Chris Ankers blog.el" "OR in an OB World.el" "Erling_s blog.el" "Version2 - it for professionelle.el" "nnrss.el" "../" "Version2 - it-job.el" "Vimeo . Kanal TUX.el" "NoctuaGUI.el" "xkcd.com.el" "sacha chua :: living an awesome life » emacs.el" "M-x all-things-emacs.el" "TV 2 Sporten (mortenlp-ThinkPad-SL510's conflicted copy 2011-08-30).el" "Twitter . MrBoJensen.el" "DR Nyheder - Alle nyheder.el" "Omg! Ubuntu!.el" "newz.dk.el" "Linux Today.el" "Planet Emacsen.el" "TV 2 Nyhederne (mortenlp-ThinkPad-SL510's conflicted copy 2011-08-30).el" "Linux Nyheder.el" "Version2 - Peter Toft.el" "TV 2 Sporten.el" "Mastering Emacs.el" "COIN-OR.el")
+
+ ("/home/mortenlp/News/" (20064 53052) "./" "drafts/" "agent/" "rss/" "INBOX" "cache/" "../" "marks/")
+
+ ("/home/mortenlp/Dropbox/Dokumenter/AU/MasterThesis/miplib3/" (20064 57462) "./" "mod008" "pk1" "mas74" "references" "mod010" "markshare2" "stein27" "danoint" "set1ch" "gen" "air04" "pp08a" "l152lav" "bell5" ".svn/" "mps_format" "gt2" "gesa3_o" "p0282" "misc06" "gesa3" "flugpl" "rentacar" "gesa2_o" "mas76" "cap6000" "p0548" "stein45" "../" "dcmulti" "mitre" "10teams" "qiu" "cplex.log" "swath" "dsbmip" "vpm1" "p0201" "pp08aCUTS" "rout" "vpm2" "khb05250" "rgn" "fast0507" "dano3mip" "arki001" "blend2" "fiber" "markshare1" "misc07" "qnet1_o" "egout" "mkc" "miplib.cat" "qnet1" "misc03" "enigma" "modglob" "p2756" "seymour" "air05" "bell3a" "air03" "mod011" "harp2" "noswot" "nw04" "p0033" "gesa2" "lseu" "fixnet6")
+
+ ("/home/mortenlp/Dropbox/Dokumenter/AU/MasterThesis/CutPlaneAlgo/" (20064 53890) "./" "branches/" "trunk/" ".svn/" "outputFiles/" "../" "cut_plane_alg.c.~BASE~")
+
+ ("/home/mortenlp/Dokumenter/AU/MasterThesis/CutPlaneAlgo/" (20064 53890) "./" "branches/" "trunk/" ".svn/" "outputFiles/" "../" "cut_plane_alg.c.~BASE~")
+
+ ("/home/" (20064 49613) "./" "mortenlp/" "../")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

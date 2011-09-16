@@ -1,0 +1,14 @@
+Indsættes i /etc/profile:
+
+export PATH=/opt/texlive/2010/bin/i386-linux:$PATH
+export PATH=/opt/ilog2006/bin:$PATH
+
+Indsættes i .bashrs:
+
+alias imf="ssh -X -l mortenlp ssh1.imf.au.dk"
+alias ll="ls -l"
+alias pubWeb="scp ~/Dropbox/Dokumenter/Hjemmeside/index.html mortenlp@ssh1.imf.au.dk:/home/mortenlp/public_html/"
+export ILOG_LICENCE_FILE=/opt/ilog2006/ilm/access.ilm
+export PATH=$PATH:~/Dropbox/Dokumenter/Scripts/
+export PS1='\w\$ '
+

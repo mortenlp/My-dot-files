@@ -1,0 +1,111 @@
+% ________________________________________________________________________________________
+% Tyvstjålet fra http://www.tjansson.dk/?p=604
+% ________________________________________________________________________________________
+\documentclass[margin,line,a4paper]{resume}
+
+\usepackage[utf8]{inputenc} %utf8
+\usepackage[english,danish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx,wrapfig}
+\usepackage{url}
+\usepackage[colorlinks=true, a4paper=true, pdfstartview=FitV,
+linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\pdfcompresslevel=9
+
+
+\begin{document}
+{\sc \Large Curriculum Vitae -- Morten L. Petersen}
+\begin{resume}
+  \vspace{0.5cm}
+  \begin{wrapfigure}{R}{0.6\textwidth}
+    \vspace{-1cm}
+    \begin{center}
+      \includegraphics[width=0.6\textwidth]{me}
+    \end{center}
+    \vspace{-1cm}
+  \end{wrapfigure}
+
+  \section{\mysidestyle Personal\\Information}%\vspace{2mm}
+  Morten Leander Petersen \\
+  Silkeborgvej 132, 2. tv.  \\
+  8000 Aarhus C \\
+  Denmark \\
+  tel: +45 28 89 20 87 \\
+  \href{mailto:mortenlp2@gmail.com}{mortenlp2@gmail.com} \\
+  \href{http://home.imf.au.dk/mortenlp}{home.imf.au.dk/mortenlp}\\
+
+  I was born and raised in Broager, which is a small city in southern
+  Denmark, where I lived the first 20 years of my life, before moving
+  to Aarhus to study Mathematics-Economics at the university. I have
+  had an interest in mathematics for the most of my childhood, and it
+  grew even stronger when I was in highschool. Add to this an overall
+  interest in society and econmics and my choise of education was not
+  difficult. I am currently writing my master thesis which I expect to
+  finish this October.
+
+  I currently live with my girlfriend Jeanne Andersen
+  (Ph.D. student at Aarhus School of Business).
+
+  In my spare time I enjoy sports a lot. In particular I go to a
+  fitness center 5 times a week. Besides that I play the guitar and
+  enjoy reading a good book.
+
+  \section{\mysidestyle Education}
+  \textbf{Master in Mathematics-Economics} (2009-2011). Working mainly
+  in operations research. Thesis Topic: Integer
+  Optimisation. Enrolled: September 2009.
+
+  \textbf{Bachelor degree in
+    Mathematics-Economics from the University of Aarhus} (2006-2009).
+  Thesis advisor: Søren Glud Johansen. Thesis title: Simulation of SM
+  Electronics. Enrolled: September 2006.
+
+  \textbf{Sønderborg Handelsskole} (2002-2005) High school.
+
+  \textbf{Broager skole} (1992-2002) Municipal School.
+
+
+  \section{\mysidestyle Job experiences}\vspace{1mm}
+  \begin{description}
+  \item[2011, April $\rightarrow$ May] Teaching assistant in the course ``Convex
+    Sets'' at the department of mathematical sciences, Aarhus University.
+  \item[2010, September $\rightarrow$ 2011, January] Teaching assistant
+    in the course ``Mathematical Programming'' at the department of
+    mathematical sciences, Aarhus University.
+  \item[2010, February $\rightarrow$ May] Teacher at a highschool (Mathematics).
+  \item[2009, September $\rightarrow$ 2010, January] Teaching assistant
+    in the course ``Mathematical Programming'' at the department of
+    mathematical sciences, Aarhus University.
+  \item[2009, July $\rightarrow$ August] Sommer job at Defco A/S as a
+    warehouse operative.
+  \item[2008, July $\rightarrow$ August] Sommer job at Defco A/S as a
+    warehouse operative.
+  \item[2007, July] Sommerjob at AKC Erhvervsrengøring ApS as cleaning
+    operative.
+  \item[2005, December $\rightarrow$ 2006, July] Postman at Post Danmark A/S.
+  \end{description}
+
+  \section{\mysidestyle Extracurricular activities}\vspace{1mm}
+  \begin{description}
+  \item[2009, December $\rightarrow$ 2010, December] Volunteer at the friday bar.
+  \item[2008, December $\rightarrow$ 2009, December] Board member in
+    the association of \newline Mathematics-Economists (MØF).
+  \end{description}
+
+  \section{\mysidestyle Computer skills}\vspace{1mm}
+  \begin{description}
+  \item[Operating systems] Advanced experience with GNU/Linux. I have
+    mainly used Ubuntu, but I have also tried other distributions like
+    Fedora, Opensuse and Debian. Experienced with Microsoft Windows.
+  \item[Programming and scripting] Bash, Java, C++, C, Ilog CPLEX,
+    HTML, \LaTeX.
+  \end{description}
+
+
+  \section{\mysidestyle Language skills}
+  \textbf{Danish}: Native tongue. \textbf{English}: High level.
+  \textbf{German}: High-school level.
+
+\end{resume}
+\end{document}
+

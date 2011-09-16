@@ -1,0 +1,16 @@
+;; AUCTeX
+(require 'tex-site)
+
+;; RefTeX and Mathmode
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(setq reftex-label-alist '((nil ?e nil "~\\eqref{%s}" nil nil)))
+
+;; Wrap long lines
+(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+
+;; Turn on flyspell
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+
+;; PDF mode
+(setq TeX-PDF-mode t)

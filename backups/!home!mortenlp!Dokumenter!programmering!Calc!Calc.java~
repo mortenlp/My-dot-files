@@ -1,0 +1,56 @@
+public class Calc{
+    
+    private float a;
+    private float b;
+
+    public Calc(float newA, float newB){
+	a= newA;
+	b= newB;
+    }
+
+    public float sum(){
+	return a+b;
+    }
+
+    public float product(){
+	return a*b;
+    }
+
+    public float difference(){
+	return a-b;
+    }
+
+    public float ratio(){
+	return a/b;
+    }
+
+    public static void main(String[] args){
+	
+	float d= 0;
+	try{
+	    float e= Float.parseFloat(args[0]);
+	    float g= Float.parseFloat(args[2]);
+	    Calc c= new Calc(e, g);
+	    if (args[1].equals("+")){
+		d= c.sum();
+	    }
+	    if (args[1].equals("-")){
+		d= c.difference();
+	    }
+	    if (args[1].equals("x")){
+		d= c.product();
+	    }
+	    if (args[1].equals("/")){
+		d= c.ratio();
+	    }
+	    System.out.println(d);
+	}
+	catch(ArrayIndexOutOfBoundsException e) {
+	    System.out.println("Du skal angive et udtryk på formen 'a + b', hvor '+' kan erstattes af hhv. '*', '/' og '-'.");
+	}
+	catch(NumberFormatException e){
+	    System.out.println("Du skal angive et udtryk på formen 'a + b', hvor '+' kan erstattes af hhv. '*', '/' og '-'.");
+	}
+	
+    }
+}

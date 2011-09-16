@@ -1,0 +1,26 @@
+%Dokumentklassen sættes til memoir
+\documentclass[a4paper,11pt,article,oneside]{memoir}
+
+%Sproget sættes til dansk og orddeling indlæses
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+
+%Matematiske symboler og fede tegn i ligninger
+\usepackage{amsmath, amssymb, bm, mathtools}
+
+%Tabeller og søjler
+\usepackage{array, booktabs, dcolumn}
+\newcolumntype{d}[1]{D{,}{,}{#1}}%Justering under komma
+
+%Figurer
+\usepackage{graphicx, caption, subfig}
+\captionsetup{font=small,labelfont=bf}
+
+\author{Morten Leander Petersen}
+\date{\today}
+\title{Opgave 2.9.9}
+
+\begin{document}
+\maketitle
+\end{document}

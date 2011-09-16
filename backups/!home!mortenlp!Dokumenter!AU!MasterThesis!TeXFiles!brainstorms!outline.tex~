@@ -1,0 +1,166 @@
+% Created 2011-07-05 tir 14:26
+\documentclass[11pt]{article}
+\usepackage[AUTO]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{outline}
+\author{Morten Leander Petersen}
+\date{05 juli 2011}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+
+\section{Introduction}
+\label{sec-1}
+\subsection{Basic polyhedron}
+\label{sec-1_1}
+
+Should I mention my failures??
+\section{Split cuts}
+\label{sec-2}
+\subsection{Papers}
+\label{sec-2_1}
+
+
+\begin{itemize}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/eorms.pdf}{Kents survey paper}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/DisjProgPropOfConvHull.pdf}{Disj Prog Prop Of DisjHull}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/LiftAndProjectCutPlaneAlgo.pdf}{Lift And Project CutPlane Algo}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/LiftAndProjectForMixedRecentProgress.pdf}{Lift And Project Recent Project}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/OnTheSeparartionOfSplitCuts.pdf}{On The Separation Of SplitCuts}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/OptOverChvatal.pdf}{Optimize over Chvatal closure}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/OptOverSplitCl.pdf}{Optimize over split closure}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/reduceAndSplitCuts.pdf}{Reduce-and-splitcuts}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/splitClosureAndIntersectioncuts.pdf}{Split closure and intersection cuts}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/eclosure.pdf}{Elementary closures}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/intersectioncuts.pdf}{Intersection cuts - A new type of cuttingplanes\ldots{}}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/StrengtheningCuts.pdf}{Strengthening cuts}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/chvatalClosuresForMIP.pdf}{Chvatal Closures for MIP}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/MIRclosuresOfPolyhedra.pdf}{MIR closures of polyhedral sets}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/ConstructiveCharacterizationOfSplitCl.pdf}{A Constructive Characterization of the Split Closure\ldots{}}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/LiftAndProjectForMixedRecentProgress.pdf}{Lift and project\ldots{}Recent progress\ldots{} Balas/Perregaard}
+\end{itemize}
+\subsection{Thoughts}
+\label{sec-2_2}
+\subsubsection{Introduction to split cuts}
+\label{sec-2_2_1}
+
+Maybe some historical facts (Balas in the seventies)
+
+Cutting plane algorithms
+\subsubsection{Derivation of splitcuts}
+\label{sec-2_2_2}
+\begin{itemize}
+
+\item Split cuts from translantes of polyhedral cones\\
+\label{sec-2_2_2_1}%
+\item Every split cut can be obtained from a translate of a polyhedral cone\\
+\label{sec-2_2_2_2}%
+See \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/splitClosureAndIntersectioncuts.pdf}{Split closure and intersection cuts}
+
+\item The disjunctive hull defined from any split disjunction is a polyhedron\\
+\label{sec-2_2_2_3}%
+Proof if you can find a one!!!
+
+\item Show that the split closure is a polyhedron\\
+\label{sec-2_2_2_4}%
+See references [3-6] in \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/eorms.pdf}{Kents survey paper}
+
+Consider using the more general approach of \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/An_Analysis.pdf}{An analysis\ldots{}}
+If this is the chosen approach, then the chapter on lattice
+point free convex sets should probably come first.
+
+\item Show the validity of the splitcut\\
+\label{sec-2_2_2_5}%
+See \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/intersectioncuts.pdf}{Intersection cuts - a new type of \ldots{}}
+
+\item Consider split cuts from a lift-and-project point of view.\\
+\label{sec-2_2_2_6}%
+See \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/LiftAndProjectForMixedRecentProgress.pdf}{Lift and project\ldots{} Recent progress \ldots{} Balas/Perregaard}
+
+\item Discuss strengthening\\
+\label{sec-2_2_2_7}%
+Weighting rows of simplextableau, adjudsting coefficients etc.
+
+See \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/StrengtheningCuts.pdf}{Strengthening cuts} and \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/eorms.pdf}{Kent's survey paper}
+\end{itemize} % ends low level
+\subsubsection{Optimizing over the split closure}
+\label{sec-2_2_3}
+\begin{itemize}
+
+\item The separation problem for split cuts is NP-complete\\
+\label{sec-2_2_3_1}%
+See \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/OnTheSeparartionOfSplitCuts.pdf}{On the separation\ldots{}}
+
+\item Mention the Balas and Saxena stuff\\
+\label{sec-2_2_3_2}%
+\end{itemize} % ends low level
+\subsubsection{Concluding remarks}
+\label{sec-2_2_4}
+\begin{itemize}
+
+\item Describe the relationship with other types of cuts\\
+\label{sec-2_2_4_1}%
+See \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/eclosure.pdf}{Elementary closures}
+
+\end{itemize} % ends low level
+\section{Lattice point free convex sets}
+\label{sec-3}
+\subsection{Papers}
+\label{sec-3_1}
+
+
+\begin{itemize}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/An_Analysis.pdf}{An analysis of\ldots{}}
+\item \href{file:///home/mortenlp/Dokumenter/AU/MasterThesis/Papers/ValidIneqForMILP.pdf}{Valid inequalities for MILP}
+\end{itemize}
+\subsection{Thoughts}
+\label{sec-3_2}
+\subsubsection{Maybe this chapter should be discarded.}
+\label{sec-3_2_1}
+
+\ldots{}at least if there is enough of the other material.
+\section{Computational experiment}
+\label{sec-4}
+\subsection{Thoughts}
+\label{sec-4_1}
+
+Maybe a point could be that the routine closes a lot of duality
+gap, relatively fast.
+\section{Thesis overview}
+\label{sec-5}
+\subsection{Introduction}
+\label{sec-5_1}
+
+Starting with some historical background, the subject must be
+introduced. Focus should go from disjunctive programming over
+split disjunctions and higher dimensional representations to the more
+recent generalisation using lattice point free convex sets.
+
+The computational experiment must be mentioned along with Balas and
+Saxenas work.
+
+An outline of the rest of the thesis.
+\subsection{Splitdisjunctions and cuts}
+\label{sec-5_2}
+
+\end{document}
