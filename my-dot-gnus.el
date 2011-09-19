@@ -12,7 +12,8 @@
 (nnimap-server-port 993)
 (nnimap-stream ssl)
 (imap-username "mortenlp2")
-(nnir-search-engine imap))))
+(nnir-search-engine imap))
+(nntp "news.gwene.org")))
 (setq message-send-mail-function 'smtpmail-send-it
       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
       smtpmail-auth-credentials '(("smtp.gmail.com" 587 "mortenlp2@gmail.com" nil))
