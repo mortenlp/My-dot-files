@@ -13,6 +13,7 @@
 (setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/" load-path))
 
 ;; Load various stuff
+(load "bitlbee.el")
 (load "my-colors.el")
 (load "my-diff.el")
 (load "my-bindings.el")
@@ -70,13 +71,6 @@
                                            nil
                                          'fullboth)))
 (global-set-key [(f11)] 'toggle-fullscreen)
-
-(defun open-daleif ()
-  "Open daleifs book"
-  (interactive)
-  (dired-do-async-shell-command "cd ~/Dokumenter/LaTeX/bøger/ && evince Bog.pdf")
-  )
-(global-set-key (kbd "C-c b") 'open-daleif)
 
 ;; Folding mode
 (load "folding" 'nomessage 'noerror)

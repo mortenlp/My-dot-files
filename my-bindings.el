@@ -58,3 +58,5 @@
 ;; Mail
 (global-set-key (kbd "C-x m") 'gnus-group-mail)
 
+;; Gnus
+(global-set-key [(f12)] 'gnus)

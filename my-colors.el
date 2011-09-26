@@ -13,6 +13,9 @@
 (require 'color-theme-wombat)
 (color-theme-wombat)
 
+;; Char-coal-black
+;; (color-theme-charcoal-black)
+
 ;; Arjen
 ;; (color-theme-arjen)
 
