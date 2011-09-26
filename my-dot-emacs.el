@@ -14,6 +14,7 @@
 
 ;; Load various stuff
 (load "bitlbee.el")
+(load "my-erc.el")
 (load "my-colors.el")
 (load "my-diff.el")
 (load "my-bindings.el")
