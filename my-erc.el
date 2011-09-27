@@ -1,9 +1,24 @@
 (require 'erc)
 
-;; check channels
-(erc-track-mode t)
-(setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+;; Log conversations
+(setq erc-log-channels-directory "~/.emacs.d/logs/")
+(setq erc-save-buffer-on-part nil)
+(setq erc-save-queries-on-quit nil
+      erc-log-write-after-send t
+      erc-log-write-after-insert t)
 
-                                "324" "329" "332" "333" "353" "477"))
-;; don't show any of this
-(setq erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
+;; Colorize when Online/Busy/Away/Idle
+(setq erc-keywords '((".*Online.*" (:foreground "green"))
+                     (".*Busy" (:foreground "red"))
+                     (".*Away" (:foreground "red"))
+                     (".*Idle" (:foreground "orange"))
+                     ))
+
+;; Ignore stuff
+(setq erc-hide-list '("MODE"))
+(defun erc-ignore-unimportant (msg)
+  (if (or (string-match "*** localhost has changed mode for &bitlbee to" msg)
+          (string-match "Account already online" msg)
+          (string-match "Unknown error while loading configuration" msg))
+      (setq erc-insert-this nil)))
+(add-hook 'erc-insert-pre-hook 'erc-ignore-unimportant)
