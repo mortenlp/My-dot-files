@@ -33,7 +33,9 @@
 (require 'magit)
 
 ;; Set font
-(set-default-font "DejaVu Sans Mono-9")
+;; (set-default-font "DejaVu Sans Mono-9")
+;; (set-default-font "Monaco-9")
+(set-default-font "Ubuntu Mono-11")
 
 ;; Doc-View auto revert
 ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
@@ -87,3 +89,7 @@
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
 (setq user-full-name "Morten Leander Petersen")
+
+;; Don't disable upcase/downcase functions
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
