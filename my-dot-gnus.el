@@ -25,19 +25,6 @@
 (setq gnus-posting-styles `((".*"
                              (name "Morten Leander Petersen")
                              (from "Morten Leander Petersen <mortenlp2@gmail.com>")
-                             ("Face" "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAACXBIWXMAAA7DAAAOwwHHb6hk
- AAAACXZwQWcAAAAwAAAAMADO7oxXAAACAUlEQVRYw81Zy4rDMAxMQr45EHouhX5r9x/2EBCzekv2
- 7kbkUFxbGY31srN+Pl/LnWT7bwB1QI/zuBGgC83jPK4HR34J615d8Hy9EUcV0/P1ZquukTIgXEa/
- mS5fHufBjFFlC1VIVnpCqq6nDEgimOgxpEoi8xii2UTVRDTSmTxADAGxPZEbS+Hmr2Ejg7vGdkrV
- pjPEsGNYtTFhiBQYUt0l5DmJhhkTMyTzsoqgShIaqeYzlBWr/aCLEAcsPC3b2GQT0KUClS7RTtGL
- QyeTmNjIps6mKHAyEIYeeivl4tDbsj6E+BhbGaNJFQJVM1kcZQ4Z6OZ5IUzq2jJDiFJuQSb+/ZTT
- Z0iyhT+kSSO1b5fqfGIzRo/UvpghKzGGLtXLap0mPyQgk7r6gKz3OQSMNCoxIKk9yVBvT/vnsvB9
- YVXONmhVvdZflvP5kuoY1TnJsK/G2mYp9TnIF06cmQFXiLJ8OStlaqYz69REDBW13oE6dKxaHsJC
- 5jSjVptG/YxjzMourKSLyA5/Vqer2rOrC3wVSf/Avnb52R87qwKGJh6iVe5rZ/vxA2tjYZCHMj21
- I369q5WO8d6PkZTMkHrpcI6tDZLU4m9pTt0PzRWfdRPQRDQY6kN3jBMlvGMgMW9hSxHLEqDTQoXE
- r+PfOvCOIXOj5WOaACiP+48Ymiu3+xr0Dd/32djNVNyTAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEx
- LTA2LTI3VDEzOjE1OjE5KzAyOjAwLRFMVAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0wNi0yN1Qx
- MzoxNToxOSswMjowMFxM9OgAAAAASUVORK5CYII=")
                              (signature "/Morten"))))
 (setq imap-store-password t)
 
