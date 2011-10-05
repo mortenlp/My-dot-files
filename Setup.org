@@ -12,6 +12,5 @@
   - AucTeX, see [[file:~/Dokumenter/PreviewLaTeXFix/fix.org][PreviewLaTeX]]
   - aspell-en
   - aspell-da
-  - Subversion
   - git-core
   - git-doc
