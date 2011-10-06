@@ -23,3 +23,10 @@
 ;; (load-file "~/.emacs.d/3rd-party/themes/zenburn.el")
 ;; (require 'zenburn)
 ;; (color-theme-zenburn)
+
+;; Desert
+;; (require 'color-theme-desert)
+;; (color-theme-desert)
+
+;; (set-background-color "gray6")
+;; (set-foreground-color "white")
