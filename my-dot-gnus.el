@@ -50,3 +50,8 @@
 
 ;; Spell checking
 (add-hook 'message-mode-hook 'flyspell-mode)
+
+;; Fix ugly errors when unplugged!
+(add-hook 'gnus-agent-unplugged-hook
+          #'(lambda ()
+              (setq nntp-marks-file-name ".marks")))
