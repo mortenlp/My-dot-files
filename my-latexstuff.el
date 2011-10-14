@@ -1,5 +1,6 @@
 ;; AUCTeX
-(require 'tex-site)
+(if (locate-library "auctex")
+    (require 'tex-site))
 (load "preview-latex.el" nil t t)
 
 ;; RefTeX and Mathmode
