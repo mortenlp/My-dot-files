@@ -17,3 +17,26 @@
 
 ;;autosave before compiling
 (setq TeX-save-query nil)
+
+;; Makes synctex work!!!
+(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+(setq TeX-source-correlate-start-server t)
+(require 'dbus)
+(defun th-evince-sync (file linecol)
+   (let ((buf (get-buffer file))
+         (line (car linecol))
+         (col (cadr linecol)))
+     (if (null buf)
+         (message "Sorry, %s is not opened..." file)
+       (switch-to-buffer buf)
+       (goto-line (car linecol))
+       (unless (= col -1)
+         (move-to-column col)))))
+
+(when (and
+       (eq window-system 'x)
+       (fboundp 'dbus-register-signal))
+  (dbus-register-signal
+   :session nil "/org/gnome/evince/Window/0"
+   "org.gnome.evince.Window" "SyncSource"
+   'th-evince-sync))
