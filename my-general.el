@@ -11,8 +11,8 @@
 ;; Don't show startup screen
 (setq inhibit-startup-screen t)
 
-;; Enable transient-mark-mode
-(setq transient-mark-mode t)
+;; Disable transient-mark-mode
+(setq transient-mark-mode nil)
 
 ;; Explicitly show the end of a buffer
 (set-default 'indicate-empty-lines t)
