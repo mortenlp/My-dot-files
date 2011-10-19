@@ -26,9 +26,13 @@
 (load "my-latexstuff.el")
 (load "browse-kill-ring.el")
 (load "my-general.el")
+(load "google.el")
 
 ;; yasnippet
 (require 'yasnippet-bundle)
+
+;; Search google from emacs
+(require 'google-search)
 
 ;; Magit
 (require 'magit)

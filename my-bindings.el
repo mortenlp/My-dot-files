@@ -60,3 +60,6 @@
 
 ;; Gnus
 (global-set-key [(f12)] 'gnus)
+
+;; Google it!
+(global-set-key "\C-cg" 'google-it)
