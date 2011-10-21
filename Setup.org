@@ -3,7 +3,7 @@
   - .gnus -> dotFiles/my-dot-gnus.el (Only if email support is needed)
   - .emacs.d -> dotFiles/
   - .emacs -> dotFiles/my-dot-emacs.el
-
+  - .newsrc.eld -> dotFiles/my-dot-newsrc-eld
 
 * Packages to install
   - emacs (!)
