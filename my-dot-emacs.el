@@ -39,7 +39,6 @@
 
 ;; Set font
 ;; (set-default-font "DejaVu Sans Mono-9")
-;; (set-default-font "Monaco-9")
 (set-default-font "Ubuntu Mono-11")
 
 ;; Doc-View auto revert
@@ -49,10 +48,11 @@
 (setq gnus-inhibit-startup-message t)
 
 ;; w3m stuff
-(setq w3m-use-cookies t)
-(setq mm-w3m-safe-url-regexp nil)
-(setq w3m-default-display-inline-images t)
-(require 'mime-w3m)
+(if (locate-library "w3m")
+    (progn (setq w3m-use-cookies t)
+           (setq mm-w3m-safe-url-regexp nil)
+           (setq w3m-default-display-inline-images t)
+           (require 'mime-w3m)))
 
 ;; Auto-new-line
 (add-hook 'c-mode-common-hook
