@@ -9,10 +9,12 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/magit-1.0.0/")
+(add-to-list 'load-path "~/.emacs.d/3rd-party/deft/")
 (setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/lisp/" load-path))
 (setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/" load-path))
 
 ;; Load various stuff
+(load "my-deft.el")
 (load "bibsnarf.el")
 (load "bitlbee.el")
 (load "my-erc.el")
