@@ -43,14 +43,19 @@
 ;; Define templates
 (setq org-capture-templates
       '(("o" "Opgave" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Opgaver")
-         "* %? %^g\n %i\n ")
+         "* %? %^g\n %i\n %a\n")
         ("j" "Journal" entry (file+datetree "~/Dokumenter/OrgMode/Journal.org")
          "* %?\nEntered on %U\n  %i\n  %a\n")
         ("ø" "JeanneØnsker" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Gaveidéer til Jeanne")
          "* %? %^g\n")
         ("h" "Husk" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Husk") "* %?\n")
-        ("c" "Contacts" entry (file "~/OrgMode/contacts.org")
+        ("c" "Contacts" entry (file "~/Dokumenter/OrgMode/contacts.org")
          "* %(org-contacts-template-name)
 :PROPERTIES:
 :EMAIL: %(org-contacts-template-email)
 :END:")))
+
+;; For moblie org
+(setq org-directory "~/Dokumenter/OrgMode")
+(setq org-mobile-directory "~/Dropbox/Org-Mobile")
+(setq org-mobile-inbox-for-pull "~/Dokumenter/OrgMode/from-mobile.org")
