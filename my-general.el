@@ -43,7 +43,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+      browse-url-generic-program "chromium-browser")
 
 ;; Compile command
 (setq compile-command "make -f ")

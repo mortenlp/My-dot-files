@@ -100,3 +100,7 @@
 ;; Don't disable upcase/downcase functions
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+;; Required for emacs editing in chromium to work
+(require 'edit-server)
+(edit-server-start)
