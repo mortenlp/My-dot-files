@@ -10,8 +10,8 @@
 ;; (set-cursor-color "orange")
 
 ;; Wombat
-(require 'color-theme-wombat)
-(color-theme-wombat)
+;; (require 'color-theme-wombat)
+;; (color-theme-wombat)
 
 ;; Char-coal-black
 ;; (color-theme-charcoal-black)
@@ -20,9 +20,9 @@
 ;; (color-theme-arjen)
 
 ;; Zenburn
-;; (load-file "~/.emacs.d/3rd-party/themes/zenburn.el")
-;; (require 'zenburn)
-;; (color-theme-zenburn)
+(load-file "~/.emacs.d/3rd-party/themes/zenburn.el")
+(require 'zenburn)
+(color-theme-zenburn)
 
 ;; Desert
 ;; (require 'color-theme-desert)
@@ -30,3 +30,7 @@
 
 ;; (set-background-color "gray6")
 ;; (set-foreground-color "white")
+
+;; Solarized
+;; (require 'color-theme-solarized)
+;; (color-theme-solarized-dark)

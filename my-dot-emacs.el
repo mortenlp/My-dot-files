@@ -10,6 +10,7 @@
 (add-to-list 'load-path "~/.emacs.d/3rd-party/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/magit-1.0.0/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/deft/")
+(add-to-list 'load-path "~/.emacs.d/3rd-party/themes/emacs-color-theme-solarized/")
 (setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/lisp/" load-path))
 (setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/" load-path))
 
