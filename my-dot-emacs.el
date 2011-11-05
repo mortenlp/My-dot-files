@@ -14,6 +14,7 @@
 (setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/" load-path))
 
 ;; Load various stuff
+(load "my-starterkit-stuff.el")
 (load "my-deft.el")
 (load "bibsnarf.el")
 (load "bitlbee.el")
