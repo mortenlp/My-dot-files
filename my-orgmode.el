@@ -19,7 +19,7 @@
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;; Use Org-mode for .org, .org-archive and .txt files
-(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
 ;; Set keybindings
 (global-set-key "\C-cl" 'org-store-link)

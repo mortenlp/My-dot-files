@@ -22,7 +22,6 @@
     ("kms" "Microsoft" nil 0)
     ("kg" "Google" nil 0)
     ("kqt" "QuickTime" nil 0)
-    ("kit" "IntelliType" nil 0)
     ("kmsw" "Microsoft Windows" nil 0)
     ("kwin" "Windows" nil 0)
     ("kie" "Internet Explorer" nil 0)
