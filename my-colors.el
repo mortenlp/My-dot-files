@@ -20,9 +20,9 @@
 ;; (color-theme-arjen)
 
 ;; Zenburn
-(load-file "~/.emacs.d/3rd-party/themes/zenburn.el")
-(require 'zenburn)
-(color-theme-zenburn)
+;; (load-file "~/.emacs.d/3rd-party/themes/zenburn.el")
+;; (require 'zenburn)
+;; (color-theme-zenburn)
 
 ;; Desert
 ;; (require 'color-theme-desert)
@@ -32,5 +32,5 @@
 ;; (set-foreground-color "white")
 
 ;; Solarized
-;; (require 'color-theme-solarized)
-;; (color-theme-solarized-dark)
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
