@@ -56,6 +56,3 @@
 
 ;; Smooth scrolling
 (setq scroll-step 1 scroll-conservatively 10000)
-
-;; Don't show external ediff frame
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
