@@ -60,3 +60,6 @@
 
 ;; Google it!
 (global-set-key "\C-cg" 'google-it)
+
+;; Imenu (nice!)
+(global-set-key [(control x) (control i)] 'imenu)
