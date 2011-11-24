@@ -29,13 +29,9 @@
 (load "my-latexstuff.el")
 (load "browse-kill-ring.el")
 (load "my-general.el")
-(load "google.el")
 
 ;; yasnippet
 (require 'yasnippet-bundle)
-
-;; Search google from emacs
-(require 'google-search)
 
 ;; Magit
 (require 'magit)
@@ -105,3 +101,14 @@
 ;; Required for emacs editing in chromium to work
 (require 'edit-server)
 (edit-server-start)
+
+;; Google it!
+(defun google nil
+  "Google something."
+  (interactive)
+  (let (arg)
+    (if mark-active
+        (setq arg (buffer-substring (region-beginning) (region-end)))
+      (setq arg (read-from-minibuffer "Search term: ")))
+    (browse-url (format "http://www.google.dk/search?q=%s" arg))))
+(global-set-key [(control c) (g)] 'google)

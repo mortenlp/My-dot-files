@@ -58,8 +58,5 @@
 ;; Mail
 (global-set-key (kbd "C-x m") 'gnus-group-mail)
 
-;; Google it!
-(global-set-key "\C-cg" 'google-it)
-
 ;; Imenu (nice!)
 (global-set-key [(control x) (control i)] 'imenu)
