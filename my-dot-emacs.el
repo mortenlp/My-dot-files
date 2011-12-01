@@ -15,6 +15,7 @@
 (setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/" load-path))
 
 ;; Load various stuff
+(load "my-window-management.el")
 (load "my-deft.el")
 (load "bibsnarf.el")
 (load "bitlbee.el")
@@ -39,6 +40,7 @@
 ;; Set font
 ;; (set-default-font "DejaVu Sans Mono-9")
 (set-default-font "Ubuntu Mono-11")
+;; (set-default-font "Monaco-10")
 
 ;; Doc-View auto revert
 ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
