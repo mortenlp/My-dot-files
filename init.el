@@ -5,6 +5,11 @@
 ;; Make sure all backup files only live in one place
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
+;; Gnus stuff
+(require 'gnus)
+(setq gnus-init-file "~/Dokumenter/dotFiles/my-gnus.el")
+(setq gnus-inhibit-startup-message t)
+
 ;; Add stuff to load-path
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/")
@@ -44,9 +49,6 @@
 
 ;; Doc-View auto revert
 ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-
-;; Don't show startup message in gnus
-(setq gnus-inhibit-startup-message t)
 
 ;; w3m stuff
 (if (locate-library "w3m")
