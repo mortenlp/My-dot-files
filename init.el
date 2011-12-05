@@ -116,3 +116,11 @@
       (setq arg (read-from-minibuffer "Search term: ")))
     (browse-url (format "http://www.google.dk/search?q=%s" arg))))
 (global-set-key [(control c) (g)] 'google)
+
+;; Paste things to ansi-term
+(defun my-term-paste (&optional string)
+  (interactive)
+  (process-send-string
+   (get-buffer-process (current-buffer))
+   (if string string (current-kill 0))))
+(global-set-key [(control c) (y)] 'my-term-paste)
