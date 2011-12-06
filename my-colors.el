@@ -10,8 +10,8 @@
 ;; (set-cursor-color "orange")
 
 ;; Wombat
-(require 'color-theme-wombat)
-(color-theme-wombat)
+;; (require 'color-theme-wombat)
+;; (color-theme-wombat)
 
 ;; Char-coal-black
 ;; (color-theme-charcoal-black)
@@ -32,5 +32,5 @@
 ;; (set-foreground-color "white")
 
 ;; Solarized
-;; (require 'color-theme-solarized)
-;; (color-theme-solarized-dark)
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)

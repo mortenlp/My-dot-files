@@ -23,7 +23,6 @@
 (load "my-window-management.el")
 (load "my-deft.el")
 (load "bibsnarf.el")
-(load "bitlbee.el")
 (load "my-erc.el")
 (load "my-colors.el")
 (load "my-diff.el")
