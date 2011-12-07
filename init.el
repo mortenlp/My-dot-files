@@ -33,7 +33,7 @@
 (load "my-skeletons.el")
 (load "my-orgmode.el")
 (load "my-tabs.el")
-(load "emacs_abbrev.el") ;; Xah Lee's abbrevs.
+(load "emacs_abbrev.el")
 (load "my-latexstuff.el")
 (load "browse-kill-ring.el")
 (load "my-general.el")

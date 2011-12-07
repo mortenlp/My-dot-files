@@ -49,9 +49,6 @@
 ;; Repeat
 (global-set-key [(control z)] 'repeat) ; was suspend-frame
 
-;; Find matching parens
-(global-set-key (kbd "C-'") 'match-paren)
-
 ;; Easier buffer killing
 (global-set-key (kbd "M-k") 'kill-this-buffer)
 
