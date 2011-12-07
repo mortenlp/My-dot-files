@@ -7,6 +7,10 @@
 ;; Ido mode
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; Don't show startup screen
 (setq inhibit-startup-screen t)
