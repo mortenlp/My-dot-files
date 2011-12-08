@@ -51,10 +51,10 @@
   :type 'string
   :group 'vimgolf)
 
-(defcustom vimgolf-mode-hook '((lambda () (whitespace-mode t)))
-  "A list of functions to call upon the initialization of vimgolf-mode."
-  :type 'hook
-  :group 'vimgolf)
+;; (defcustom vimgolf-mode-hook '((lambda () (whitespace-mode t)))
+;;   "A list of functions to call upon the initialization of vimgolf-mode."
+;;   :type 'hook
+;;   :group 'vimgolf)
 
 (defvar vimgolf-mode-map
   (let ((map (make-sparse-keymap)))
