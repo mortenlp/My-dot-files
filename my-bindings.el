@@ -1,7 +1,4 @@
-;;; Global key bindigns
-
-;; How to Define Keyboard Shortcuts in Emacs
-;; http://xahlee.org/emacs/keyboard_shortcuts.html
+;;; Global key bindings
 
 ;; Window manipulation
 (global-set-key [(control kp-6)] 'enlarge-window-horizontally)
@@ -10,50 +7,67 @@
 (global-set-key [(control kp-2)] 'shrink-window)
 (global-set-key [(control kp-5)] 'balance-windows)
 
-;; Easier window movements
-(global-set-key (kbd "M-æ") 'windmove-left)          ; move to lefter window
-
 ;; Refresh-like
 (global-set-key [(f5)]  'revert-buffer)
 
-;; Indenting and alignment
-(global-set-key [(f8)]         'indent-region)
-(global-set-key [(control f8)] 'align)
-(global-set-key [(shift f8)]   'align-current)
-(global-set-key [(meta f8)]    'align-regexp)
-
 ;; Map the window manipulation keys to meta 0, 1, 2, o
-(global-set-key (kbd "M-3") 'split-window-horizontally) ; was digit-argument
-(global-set-key (kbd "M-2") 'split-window-vertically) ; was digit-argument
-(global-set-key (kbd "M-1") 'delete-other-windows) ; was digit-argument
-(global-set-key (kbd "M-0") 'delete-window) ; was digit-argument
-(global-set-key (kbd "M-o") 'other-window) ; was facemenu-keymap
+(global-set-key (kbd "M-3") 'split-window-horizontally)
+(global-set-key (kbd "M-2") 'split-window-vertically)
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-0") 'delete-window)
+(global-set-key [(meta o)] 'other-window)
+
 ;; Replace dired's M-o
-(add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map (kbd "M-o") 'other-window))) ; was dired-omit-mode
+(add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map (kbd "M-o") 'other-window)))
+
 ;; Replace ibuffer's M-o
-(add-hook 'ibuffer-mode-hook (lambda () (define-key ibuffer-mode-map (kbd "M-o") 'other-window))) ; was ibuffer-visit-buffer-1-window
+(add-hook 'ibuffer-mode-hook (lambda () (define-key ibuffer-mode-map (kbd "M-o") 'other-window)))
+
+;; Easier buffer killing
+(global-set-key [(meta k)] 'kill-this-buffer)
 
 ;; Version control and change related
-(global-set-key [(f7)]    'svn-status)
-(global-set-key [(f6)]    'magit-status)
+(global-set-key [(f7)] 'svn-status)
+(global-set-key [(f6)] 'magit-status)
 
 ;; Compile
 (global-set-key [(f9)]  'compile)
 
-;; Open Shell
-(global-set-key "\C-cs" 'shell)
-
-;; Open ansi-term
-(global-set-key "\C-ct" 'ansi-term)
-
-;; Repeat
-(global-set-key [(control z)] 'repeat) ; was suspend-frame
-
-;; Easier buffer killing
-(global-set-key (kbd "M-k") 'kill-this-buffer)
+;; Shell/Terminal
+(global-set-key [(control c) (s)] 'shell)
+(global-set-key [(control c) (t)] 'ansi-term)
+(global-set-key [(control c) (y)] 'my-term-paste)
 
 ;; Mail
-(global-set-key (kbd "C-x m") 'gnus-group-mail)
+(global-set-key [(control x) (m)] 'gnus-group-mail)
 
 ;; Imenu (nice!)
 (global-set-key [(control x) (control i)] 'imenu)
+
+;; Smex
+(global-set-key [(meta x)] 'smex)
+(global-set-key [(meta X)] 'smex-major-mode-commands)
+
+;; Fullscreen
+(global-set-key [(f11)] 'toggle-fullscreen)
+
+;; Google
+(global-set-key [(control c) (g)] 'google)
+
+;; Deft
+(global-set-key [(control c) (d)] 'deft)
+
+;; Orgmode
+(global-set-key [(control c) (l)] 'org-store-link)
+(global-set-key [(control c) (a)] 'org-agenda)
+(global-set-key [(control c) (c)] 'org-capture)
+
+;; Skeletons
+(global-set-key [(f2)] 'java-skeleton)
+(global-set-key [(f1)] 'latex-skeleton)
+
+;; Smart TAB!
+(global-set-key (kbd "TAB") 'smart-tab)
+
+;; Rotate windows
+(global-set-key [(control c) (r)] 'rotate-windows)

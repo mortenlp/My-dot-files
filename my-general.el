@@ -1,5 +1,11 @@
-;; Easy window management
-(winner-mode t) ;; turn on the global minor mode
+;; Gnus stuff
+(require 'gnus)
+(setq gnus-init-file "~/Dokumenter/dotFiles/my-gnus.el")
+(setq gnus-inhibit-startup-message t)
+
+;; Mail stuff
+(setq user-mail-address "mortenlp2@gmail.com")
+(setq user-full-name "Morten Leander Petersen")
 
 ;; Visible bell
 (setq visible-bell t)
@@ -9,8 +15,6 @@
 (setq ido-enable-flex-matching t)
 (require 'smex)
 (smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; Don't show startup screen
 (setq inhibit-startup-screen t)
@@ -28,6 +32,14 @@
   (toggle-scroll-bar -1)
   (tool-bar-mode -1)
   (menu-bar-mode -1))
+
+;; Don't disable upcase/downcase functions
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+;; Required for emacs editing in chromium to work
+(require 'edit-server)
+(edit-server-start)
 
 ;; Don’t blink the cursor
 (blink-cursor-mode 0)
@@ -63,3 +75,68 @@
 
 ;; Don't show scratch buffer text!
 (setq initial-scratch-message nil)
+
+;; Set font
+;; (set-default-font "DejaVu Sans Mono-9")
+(set-default-font "Ubuntu Mono-11")
+;; (set-default-font "Monaco-10")
+
+;; Doc-View auto revert
+;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+;; w3m stuff
+(if (locate-library "w3m")
+    (progn (setq w3m-use-cookies t)
+           (setq mm-w3m-safe-url-regexp nil)
+           (setq w3m-default-display-inline-images t)
+           (require 'mime-w3m)))
+
+;; Auto-new-line
+(add-hook 'c-mode-common-hook
+          (lambda () (c-toggle-auto-newline 1)))
+
+;; Switch between header and source file
+(add-hook 'c-mode-common-hook
+          (lambda()
+            (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+
+;; Default etags name
+(setq tags-file-name "TAGS")
+
+;; Don't use tabs when indenting!!
+(setq-default indent-tabs-mode nil)
+
+;; full screen toggle using F11
+(defun toggle-fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
+                                           nil
+                                         'fullboth)))
+
+;; Folding mode
+(load "folding" 'nomessage 'noerror)
+(folding-add-to-marks-list 'haskell-mode "--{{{"  "--}}}"  nil t)
+(folding-mode-add-find-file-hook)
+(add-hook 'haskell-mode-hook 'folding-mode)
+(folding-add-to-marks-list 'tuareg-mode "(*{{{"  "(*}}}*)"  nil t)
+(add-hook 'tuareg-mode-hook 'folding-mode)
+
+;; Google it!
+(defun google nil
+  "Google something."
+  (interactive)
+  (let (arg)
+    (if mark-active
+        (setq arg (buffer-substring (region-beginning) (region-end)))
+      (setq arg (read-from-minibuffer "Search term: ")))
+    (browse-url (format "http://www.google.dk/search?q=%s" arg))))
+
+;; Paste things to ansi-term
+(defun my-term-paste (&optional string)
+  (interactive)
+  (process-send-string
+   (get-buffer-process (current-buffer))
+   (if string string (current-kill 0))))
+
+;; Tramp
+(setq tramp-default-method "ssh")

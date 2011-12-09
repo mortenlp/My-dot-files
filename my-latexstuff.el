@@ -17,6 +17,8 @@
 ;; PDF mode
 (setq TeX-PDF-mode t)
 
+(add-hook 'LaTeX-mode-hook (lambda () (setq default-abbrev-mode t)))
+
 ;;autosave before compiling
 (setq TeX-save-query nil)
 

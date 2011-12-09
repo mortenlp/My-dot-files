@@ -1,3 +1,7 @@
+;; Easy window management
+(winner-mode t) ;; turn on the global minor mode
+
+;; Rotate windows easily
 (defun rotate-windows ()
   "Rotate your windows"
   (interactive)
@@ -22,4 +26,3 @@
              (set-window-start w1 s2)
              (set-window-start w2 s1)
              (setq i (1+ i)))))))
-(global-set-key [(control c) (r)] 'rotate-windows)

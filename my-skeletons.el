@@ -40,6 +40,3 @@
   \n
   "}" > \n
   )
-
-(global-set-key [(f2)] 'java-skeleton)
-(global-set-key [(f1)] 'latex-skeleton)

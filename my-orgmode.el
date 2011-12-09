@@ -21,11 +21,7 @@
 ;; Use Org-mode for .org, .org-archive and .txt files
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
-;; Set keybindings
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(define-key global-map "\C-cc" 'org-capture)
-
+;; Syntax highlighting
 (global-font-lock-mode 1)
 
 ;; Define various sequences
