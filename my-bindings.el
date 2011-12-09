@@ -1,4 +1,6 @@
-;;; Global key bindings
+;; Make Control-z a key prefix.
+(global-unset-key [(control z)])
+(global-set-key [(control z)] (make-sparse-keymap))
 
 ;; Window manipulation
 (global-set-key [(control kp-6)] 'enlarge-window-horizontally)
@@ -63,8 +65,8 @@
 (global-set-key [(control c) (c)] 'org-capture)
 
 ;; Skeletons
-(global-set-key [(f2)] 'java-skeleton)
-(global-set-key [(f1)] 'latex-skeleton)
+(global-set-key (kbd "C-z 1") 'latex-skeleton)
+(global-set-key (kbd "C-z 2") 'java-skeleton)
 
 ;; Smart TAB!
 (global-set-key (kbd "TAB") 'smart-tab)
