@@ -12,11 +12,11 @@
 (add-to-list 'load-path "~/.emacs.d/3rd-party/deft/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/vimgolf/emacs/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/themes/emacs-color-theme-solarized/")
-(setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/lisp/" load-path))
-(setq load-path (cons "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/" load-path))
+(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/lisp/")
+(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/")
 
 ;; Load various stuff
-(load "vimgolf.el")
+(load "my-general.el")
 (load "my-window-management.el")
 (load "my-deft.el")
 (load "bibsnarf.el")
@@ -29,7 +29,6 @@
 (load "emacs_abbrev.el")
 (load "my-latexstuff.el")
 (load "browse-kill-ring.el")
-(load "my-general.el")
 (load "my-bindings.el")
 
 ;; Require some packages

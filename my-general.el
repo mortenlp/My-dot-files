@@ -140,3 +140,7 @@
 
 ;; Tramp
 (setq tramp-default-method "ssh")
+
+;; Eval-and-replace-ish kbd macro
+(fset 'eval-and-replace
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([21 24 5 134217826 escape C-backspace 134217830] 0 "%d")) arg)))
