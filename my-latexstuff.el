@@ -17,8 +17,6 @@
 ;; PDF mode
 (setq TeX-PDF-mode t)
 
-(add-hook 'LaTeX-mode-hook (lambda () (setq default-abbrev-mode t)))
-
 ;;autosave before compiling
 (setq TeX-save-query nil)
 
@@ -44,3 +42,14 @@
    :session nil "/org/gnome/evince/Window/0"
    "org.gnome.evince.Window" "SyncSource"
    'th-evince-sync))
+
+;; Use abbrev-mode when editing LaTeX
+(add-hook 'LaTeX-mode-hook (lambda () (setq default-abbrev-mode t)))
+
+;; My few LaTeX abbreviations
+(define-abbrev-table 'global-abbrev-table '(
+                                            ("kwhi" "while ()" nil 0)
+                                            ("kcol" "\\vcentcolon" nil 0)
+                                            ("kmat" "\\mathbb{}" nil 0)
+                                            ("kcal" "\\mathcal{}" nil 0)
+                                            ))
