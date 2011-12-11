@@ -100,11 +100,12 @@
           (lambda()
             (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
-;; Default etags name
-(setq tags-file-name "TAGS")
-
 ;; Don't use tabs when indenting!!
 (setq-default indent-tabs-mode nil)
 
 ;; Tramp
 (setq tramp-default-method "ssh")
+
+;; Yasnippet setup
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/3rd-party/yasnippet/snippets")

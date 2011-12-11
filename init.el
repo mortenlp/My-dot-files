@@ -14,6 +14,12 @@
 (add-to-list 'load-path "~/.emacs.d/3rd-party/themes/emacs-color-theme-solarized/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/lisp/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/")
+(add-to-list 'load-path "~/.emacs.d/3rd-party/yasnippet/")
+
+;; Require some packages
+(require 'magit)
+(require 'vimgolf)
+(require 'yasnippet)
 
 ;; Load various stuff
 (load "my-general.el")
@@ -28,12 +34,6 @@
 (load "my-skeletons.el")
 (load "my-orgmode.el")
 (load "my-tabs.el")
-(load "emacs_abbrev.el")
 (load "my-latexstuff.el")
 (load "browse-kill-ring.el")
 (load "my-bindings.el")
-
-;; Require some packages
-(require 'yasnippet-bundle)
-(require 'magit)
-(require 'vimgolf)
