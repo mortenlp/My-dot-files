@@ -1,5 +1,4 @@
 ;; Set use color-theme.el
-(require 'color-theme)
 (color-theme-initialize)
 
 ;; Wombat

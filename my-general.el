@@ -13,7 +13,6 @@
 ;; Ido mode
 (ido-mode t)
 (setq ido-enable-flex-matching t)
-(require 'smex)
 (smex-initialize)
 
 ;; Don't show startup screen
@@ -38,7 +37,6 @@
 (put 'downcase-region 'disabled nil)
 
 ;; Required for emacs editing in chromium to work
-(require 'edit-server)
 (edit-server-start)
 
 ;; Don’t blink the cursor
@@ -108,4 +106,7 @@
 
 ;; Yasnippet setup
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/3rd-party/yasnippet/snippets")
+(yas/load-directory "~/.emacs.d/3rd-party/yasnippet/snippets/")
+
+;; Use the trash can!
+(setq delete-by-moving-to-trash t)

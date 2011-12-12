@@ -1,9 +1,3 @@
-;; Org-mode settings
-(require 'org-install)
-
-;; Org-contacts
-(require 'org-contacts)
-
 ;; Set file to look for contacts
 (setq org-contacts-files (quote ("~/Dokumenter/OrgMode/contacts.org")))
 
