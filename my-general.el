@@ -104,9 +104,5 @@
 ;; Tramp
 (setq tramp-default-method "ssh")
 
-;; Yasnippet setup
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/3rd-party/yasnippet/snippets/")
-
 ;; Use the trash can!
 (setq delete-by-moving-to-trash t)

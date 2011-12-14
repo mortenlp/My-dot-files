@@ -14,12 +14,11 @@
 (add-to-list 'load-path "~/.emacs.d/3rd-party/themes/emacs-color-theme-solarized/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.8.02/lisp/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.8.02/contrib/lisp/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/yasnippet/")
 
 ;; Require some packages
 (require 'magit)
 (require 'vimgolf)
-(require 'yasnippet)
+(require 'yasnippet-bundle)
 (require 'bibsnarf)
 (require 'browse-kill-ring)
 (require 'color-theme)
