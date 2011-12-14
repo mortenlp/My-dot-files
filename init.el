@@ -12,8 +12,8 @@
 (add-to-list 'load-path "~/.emacs.d/3rd-party/deft/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/vimgolf/emacs/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/themes/emacs-color-theme-solarized/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.8.02/lisp/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.8.02/contrib/lisp/")
+(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/lisp/")
+(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/")
 
 ;; Require some packages
 (require 'magit)
@@ -24,9 +24,7 @@
 (require 'color-theme)
 (require 'deft)
 (require 'edit-server)
-(require 'folding)
 (require 'org-install)
-(require 'org-contacts)
 (require 'smex)
 (require 'erc)
 

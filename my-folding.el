@@ -1,5 +1,5 @@
 ;; Folding mode
-;; (load "folding" 'nomessage 'noerror)
+(load "folding" 'nomessage 'noerror)
 (folding-add-to-marks-list 'haskell-mode "--{{{"  "--}}}"  nil t)
 (folding-mode-add-find-file-hook)
 (add-hook 'haskell-mode-hook 'folding-mode)

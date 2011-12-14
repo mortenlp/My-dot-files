@@ -1,3 +1,5 @@
+(require 'org-contacts)
+
 ;; Set file to look for contacts
 (setq org-contacts-files (quote ("~/Dokumenter/OrgMode/contacts.org")))
 
@@ -12,7 +14,7 @@
 ;; Wrap long lines
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
-;; Use Org-mode for .org, .org-archive and .txt files
+;; Use Org-mode for .org and .org-archive
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
 ;; Syntax highlighting
