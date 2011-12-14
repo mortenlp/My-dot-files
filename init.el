@@ -12,8 +12,8 @@
 (add-to-list 'load-path "~/.emacs.d/3rd-party/deft/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/vimgolf/emacs/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/themes/emacs-color-theme-solarized/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/lisp/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/")
+(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.8.02/lisp/")
+(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.8.02/contrib/lisp/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/yasnippet/")
 
 ;; Require some packages
@@ -29,6 +29,7 @@
 (require 'org-install)
 (require 'org-contacts)
 (require 'smex)
+(require 'erc)
 
 ;; Load various stuff
 (load "my-general.el")

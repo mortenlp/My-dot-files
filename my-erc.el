@@ -1,5 +1,3 @@
-(require 'erc)
-
 ;; Log conversations
 (setq erc-log-channels-directory "~/.emacs.d/logs/")
 (setq erc-save-buffer-on-part nil)

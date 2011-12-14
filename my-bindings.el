@@ -29,8 +29,8 @@
 (global-set-key [(meta k)] 'kill-this-buffer)
 
 ;; Version control and change related
-(global-set-key [(f7)] 'svn-status)
 (global-set-key [(f6)] 'magit-status)
+(global-set-key [(f7)] 'svn-status)
 
 ;; Compile
 (global-set-key [(f9)]  'compile)
