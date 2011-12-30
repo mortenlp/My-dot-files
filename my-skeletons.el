@@ -34,7 +34,7 @@
   "* @version " > \n
   "**/" > \n
   \n
-  > "public static void main ( String args[] ) {" \n
+  > "public static void main (String args[]) {" \n
   > _ \n
   "}" > \n
   \n
