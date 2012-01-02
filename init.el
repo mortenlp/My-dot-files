@@ -14,6 +14,9 @@
 (add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/lisp/")
 (add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/")
 
+;; Set theme directory
+(setq custom-theme-directory "~/.emacs.d/3rd-party/themes/")
+
 ;; Require some packages
 (require 'magit)
 (require 'vimgolf)
@@ -33,7 +36,6 @@
 (load "my-window-management.el")
 (load "my-deft.el")
 (load "my-erc.el")
-(load "naquadah-theme.el")
 (load "my-diff.el")
 (load "my-skeletons.el")
 (load "my-orgmode.el")

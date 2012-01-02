@@ -3,6 +3,9 @@
 (setq gnus-init-file "~/Dokumenter/dotFiles/my-gnus.el")
 (setq gnus-inhibit-startup-message t)
 
+;; Set color
+(load-theme 'naquadah)
+
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
 (setq user-full-name "Morten Leander Petersen")
