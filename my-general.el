@@ -109,3 +109,9 @@
 
 ;; Use the trash can!
 (setq delete-by-moving-to-trash t)
+
+;; Don't show external ediff frame
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;; Side by side diff is the only way
+(setq ediff-split-window-function 'split-window-horizontally)
