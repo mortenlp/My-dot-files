@@ -36,7 +36,6 @@
 (load "my-window-management.el")
 (load "my-deft.el")
 (load "my-erc.el")
-(load "my-diff.el")
 (load "my-skeletons.el")
 (load "my-orgmode.el")
 (load "my-tabs.el")

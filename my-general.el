@@ -77,10 +77,8 @@
 ;; Don't show scratch buffer text!
 (setq initial-scratch-message nil)
 
-;; Set font
-;; (set-default-font "DejaVu Sans Mono-9")
-(set-default-font "Ubuntu Mono-11")
-;; (set-default-font "Monaco-10")
+;; Use the OS's monospaced font.
+(setq font-use-system-font t)
 
 ;; Doc-View auto revert
 ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
