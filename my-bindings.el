@@ -36,7 +36,7 @@
 (global-set-key [(f9)]  'compile)
 
 ;; Shell/Terminal
-(global-set-key [(control c) (s)] 'shell)
+(global-set-key [(control c) (s)] 'eshell)
 (global-set-key [(control c) (t)] 'ansi-term)
 (global-set-key [(control c) (y)] 'my-term-paste)
 

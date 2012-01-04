@@ -1,0 +1,18 @@
+alias ll 'ls -l $1'
+exit
+cd .emacs.d/eshell/
+ls
+cat alias 
+alias d 'dired $1'
+cat alias 
+ll
+ll ~/
+d .
+d
+top
+alias top 'proced'
+top
+top
+alias sapup 'sudo apt-get update'
+alias sapug 'sudo apt-get upgrade'
+exit

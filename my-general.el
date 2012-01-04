@@ -3,6 +3,9 @@
 (setq gnus-init-file "~/Dokumenter/dotFiles/my-gnus.el")
 (setq gnus-inhibit-startup-message t)
 
+;; Set eshell directory
+(setq eshell-directory-name "~/.emacs.d/eshell/")
+
 ;; Set color
 (load-theme 'naquadah)
 

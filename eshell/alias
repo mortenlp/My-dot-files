@@ -1,0 +1,6 @@
+alias ff find-file $1
+alias ll ls -l $1
+alias d dired $1
+alias top proced
+alias sapup sudo apt-get update
+alias sapug sudo apt-get upgrade
