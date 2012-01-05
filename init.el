@@ -7,20 +7,21 @@
 
 ;; Add stuff to load-path
 (add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/magit-1.0.0/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/deft/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/vimgolf/emacs/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/lisp/")
-(add-to-list 'load-path "~/.emacs.d/3rd-party/org-7.7/contrib/lisp/")
+(add-to-list 'load-path "~/.emacs.d/plugins/")
+(add-to-list 'load-path "~/.emacs.d/plugins/magit-1.0.0/")
+(add-to-list 'load-path "~/.emacs.d/plugins/deft/")
+(add-to-list 'load-path "~/.emacs.d/plugins/vimgolf/emacs/")
+(add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/lisp/")
+(add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/contrib/lisp/")
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
 ;; Set theme directory
-(setq custom-theme-directory "~/.emacs.d/3rd-party/themes/")
+(setq custom-theme-directory "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'yasnippet)
 (require 'magit)
 (require 'vimgolf)
-(require 'yasnippet-bundle)
 (require 'bibsnarf)
 (require 'browse-kill-ring)
 (require 'deft)
@@ -30,6 +31,7 @@
 (require 'erc)
 
 ;; Load various stuff
+(load "my-yasnippet.el")
 (load "my-general.el")
 (load "my-folding.el")
 (load "my-defuns.el")
