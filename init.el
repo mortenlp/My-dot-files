@@ -13,25 +13,23 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/vimgolf/emacs/")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/contrib/lisp/")
-(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
-(require 'yasnippet)
 (require 'magit)
 (require 'vimgolf)
 (require 'bibsnarf)
 (require 'browse-kill-ring)
 (require 'deft)
+(require 'yasnippet-bundle)
 (require 'edit-server)
 (require 'org-install)
 (require 'smex)
 (require 'erc)
 
 ;; Load various stuff
-(load "my-yasnippet.el")
 (load "my-general.el")
 (load "my-folding.el")
 (load "my-defuns.el")
