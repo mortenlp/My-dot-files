@@ -25,7 +25,6 @@
 (require 'browse-kill-ring)
 (require 'deft)
 (require 'yasnippet-bundle)
-(require 'edit-server)
 (require 'org-install)
 (require 'smex)
 (require 'erc)

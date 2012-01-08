@@ -42,9 +42,6 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-;; Required for emacs editing in chromium to work
-(edit-server-start)
-
 ;; Don’t blink the cursor
 (blink-cursor-mode 0)
 
@@ -63,7 +60,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "chromium-browser")
+      browse-url-generic-program "conkeror")
 
 ;; Compile command
 (setq compile-command "make -f ")
