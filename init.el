@@ -19,6 +19,7 @@
 
 ;; Require some packages
 (require 'magit)
+(require 'starter-kit-eshell)
 (require 'vimgolf)
 (require 'bibsnarf)
 (require 'browse-kill-ring)

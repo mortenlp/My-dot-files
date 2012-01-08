@@ -1,3 +1,4 @@
+alias sagi sudo apt-get install $1
 alias sagpu sudo apt-get purge $1
 alias sagug sudo apt-get upgrade
 alias sagup sudo apt-get update
@@ -5,3 +6,4 @@ alias top proced
 alias d dired $1
 alias ll ls -l $1
 alias ff find-file $1
+alias acs apt-cache search $1
