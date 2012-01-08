@@ -34,7 +34,6 @@
 (load "my-general.el")
 (load "my-folding.el")
 (load "my-defuns.el")
-(load "my-window-management.el")
 (load "my-deft.el")
 (load "my-erc.el")
 (load "my-skeletons.el")

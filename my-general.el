@@ -116,3 +116,6 @@
 
 ;; Side by side diff is the only way
 (setq ediff-split-window-function 'split-window-horizontally)
+
+;; Easy window management
+(winner-mode t) ;; turn on the global minor mode
