@@ -116,10 +116,3 @@
 
 ;; Easy window management
 (winner-mode t) ;; turn on the global minor mode
-
-;; Don't activate yasnippet in magit
-(add-hook
- 'magit-mode-hook
- (lambda ()
-   (setq yas/dont-activate t)
-   ))
