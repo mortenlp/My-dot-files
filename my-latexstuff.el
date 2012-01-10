@@ -52,3 +52,10 @@
                                             ("kmat" "\\mathbb{}" nil 0)
                                             ("kcal" "\\mathcal{}" nil 0)
                                             ))
+
+;; Don't activate yasnippet in LaTeX-mode
+(add-hook
+ 'LaTeX-mode-hook
+ (lambda ()
+   (setq yas/dont-activate t)
+   ))
