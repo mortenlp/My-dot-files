@@ -13,6 +13,9 @@
 (setq user-mail-address "mortenlp2@gmail.com")
 (setq user-full-name "Morten Leander Petersen")
 
+;; Tooltip mode off
+(tooltip-mode -1)
+
 ;; Visible bell
 (setq visible-bell t)
 
