@@ -1,11 +1,28 @@
 ;;; Snippets make typing fun
 
-;; (require 'dropdown-list)
+(require 'dropdown-list)
 
-;; (yas/global-mode 1)
-(add-hook 'c-mode-common-hook 'yas/minor-mode)
-(add-hook 'emacs-lisp-mode-hook 'yas/minor-mode)
-(add-hook 'html-mode-hook 'yas/minor-mode)
+(yas/global-mode 1)
+
+;; Disable yasnippet in certain modes
+(add-hook
+ 'magit-mode-hook
+ (lambda ()
+   (setq yas/dont-activate t)
+   ))
+
+(add-hook
+ 'message-mode-hook
+ (lambda ()
+   (setq yas/dont-activate t)
+   ))
+
+(add-hook
+ 'gnus-article-mode-hook
+ (lambda ()
+   (setq yas/dont-activate t)
+   ))
+
 (yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 (yas/load-directory "~/.emacs.d/snippets/")
 

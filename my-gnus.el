@@ -55,9 +55,3 @@
 (add-hook 'gnus-agent-unplugged-hook
           #'(lambda ()
               (setq nntp-marks-file-name ".marks")))
-
-(add-hook
- 'gnus-article-mode-hook
- (lambda ()
-   (setq yas/dont-activate t)
-   ))
