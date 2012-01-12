@@ -76,3 +76,6 @@
 
 ;; Eval-and-replace-ish kbd macro
 (global-set-key [(control c) (e)] 'eval-and-replace)
+
+;; Tell-the-time
+(global-set-key [(control c) (u)] 'tell-the-time)

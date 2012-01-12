@@ -45,6 +45,9 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; Enable narrowing
+(put 'narrow-to-region 'disabled nil)
+
 ;; Don’t blink the cursor
 (blink-cursor-mode 0)
 
@@ -70,9 +73,6 @@
 
 ;; Trailing whitespace is unnecessary
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
-
-;; Enable narrowing
-(put 'narrow-to-region 'disabled nil)
 
 ;; Smooth scrolling
 (setq scroll-step 1 scroll-conservatively 10000)
@@ -119,3 +119,7 @@
 
 ;; Easy window management
 (winner-mode t) ;; turn on the global minor mode
+
+;; For markdown mode
+(setq auto-mode-alist
+   (cons '("\\.md" . markdown-mode) auto-mode-alist))

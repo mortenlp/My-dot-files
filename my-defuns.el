@@ -51,3 +51,9 @@
              (set-window-start w1 s2)
              (set-window-start w2 s1)
              (setq i (1+ i)))))))
+
+(defun tell-the-time ()
+  "Print the time and date in the minibuffer"
+  (interactive)
+  (shell-command "date")
+  )

@@ -19,6 +19,7 @@
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'markdown-mode)
 (require 'magit)
 (require 'starter-kit-eshell)
 (require 'vimgolf)
