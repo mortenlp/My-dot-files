@@ -57,3 +57,9 @@
   (interactive)
   (shell-command "date")
   )
+
+(defun show-battery-state ()
+  "Print the battery state in the minibuffer"
+  (interactive)
+  (shell-command "acpi")
+  )

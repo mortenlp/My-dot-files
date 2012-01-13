@@ -79,3 +79,6 @@
 
 ;; Tell-the-time
 (global-set-key [(control c) (u)] 'tell-the-time)
+
+;; Display the battery state
+(global-set-key [(control c) (b)] 'show-battery-state)
