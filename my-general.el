@@ -66,7 +66,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "conkeror")
+      browse-url-generic-program "firefox")
 
 ;; Compile command
 (setq compile-command "make -f ")
@@ -123,5 +123,3 @@
 ;; For markdown mode
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
-
-(add-hook 'emacs-startup-hook 'toggle-fullscreen)

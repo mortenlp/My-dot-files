@@ -1,0 +1,1 @@
+(set-register ?n '(file . "/home/mortenlp/Dokumenter/OrgMode/Notes.org"))

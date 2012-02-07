@@ -9,3 +9,4 @@ alias sagup sudo apt-get update
 alias sagug sudo apt-get upgrade
 alias sagpu sudo apt-get purge $*
 alias sagi sudo apt-get install $*
+alias upgr sudo apt-get update && sudo apt-get upgrade

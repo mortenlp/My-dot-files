@@ -19,6 +19,8 @@
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'lorem-ipsum)
+(require 'epresent)
 (require 'markdown-mode)
 (require 'magit)
 (require 'starter-kit-eshell)
@@ -43,3 +45,4 @@
 (load "my-latexstuff.el")
 (load "my-bindings.el")
 (load "my-yasnippet.el")
+(load "my-registers.el")
