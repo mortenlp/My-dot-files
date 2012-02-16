@@ -82,3 +82,5 @@
 
 ;; Display the battery state
 (global-set-key [(control c) (b)] 'show-battery-state)
+
+(global-set-key (kbd "C-æ") 'er/expand-region)

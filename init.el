@@ -11,6 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/magit-1.0.0/")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet/")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft/")
+(add-to-list 'load-path "~/.emacs.d/plugins/expand-region/")
 (add-to-list 'load-path "~/.emacs.d/plugins/vimgolf/emacs/")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/contrib/lisp/")
@@ -19,6 +20,7 @@
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'expand-region)
 (require 'lorem-ipsum)
 (require 'epresent)
 (require 'markdown-mode)

@@ -6,8 +6,9 @@
 ;; Set eshell directory
 (setq eshell-directory-name "~/.emacs.d/eshell/")
 
-;; Set color
-(load-theme 'naquadah)
+;; Set color if using X
+(if (eq window-system 'x)
+    (load-theme 'naquadah))
 
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
@@ -29,8 +30,8 @@
 
 ;; Enable transient-mark-mode
 (setq transient-mark-mode t)
-(set-face-foreground 'region nil)       ;Dont highlight region!!
-(set-face-background 'region nil)       ;Dont highlight region!!
+(set-face-foreground 'region "white")
+(set-face-background 'region "dark slate gray")
 
 ;; Explicitly show the end of a buffer
 (set-default 'indicate-empty-lines t)
@@ -123,3 +124,5 @@
 ;; For markdown mode
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+(add-hook 'emacs-startup-hook 'toggle-fullscreen)
