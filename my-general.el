@@ -42,6 +42,9 @@
   (tool-bar-mode -1)
   (menu-bar-mode -1))
 
+;; No fringes
+(fringe-mode 0)
+
 ;; Don't disable upcase/downcase functions
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -67,7 +70,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+      browse-url-generic-program "conkeror")
 
 ;; Compile command
 (setq compile-command "make -f ")
