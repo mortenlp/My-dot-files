@@ -50,3 +50,9 @@
 (setq org-directory "~/Dokumenter/OrgMode")
 (setq org-mobile-directory "~/Dropbox/Org-Mobile")
 (setq org-mobile-inbox-for-pull "~/Dokumenter/OrgMode/from-mobile.org")
+
+;; Push changes to mobile org after saving
+(add-hook 'after-save-hook (lambda ()
+                             (when
+                                 (equal buffer-file-name "/home/mortenlp/Dokumenter/OrgMode/Notes.org")
+                               (org-mobile-push))))
