@@ -15,11 +15,14 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/vimgolf/emacs/")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/contrib/lisp/")
+(add-to-list 'load-path "~/.emacs.d/plugins/themes/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")
+(setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'rainbow-mode)
 (require 'expand-region)
 (require 'lorem-ipsum)
 (require 'epresent)
