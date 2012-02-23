@@ -6,6 +6,7 @@
 (add-hook 'c-mode-common-hook 'yas/minor-mode)
 (add-hook 'emacs-lisp-mode-hook 'yas/minor-mode)
 (add-hook 'html-mode-hook 'yas/minor-mode)
+(add-hook 'python-mode-hook 'yas/minor-mode)
 
 (yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 (yas/load-directory "~/.emacs.d/snippets/")

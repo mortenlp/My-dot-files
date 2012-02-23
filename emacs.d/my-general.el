@@ -43,7 +43,7 @@
   (menu-bar-mode -1))
 
 ;; No fringes
-(fringe-mode 0)
+;; (fringe-mode 0)
 
 ;; Don't disable upcase/downcase functions
 (put 'upcase-region 'disabled nil)
@@ -85,7 +85,8 @@
 (setq initial-scratch-message nil)
 
 ;; Use the OS's monospaced font.
-(setq font-use-system-font t)
+(set-default-font "DejaVu Sans Mono-9")
+;; (setq font-use-system-font t)
 
 ;; Doc-View auto revert
 ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
@@ -128,4 +129,4 @@
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
-(add-hook 'emacs-startup-hook 'toggle-fullscreen)
+;; (add-hook 'emacs-startup-hook 'toggle-fullscreen)
