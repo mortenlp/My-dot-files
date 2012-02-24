@@ -158,7 +158,6 @@ bar {
 exec gnome-settings-daemon
 exec gnome-power-manager
 exec nm-applet
-exec gnome-sound-applet
 exec dropbox start
 exec feh --bg-fill /home/mortenlp/Billeder/chalkboard.jpg
 
