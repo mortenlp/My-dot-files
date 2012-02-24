@@ -85,8 +85,7 @@
 (setq initial-scratch-message nil)
 
 ;; Use the OS's monospaced font.
-(set-default-font "DejaVu Sans Mono-9")
-;; (setq font-use-system-font t)
+(setq font-use-system-font t)
 
 ;; Doc-View auto revert
 ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)

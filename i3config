@@ -24,7 +24,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -nb black -nf grey50 -sb "#506589" -sf white
 
 # change focus
 bindsym $mod+j focus left
@@ -151,20 +151,25 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        mode hide
 
 }
 
 # Startup apps
+exec gnome-settings-daemon
+exec gnome-power-manager
 exec nm-applet
+exec gnome-sound-applet
+exec dropbox start
 exec feh --bg-fill /home/mortenlp/Billeder/chalkboard.jpg
-
-## volume control
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2- unmute
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2+ unmute
-bindsym Mod4+XF86AudioLowerVolume exec amixer -q set PCM 2- unmute
-bindsym Mod4+XF86AudioRaiseVolume exec amixer -q set PCM 2+ unmute
 
 # Start apps on certain workspaces
 assign [class="^Emacs$"] 1
 assign [class="^Conkeror$"] 2
+
+# Window borders
+bindsym $mod+t border toggle
+new_window 1pixel
+
+### Local Variables:
+### mode: conf
+### End:
