@@ -1,14 +1,15 @@
-alias mntusb sudo mount -t vfat /dev/sdb1 /media/external -o uid=1000,gid=1000,utf8,dmask=027,fmask=137
-alias sudo *sudo $*
-alias acsh apt-cache show $*
-alias acse apt-cache search $*
-alias ff find-file $1
-alias ll ls -l $1
-alias d dired $1
-alias top proced
-alias sagup sudo apt-get update
-alias sagug sudo apt-get upgrade
-alias sagpu sudo apt-get purge $*
-alias sagi sudo apt-get install $*
-alias upgr sudo apt-get update && sudo apt-get upgrade
+alias mntntfs sudo mount -t ntfs-3g /dev/sdb1 /media/external
 alias sagar sudo apt-get autoremove
+alias upgr sudo apt-get update && sudo apt-get upgrade
+alias sagi sudo apt-get install $*
+alias sagpu sudo apt-get purge $*
+alias sagug sudo apt-get upgrade
+alias sagup sudo apt-get update
+alias top proced
+alias d dired $1
+alias ll ls -l $1
+alias ff find-file $1
+alias acse apt-cache search $*
+alias acsh apt-cache show $*
+alias sudo *sudo $*
+alias mntusb sudo mount -t vfat /dev/sdb1 /media/external -o uid=1000,gid=1000,utf8,dmask=027,fmask=137

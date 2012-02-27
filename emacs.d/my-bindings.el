@@ -83,4 +83,9 @@
 ;; Display the battery state
 (global-set-key [(control c) (b)] 'show-battery-state)
 
+;; Expand region
 (global-set-key (kbd "C-æ") 'er/expand-region)
+
+;; Evil-numbers
+(global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
+(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
