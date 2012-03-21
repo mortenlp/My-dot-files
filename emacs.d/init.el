@@ -22,6 +22,7 @@
 (setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'csharp-mode)
 (require 'evil-numbers)
 (require 'rainbow-mode)
 (require 'expand-region)

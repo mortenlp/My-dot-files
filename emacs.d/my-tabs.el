@@ -11,6 +11,7 @@
 (setq c-basic-offset 2)
 (setq css-indent-offset 2)
 (setq sh-basic-offset 2)
+(setq python-indent 2)
 (set-default 'javascript-indent-level 2)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

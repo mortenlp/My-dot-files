@@ -39,7 +39,7 @@
          "* %?\nEntered on %U\n  %i\n  %a\n")
         ("ø" "JeanneØnsker" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Gaveidéer til Jeanne")
          "* %? %^g\n")
-        ("h" "Husk" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Husk") "* %?\n")
+        ("r" "Random noter" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Random noter") "* %?\n")
         ("c" "Contacts" entry (file "~/Dokumenter/OrgMode/contacts.org")
          "* %(org-contacts-template-name)
 :PROPERTIES:

@@ -70,7 +70,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "conkeror")
+      browse-url-generic-program "firefox")
 
 ;; Compile command
 (setq compile-command "make -f ")
@@ -82,7 +82,7 @@
 (setq scroll-step 1 scroll-conservatively 10000)
 
 ;; Don't show scratch buffer text!
-(setq initial-scratch-message nil)
+(setq initial-scratch-message "\"ಠ_ಠ\n\n\"")
 
 ;; Use the OS's monospaced font.
 (setq font-use-system-font t)
