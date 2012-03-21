@@ -8,7 +8,7 @@
 
 ;; Set color if using X
 (if (eq window-system 'x)
-    (load-theme 'naquadah))
+    (load-theme 'tomorrow-night))
 
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
