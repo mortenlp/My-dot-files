@@ -8,7 +8,7 @@
 
 ;; Set color if using X
 (if (eq window-system 'x)
-    (load-theme 'tomorrow-night))
+    (load-theme 'tomorrow-night t))
 
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
@@ -30,8 +30,8 @@
 
 ;; Enable transient-mark-mode
 (setq transient-mark-mode t)
-(set-face-foreground 'region "white")
-(set-face-background 'region "dark slate gray")
+;; (set-face-foreground 'region "white")
+;; (set-face-background 'region "dark slate gray")
 
 ;; Explicitly show the end of a buffer
 (set-default 'indicate-empty-lines t)
@@ -82,7 +82,7 @@
 (setq scroll-step 1 scroll-conservatively 10000)
 
 ;; Don't show scratch buffer text!
-(setq initial-scratch-message "\"ಠ_ಠ\n\n\"")
+(setq initial-scratch-message nil)
 
 ;; Use the OS's monospaced font.
 (setq font-use-system-font t)

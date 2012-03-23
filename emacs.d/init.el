@@ -16,12 +16,22 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.7/contrib/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/themes/")
+(add-to-list 'load-path "~/.emacs.d/plugins/google-contacts.el/")
+
+;; Include marmalade
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")
-(setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
+;; (setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'google-contacts)
+(require 'google-contacts-gnus)
+(require 'google-contacts-message)
 (require 'csharp-mode)
 (require 'evil-numbers)
 (require 'rainbow-mode)

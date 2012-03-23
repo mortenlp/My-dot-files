@@ -171,6 +171,7 @@
 /url/cache/mortenlp/http/com/google/maps/f8d4265d535c5e1882dd6d6d84e38b9d
 /url/cache/mortenlp/http/com/google/maps/f9a8dbf1e9093500a0f0b3592dbd3863
 /url/cache/mortenlp/http/com/google/maps/fcbd3ca10a8c41762a0c8c8fbcb1a994
+emacs.d/url/cache
 /url/cookies
 /eshell/history
 /eshell/lastdir
@@ -179,3 +180,4 @@
 /emacs.d/eshell/lastdir
 /emacs.d/url/cookies
 /emacs.d/tramp
+/emacs.d/oauth2.plstore
