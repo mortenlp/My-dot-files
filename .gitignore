@@ -181,3 +181,4 @@ emacs.d/url/cache
 /emacs.d/url/cookies
 /emacs.d/tramp
 /emacs.d/oauth2.plstore
+/emacs.d/plugins/org-*
