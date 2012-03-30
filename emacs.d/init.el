@@ -22,6 +22,7 @@
 (setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'screencast)
 (require 'org-install)
 (require 'csharp-mode)
 (require 'evil-numbers)

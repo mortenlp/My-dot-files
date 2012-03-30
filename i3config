@@ -173,6 +173,9 @@ assign [class="^Firefox"] 2
 bindsym $mod+t border toggle
 new_window 1pixel
 
+# Window layout
+workspace_layout tabbed
+
 ### Local Variables:
 ### mode: conf
 ### End:

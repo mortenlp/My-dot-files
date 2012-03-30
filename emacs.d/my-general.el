@@ -112,9 +112,6 @@
 ;; Tramp
 (setq tramp-default-method "ssh")
 
-;; Use the trash can!
-(setq delete-by-moving-to-trash t)
-
 ;; Don't show external ediff frame
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 

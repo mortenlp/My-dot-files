@@ -89,3 +89,7 @@
 ;; Evil-numbers
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
+
+;; Screencast
+(global-set-key (kbd "C-z s a") 'screencast-start)
+(global-set-key (kbd "C-z s e") 'screencast-stop)
