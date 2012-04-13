@@ -24,6 +24,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 (smex-initialize)
+(ido-ubiquitous)
 
 ;; Don't show startup screen
 (setq inhibit-startup-screen t)

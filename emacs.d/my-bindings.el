@@ -93,3 +93,6 @@
 ;; Screencast
 (global-set-key (kbd "C-z s a") 'screencast-start)
 (global-set-key (kbd "C-z s e") 'screencast-stop)
+
+;; Ace-jump-mode
+(define-key global-map (kbd "C-ø") 'ace-jump-mode)

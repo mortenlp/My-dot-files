@@ -20,9 +20,6 @@
 ;; Syntax highlighting
 (global-font-lock-mode 1)
 
-;; First day in agenda should be today
-(setq org-agenda-start-on-weekday nil)
-
 (setq org-archive-location "archive.org::* Færdiggjorte opgaver")
 
 ;; Define various sequences
