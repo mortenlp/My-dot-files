@@ -23,8 +23,8 @@
 ;; Ido mode
 (ido-mode t)
 (setq ido-enable-flex-matching t)
-(smex-initialize)
 (ido-ubiquitous)
+(smex-initialize)
 
 ;; Don't show startup screen
 (setq inhibit-startup-screen t)

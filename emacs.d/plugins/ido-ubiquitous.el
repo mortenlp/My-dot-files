@@ -42,6 +42,7 @@
 ;;; Code:
 
 (require 'ido)
+(require 'cl)
 
 ;;;###autoload
 (defgroup ido-ubiquitous nil
