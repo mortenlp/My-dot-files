@@ -33,6 +33,9 @@
 (setq gnus-permanently-visible-groups ".*.*")
 (setq gnus-group-line-format "%P%M%S%5y:%B%(%G%)\n")
 
+;; Allow sending of messages of unlimited size
+(setq message-send-mail-partially-limit nil)
+
 ;; Used to search gmail's
 (require 'nnir)
 

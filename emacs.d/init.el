@@ -22,6 +22,7 @@
 (setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'python)
 (require 'ido-ubiquitous)
 (require 'ace-jump-mode)
 (require 'screencast)
