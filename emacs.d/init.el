@@ -16,12 +16,14 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.8.06/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.8.06/contrib/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/themes/")
+(add-to-list 'load-path "~/.emacs.d/plugins/ess-12.04/lisp/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")
 (setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'ess-site)
 (require 'python)
 (require 'ido-ubiquitous)
 (require 'ace-jump-mode)

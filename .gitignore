@@ -182,3 +182,4 @@ emacs.d/url/cache
 /emacs.d/tramp
 /emacs.d/oauth2.plstore
 /emacs.d/plugins/org-*
+/emacs.d/plugins/ess-*

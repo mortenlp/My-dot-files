@@ -59,3 +59,13 @@
                              (when
                                  (equal buffer-file-name "/home/mortenlp/Dokumenter/OrgMode/Notes.org")
                                (org-mobile-push))))
+
+;; Add languages to org-babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (R . t)
+   (C . t)
+   (latex . t)))
+
+(setq org-src-fontify-natively t)

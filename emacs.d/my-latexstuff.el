@@ -52,3 +52,6 @@
                                             ("kmat" "\\mathbb{}" nil 0)
                                             ("kcal" "\\mathcal{}" nil 0)
                                             ))
+
+;; Don't use ido-ubiquitous when compiling LaTeX
+(ido-ubiquitous-disable-in TeX-command-master)
