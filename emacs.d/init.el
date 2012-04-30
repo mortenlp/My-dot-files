@@ -23,6 +23,7 @@
 (setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
 
 ;; Require some packages
+(require 'paredit)
 (require 'ess-site)
 (require 'python)
 (require 'ido-ubiquitous)

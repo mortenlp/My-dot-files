@@ -2,6 +2,7 @@
 (require 'gnus)
 (setq gnus-init-file "~/.emacs.d/my-gnus.el")
 (setq gnus-inhibit-startup-message t)
+(ido-ubiquitous-disable-in mml-attach-file)
 
 ;; Set eshell directory
 (setq eshell-directory-name "~/.emacs.d/eshell/")
@@ -96,6 +97,7 @@
     (progn (setq w3m-use-cookies t)
            (setq mm-w3m-safe-url-regexp nil)
            (setq w3m-default-display-inline-images t)
+           (ido-ubiquitous-disable-in w3m-goto-url)
            (require 'mime-w3m)))
 
 ;; Auto-new-line
@@ -127,3 +129,11 @@
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
 ;; (add-hook 'emacs-startup-hook 'toggle-fullscreen)
+
+;; Set up par-edit
+(autoload 'paredit-mode "paredit"
+      "Minor mode for pseudo-structurally editing Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
+(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
+(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))

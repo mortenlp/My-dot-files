@@ -96,3 +96,6 @@
 
 ;; Ace-jump-mode
 (define-key global-map (kbd "C-ø") 'ace-jump-mode)
+
+;; Find library
+(global-set-key (kbd "C-c k") 'find-library)
