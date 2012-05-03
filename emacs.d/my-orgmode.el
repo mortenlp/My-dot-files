@@ -7,7 +7,6 @@
 (add-hook 'message-mode-hook
           (lambda () (local-set-key (kbd "TAB") 'completion-at-point)))
 
-
 ;; Org files
 (setq org-agenda-files (quote ("~/Dokumenter/OrgMode/Notes.org")))
 
@@ -53,6 +52,7 @@
 (setq org-directory "~/Dokumenter/OrgMode")
 (setq org-mobile-directory "~/Dropbox/Org-Mobile")
 (setq org-mobile-inbox-for-pull "~/Dokumenter/OrgMode/from-mobile.org")
+(setq org-mobile-files '("~/Dokumenter/OrgMode/Notes.org" "~/Dokumenter/OrgMode/archive.org"))
 
 ;; Push changes to mobile org after saving
 (add-hook 'after-save-hook (lambda ()

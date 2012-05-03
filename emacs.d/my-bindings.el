@@ -98,4 +98,7 @@
 (define-key global-map (kbd "C-ø") 'ace-jump-mode)
 
 ;; Find library
-(global-set-key (kbd "C-c k") 'find-library)
+(global-set-key (kbd "C-c f") 'find-library)
+
+;; View url-at-point
+(global-set-key (kbd "C-c v") 'w3m-external-view-this-url)
