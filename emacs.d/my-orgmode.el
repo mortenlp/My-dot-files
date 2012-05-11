@@ -57,7 +57,8 @@
 ;; Push changes to mobile org after saving
 (add-hook 'after-save-hook (lambda ()
                              (when
-                                 (equal buffer-file-name "/home/mortenlp/Dokumenter/OrgMode/Notes.org")
+                                 (or (equal buffer-file-name "/home/mortenlp/Dokumenter/OrgMode/Notes.org")
+                                     (equal buffer-file-name "/home/mortenlp/Dokumenter/OrgMode/archive.org"))
                                (org-mobile-push))))
 
 ;; Add languages to org-babel

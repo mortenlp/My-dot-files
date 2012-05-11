@@ -7,13 +7,16 @@
 (setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\”]\”[#’()]")
 
 ;; GMAIL stuff
-(setq gnus-secondary-select-methods '((nnimap "gmail"
-(nnimap-address "imap.gmail.com")
-(nnimap-server-port 993)
-(nnimap-stream ssl)
-(imap-username "mortenlp2")
-(nnir-search-engine imap))
-(nntp "news.gwene.org")))
+(add-to-list 'gnus-secondary-select-methods
+             '(nntp "news.gwene.org"))
+(add-to-list 'gnus-secondary-select-methods
+             '(nnimap "gmail"
+                      (nnimap-address "imap.gmail.com")
+                      (imap-username "mortenlp2")
+                      (nnimap-server-port 993)
+                      (nnimap-stream ssl)
+                      (nnir-search-engine imap)))
+
 (setq message-send-mail-function 'smtpmail-send-it
       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
       smtpmail-auth-credentials '(("smtp.gmail.com" 587 "mortenlp2@gmail.com" nil))
@@ -48,7 +51,7 @@
 ;; ?
 (defun my-message-mode-setup ()
   (setq fill-column 72)
-       (turn-on-auto-fill))
+  (turn-on-auto-fill))
 (add-hook 'message-mode-hook 'my-message-mode-setup)
 
 ;; Spell checking

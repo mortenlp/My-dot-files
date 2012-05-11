@@ -24,6 +24,7 @@
 
 ;; Require some packages
 (require 'paredit)
+(require 'clojure-mode)
 (require 'ess-site)
 (require 'python)
 (require 'ido-ubiquitous)

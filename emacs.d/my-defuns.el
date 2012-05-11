@@ -63,3 +63,14 @@
   (interactive)
   (shell-command "acpi")
   )
+
+(defun pub-web ()
+  "Export my index.org to html and copy to public_html"
+  (interactive)
+  (org-export-as-html 3)
+  (setq scp-string (concat "scp ~/Dokumenter/Homepage/index.html"
+                           " ~/Dokumenter/Homepage/org.css"
+                           " ~/Dokumenter/Homepage/index.org"
+                           " mortenlp@ssh1.imf.au.dk:/home/mortenlp/public_html/"))
+  (shell-command scp-string)
+)

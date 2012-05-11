@@ -9,7 +9,7 @@
 
 ;; Set color if using X
 (if (eq window-system 'x)
-    (load-theme 'tomorrow-night))
+    (load-theme 'tomorrow-night-eighties))
 
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
@@ -72,7 +72,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+      browse-url-generic-program "conkeror")
 
 ;; Compile command
 (setq compile-command "make -f ")
@@ -97,7 +97,6 @@
     (progn (setq w3m-use-cookies t)
            (setq mm-w3m-safe-url-regexp nil)
            (setq w3m-default-display-inline-images t)
-           (ido-ubiquitous-disable-in w3m-goto-url)
            (require 'mime-w3m)))
 
 ;; Auto-new-line
@@ -131,9 +130,9 @@
 ;; (add-hook 'emacs-startup-hook 'toggle-fullscreen)
 
 ;; Set up par-edit
-(autoload 'paredit-mode "paredit"
-      "Minor mode for pseudo-structurally editing Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
-(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
-(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
-(add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))
+;; (autoload 'paredit-mode "paredit"
+;;       "Minor mode for pseudo-structurally editing Lisp code." t)
+;; (add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
+;; (add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
+;; (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+;; (add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))
