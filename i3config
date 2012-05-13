@@ -159,15 +159,16 @@ bar {
 ###################################
 
 # Startup apps
+exec feh --bg-fill /home/mortenlp/Billeder/chalkboard.jpg
 exec gnome-settings-daemon
 exec gnome-power-manager
 exec nm-applet
 exec dropbox start
-exec feh --bg-fill /home/mortenlp/Billeder/chalkboard.jpg
 
 # Start apps on certain workspaces
-assign [class="^Emacs$"] 1
-assign [class="^Firefox"] 2
+# assign [class="^Emacs$"] 1
+# assign [class="^Firefox"] 2
+# assign [class="^Conkeror"] 1
 
 # Window borders
 bindsym $mod+t border toggle

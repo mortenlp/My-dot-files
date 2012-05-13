@@ -62,7 +62,7 @@
 (setq column-number-mode  t)
 
 ;; Avoid mouse!!
-(mouse-avoidance-mode 'banish)
+(mouse-avoidance-mode 'jump)
 
 ;; "y or n" instead of "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -130,9 +130,9 @@
 ;; (add-hook 'emacs-startup-hook 'toggle-fullscreen)
 
 ;; Set up par-edit
-;; (autoload 'paredit-mode "paredit"
-;;       "Minor mode for pseudo-structurally editing Lisp code." t)
-;; (add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
-;; (add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
-;; (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
-;; (add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))
+(autoload 'paredit-mode "paredit"
+      "Minor mode for pseudo-structurally editing Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
+(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
+(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))

@@ -74,3 +74,21 @@
                            " mortenlp@ssh1.imf.au.dk:/home/mortenlp/public_html/"))
   (shell-command scp-string)
 )
+
+(defun etags-current (sudo string)
+  "Run the etags shell command on the current directory.
+STRING should be one of the following:
+c/cpp -> for c/c++ programs
+el -> for elisp"
+  (interactive (list (y-or-n-p "As root? ")
+                     (completing-read
+                      "Choose language: " '("c/cpp" "el") nil t)))
+  (let ((command "find . -regex "))
+    (if (eq sudo t)
+        (setq command (concat "sudo " command)))
+    (cond
+     ((equal string "c/cpp")
+      (setq command (concat command "'.*\.c\|.*\.h\|.*\.cpp' -print | etags -")))
+     ((equal string "el")
+      (setq command (concat command "'.*\.el\|.*\.el.gz' -print | etags -"))))
+    (shell-command command)))
