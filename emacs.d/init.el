@@ -50,6 +50,7 @@
 
 ;; Load various stuff
 (load "my-general.el")
+(load "my-programming.el")
 (load "my-folding.el")
 (load "my-defuns.el")
 (load "my-deft.el")

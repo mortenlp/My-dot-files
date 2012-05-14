@@ -44,9 +44,6 @@
   (tool-bar-mode -1)
   (menu-bar-mode -1))
 
-;; No fringes
-;; (fringe-mode 0)
-
 ;; Don't disable upcase/downcase functions
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -74,9 +71,6 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "conkeror")
 
-;; Compile command
-(setq compile-command "make -f ")
-
 ;; Trailing whitespace is unnecessary
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
@@ -99,18 +93,6 @@
            (setq w3m-default-display-inline-images t)
            (require 'mime-w3m)))
 
-;; Auto-new-line
-(add-hook 'c-mode-common-hook
-          (lambda () (c-toggle-auto-newline 1)))
-
-;; Switch between header and source file
-(add-hook 'c-mode-common-hook
-          (lambda()
-            (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
-
-;; Don't use tabs when indenting!!
-(setq-default indent-tabs-mode nil)
-
 ;; Tramp
 (setq tramp-default-method "ssh")
 
@@ -126,13 +108,3 @@
 ;; For markdown mode
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
-
-;; (add-hook 'emacs-startup-hook 'toggle-fullscreen)
-
-;; Set up par-edit
-(autoload 'paredit-mode "paredit"
-      "Minor mode for pseudo-structurally editing Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
-(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
-(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
-(add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))

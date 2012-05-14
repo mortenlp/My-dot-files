@@ -91,4 +91,6 @@ el -> for elisp"
       (setq command (concat command "'.*\.c\|.*\.h\|.*\.cpp' -print | etags -")))
      ((equal string "el")
       (setq command (concat command "'.*\.el\|.*\.el.gz' -print | etags -"))))
-    (shell-command command)))
+    (if (eq sudo t)
+        (eshell-command command)
+      (shell-command command))))
