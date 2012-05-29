@@ -67,6 +67,7 @@
 ;; Skeletons
 (global-set-key (kbd "C-z 1") 'latex-skeleton)
 (global-set-key (kbd "C-z 2") 'java-skeleton)
+(global-set-key (kbd "C-z 3") 'beamer-skeleton)
 
 ;; Smart TAB!
 (global-set-key (kbd "TAB") 'smart-tab)
@@ -102,3 +103,10 @@
 
 ;; View url-at-point
 (global-set-key (kbd "C-c v") 'w3m-external-view-this-url)
+
+;;; Mark multiple
+(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
+(global-set-key (kbd "C-<") 'mark-previous-like-this)
+(global-set-key (kbd "C->") 'mark-next-like-this)
+(global-set-key (kbd "C-M-m") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
+(global-set-key (kbd "C-*") 'mark-all-like-this)

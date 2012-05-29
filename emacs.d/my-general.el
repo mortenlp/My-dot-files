@@ -8,8 +8,12 @@
 (setq eshell-directory-name "~/.emacs.d/eshell/")
 
 ;; Set color if using X
-(if (eq window-system 'x)
-    (load-theme 'tomorrow-night-eighties))
+(cond
+ ((and (< emacs-major-version 24) (eq window-system 'x))
+  (load-theme 'tomorrow-night-eighties))
+ ((and (>= emacs-major-version 24) (eq window-system 'x))
+  (load-theme 'tomorrow-night-eighties t))
+ )
 
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")

@@ -17,10 +17,12 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/org-7.8.06/contrib/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/themes/")
 (add-to-list 'load-path "~/.emacs.d/plugins/ess-12.04/lisp/")
+(add-to-list 'load-path "~/.emacs.d/plugins/mark-multiple/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")
-(setq custom-theme-load-path "~/.emacs.d/plugins/themes/")
+(if (< emacs-major-version 23)
+    (setq custom-theme-load-path "~/.emacs.d/plugins/themes/"))
 
 ;; Require some packages
 (require 'paredit)
@@ -47,6 +49,9 @@
 (require 'yasnippet)
 (require 'smex)
 (require 'erc)
+(require 'mark-more-like-this)          ;Used for mark-multiple
+(require 'inline-string-rectangle)      ;Used for mark-multiple
+
 
 ;; Load various stuff
 (load "my-general.el")
