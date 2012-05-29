@@ -6,6 +6,27 @@
 ;; Makes it possible to see [Gmail] folders
 (setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\”]\”[#’()]")
 
+(setq gnus-directory "~/.emacs.d/news"
+      gnus-kill-files-directory "~/.emacs.d/news"
+      gnus-home-directory "~/.emacs.d"
+      gnus-dribble-directory "~/.emacs.d"
+      gnus-always-read-dribble-file t
+
+      mail-source-directory "~/.emacs.d/mail"
+      message-directory "~/.emacs.d/mail"
+
+      message-kill-buffer-on-exit t
+      gnus-treat-display-smileys nil
+      gnus-message-archive-group "sent"
+      gnus-fetch-old-headers 'some
+      nnmail-crosspost nil
+      mail-source-delete-incoming nil
+      gnus-asynchronous t
+      gnus-agent-expire-days 0
+      gnus-agent-synchronize-flags t
+      gnus-agent-enable-expiration 'DISABLE)
+
+
 ;; GMAIL stuff
 (add-to-list 'gnus-secondary-select-methods
              '(nntp "news.gwene.org"))
@@ -61,3 +82,21 @@
 (add-hook 'gnus-agent-unplugged-hook
           #'(lambda ()
               (setq nntp-marks-file-name ".marks")))
+
+;; Unbind this key; it's annoying!
+(define-key gnus-summary-mode-map "o" (lambda () (interactive)))
+
+(defun aar/get-new-news-and-disconnect (&optional arg)
+  "Plug in, send, receive, plug out."
+  (interactive "P")
+  (gnus-group-save-newsrc)
+  (gnus-agent-toggle-plugged t)
+  (gnus-group-send-queue)
+  (gnus-group-get-new-news arg)
+  (gnus-agent-fetch-session)
+  (gnus-group-save-newsrc)
+  (gnus-agent-toggle-plugged nil))
+
+;; (define-key gnus-group-mode-map (kbd "g") 'aar/get-new-news-and-disconnect)
+
+(setq gnus-interactive-exit nil)
