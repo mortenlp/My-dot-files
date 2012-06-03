@@ -36,6 +36,7 @@
 
 ;; Enable transient-mark-mode
 (setq transient-mark-mode t)
+(delete-selection-mode t)
 ;; (set-face-foreground 'region "white")
 ;; (set-face-background 'region "dark slate gray")
 
