@@ -92,10 +92,12 @@
 ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
 ;; w3m stuff
+
 (if (locate-library "w3m")
     (progn (setq w3m-use-cookies t)
            (setq mm-w3m-safe-url-regexp nil)
            (setq w3m-default-display-inline-images t)
+           (setq mm-text-html-renderer 'w3m)
            (require 'mime-w3m)))
 
 ;; Tramp

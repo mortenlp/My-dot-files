@@ -1,14 +1,14 @@
-(require 'org-contacts-morten)
+(require 'org-contacts)
 
 ;; Set file to look for contacts
 (setq org-contacts-files (quote ("~/Dokumenter/OrgMode/contacts.org")))
 
-;; Workaround to make gnus integration work
-(add-hook 'message-mode-hook
-          (lambda () (local-set-key (kbd "TAB") 'completion-at-point)))
+;; ;; Workaround to make gnus integration work
+;; (add-hook 'message-mode-hook
+;;           (lambda () (local-set-key (kbd "TAB") 'completion-at-point)))
 
 ;; Org files
-(setq org-agenda-files (quote ("~/Dokumenter/OrgMode/Notes.org")))
+(setq org-agenda-files (quote ("~/Dokumenter/OrgMode/Notes.org" "~/Dokumenter/OrgMode/euro2012.org")))
 
 ;; Wrap long lines
 (add-hook 'org-mode-hook 'turn-on-auto-fill)

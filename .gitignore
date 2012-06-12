@@ -189,3 +189,6 @@ emacs.d/url/cache
 /emacs.d/mail/
 /emacs.d/#.newsrc-dribble#
 /emacs.d/abbrev_defs
+/emacs.d/plugins/apel*
+/emacs.d/plugins/flim*
+/emacs.d/plugins/emacs-w3m/

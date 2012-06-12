@@ -13,11 +13,14 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/deft/")
 (add-to-list 'load-path "~/.emacs.d/plugins/expand-region/")
 (add-to-list 'load-path "~/.emacs.d/plugins/vimgolf/emacs/")
-(add-to-list 'load-path "~/.emacs.d/plugins/org-7.8.06/lisp/")
-(add-to-list 'load-path "~/.emacs.d/plugins/org-7.8.06/contrib/lisp/")
+(add-to-list 'load-path "~/.emacs.d/plugins/org-7.8.11/lisp/")
+(add-to-list 'load-path "~/.emacs.d/plugins/org-7.8.11/contrib/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/themes/")
 (add-to-list 'load-path "~/.emacs.d/plugins/ess-12.04/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/mark-multiple/")
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-w3m/")
+(add-to-list 'load-path "~/.emacs.d/plugins/flim/")
+(add-to-list 'load-path "~/.emacs.d/plugins/apel/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/plugins/themes/")

@@ -33,7 +33,7 @@
 (add-to-list 'gnus-secondary-select-methods
              '(nnimap "gmail"
                       (nnimap-address "imap.gmail.com")
-                      (imap-username "mortenlp2")
+                      (nnimap-user "mortenlp2")
                       (nnimap-server-port 993)
                       (nnimap-stream ssl)
                       (nnir-search-engine imap)))
@@ -97,6 +97,6 @@
   (gnus-group-save-newsrc)
   (gnus-agent-toggle-plugged nil))
 
-;; (define-key gnus-group-mode-map (kbd "g") 'aar/get-new-news-and-disconnect)
+(define-key gnus-group-mode-map (kbd "g") 'aar/get-new-news-and-disconnect)
 
 (setq gnus-interactive-exit nil)
