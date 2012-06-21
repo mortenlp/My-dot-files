@@ -40,7 +40,7 @@
 
 (setq message-send-mail-function 'smtpmail-send-it
       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "mortenlp2@gmail.com" nil))
+      smtpmail-smtp-user "mortenlp2"
       smtpmail-default-smtp-server "smtp.gmail.com"
       smtpmail-smtp-server "smtp.gmail.com"
       smtpmail-smtp-service 587)

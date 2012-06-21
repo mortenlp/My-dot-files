@@ -110,3 +110,15 @@ el -> for elisp"
     (if (eq sudo t)
         (eshell-command command)
       (shell-command command))))
+
+
+;;; Function to mark a proc or data step in SAS code
+(defun mark-proc ()
+  "Mark the proc or data step at point"
+  (interactive)
+  (set-mark (point))
+  (re-search-forward "\\(run;\\)\\|\\(quit;\\)")
+  (set-mark (point))
+  (re-search-backward "\\(^ *proc\\)\\|\\(^ *data\\)")
+)
+(define-key ess-mode-map (kbd "C-c C-h") 'mark-proc)
