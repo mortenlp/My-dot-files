@@ -81,8 +81,8 @@
 ;; Tell-the-time
 (global-set-key [(control c) (u)] 'tell-the-time)
 
-;; Display the battery state
-(global-set-key [(control c) (b)] 'show-battery-state)
+;; Browse url
+(global-set-key (kbd "C-c b") 'browse-url)
 
 ;; Expand region
 (global-set-key (kbd "C-æ") 'er/expand-region)

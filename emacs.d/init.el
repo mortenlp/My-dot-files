@@ -55,7 +55,6 @@
 (require 'mark-more-like-this)          ;Used for mark-multiple
 (require 'inline-string-rectangle)      ;Used for mark-multiple
 
-
 ;; Load various stuff
 (load "my-general.el")
 (load "my-programming.el")

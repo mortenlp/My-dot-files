@@ -192,3 +192,4 @@ emacs.d/url/cache
 /emacs.d/plugins/apel*
 /emacs.d/plugins/flim*
 /emacs.d/plugins/emacs-w3m/
+/emacs.d/.newsrc-dribble

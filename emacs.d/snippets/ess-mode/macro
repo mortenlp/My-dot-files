@@ -1,0 +1,7 @@
+# -*- mode: ess-mode -*-
+# name: macro
+# key: m
+# --
+%macro ${1:name}
+    $0
+%mend $1;

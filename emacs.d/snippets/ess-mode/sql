@@ -1,0 +1,7 @@
+# -*- mode: ess-mode -*-
+# name: sql
+# key: s
+# --
+proc sql;
+    $0
+quit;

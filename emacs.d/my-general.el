@@ -1,3 +1,5 @@
+(server-start)
+
 ;; Gnus stuff
 (require 'gnus)
 (setq gnus-init-file "~/.emacs.d/my-gnus.el")
@@ -115,3 +117,5 @@
 ;; For markdown mode
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+(setq x-select-enable-clipboard t)

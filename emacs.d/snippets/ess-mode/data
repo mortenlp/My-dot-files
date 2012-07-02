@@ -1,0 +1,7 @@
+# -*- mode: ess-mode -*-
+# name: data
+# key: d
+# --
+data ${1:name};
+    $0
+run;

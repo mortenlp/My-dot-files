@@ -95,7 +95,8 @@
   (gnus-group-get-new-news arg)
   (gnus-agent-fetch-session)
   (gnus-group-save-newsrc)
-  (gnus-agent-toggle-plugged nil))
+  (gnus-agent-toggle-plugged nil)
+  (goto-char (point-min)))
 
 (define-key gnus-group-mode-map (kbd "g") 'aar/get-new-news-and-disconnect)
 

@@ -1,0 +1,7 @@
+# -*- mode: ess-mode -*-
+# name: proc
+# key: p
+# --
+proc ${1:name} data=${2:data};
+    $0
+run;
