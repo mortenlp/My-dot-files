@@ -119,6 +119,19 @@ el -> for elisp"
   (set-mark (point))
   (re-search-forward "\\(run;\\)\\|\\(quit;\\)")
   (set-mark (point))
-  (re-search-backward "\\(^ *proc\\)\\|\\(^ *data\\)")
-)
-(define-key ess-mode-map (kbd "C-c C-h") 'mark-proc)
+  (re-search-backward "\\(^ *proc\\)\\|\\(^ *data[^=l]\\)"))
+
+;;; Function to run the sas code contained in the region
+(defun submit-portion-sas (beg end)
+  "Create a new temporary file to store the current region and run a batch process of SAS on that temporary file"
+  (interactive (list (point) (mark)))
+  (unless (and beg end)
+    (error "The mark is not set now, so there is no region"))
+  (save-excursion
+    (kill-ring-save beg end)
+    (find-file "temp.sas")
+    (yank)
+    (save-buffer)
+    (kill-this-buffer)
+    (shell-command "sas.exe temp.sas")
+    (shell-command "rm temp.sas")))

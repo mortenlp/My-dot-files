@@ -8,7 +8,7 @@
 ;;           (lambda () (local-set-key (kbd "TAB") 'completion-at-point)))
 
 ;; Org files
-(setq org-agenda-files (quote ("~/Dokumenter/OrgMode/Notes.org" "~/Dokumenter/OrgMode/euro2012.org")))
+(setq org-agenda-files (quote ("~/Dokumenter/OrgMode/Notes.org")))
 
 ;; Wrap long lines
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
