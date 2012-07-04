@@ -12,10 +12,11 @@
 ;; Set color if using X
 (cond
  ((and (< emacs-major-version 24) (eq window-system 'x))
-  (load-theme 'tomorrow-night-eighties))
+  (load-theme 'naquadah))
  ((and (>= emacs-major-version 24) (eq window-system 'x))
-  (load-theme 'tomorrow-night-eighties t))
+  (load-theme 'naquadah t))
  )
+(set-face-background 'region "#464740")
 
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
@@ -114,8 +115,5 @@
 ;; Easy window management
 (winner-mode t) ;; turn on the global minor mode
 
-;; For markdown mode
-(setq auto-mode-alist
-   (cons '("\\.md" . markdown-mode) auto-mode-alist))
-
+;;; Use system clipboard
 (setq x-select-enable-clipboard t)

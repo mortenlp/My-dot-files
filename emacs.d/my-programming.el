@@ -20,3 +20,7 @@
 
 ;; Compile command
 (setq compile-command "make -f ")
+
+;; For markdown mode
+(setq auto-mode-alist
+   (cons '("\\.md" . markdown-mode) auto-mode-alist))

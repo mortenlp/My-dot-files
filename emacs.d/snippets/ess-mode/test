@@ -1,0 +1,13 @@
+# -*- mode: ess-mode -*-
+# name: test
+# key: test
+# --
+data test;
+    input kaj;
+    datalines;
+    2
+        2
+        4
+        3
+    ;
+run;
