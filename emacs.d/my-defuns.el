@@ -135,3 +135,9 @@ el -> for elisp"
     (kill-this-buffer)
     (shell-command "sas.exe temp.sas")
     (shell-command "rm temp.sas")))
+
+;;; Toggle notetaking buffer
+(defun toggle-notetaking-buffer ()
+  "Open a buffer in a seperate window that is designed to take notes."
+  (interactive)
+  (switch-to-buffer-other-window (get-buffer-create "*Notes*")))

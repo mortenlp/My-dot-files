@@ -40,8 +40,6 @@
 ;; Enable transient-mark-mode
 (setq transient-mark-mode t)
 (delete-selection-mode t)
-;; (set-face-foreground 'region "white")
-;; (set-face-background 'region "dark slate gray")
 
 ;; Explicitly show the end of a buffer
 (set-default 'indicate-empty-lines t)
@@ -67,7 +65,7 @@
 (setq column-number-mode  t)
 
 ;; Avoid mouse!!
-(mouse-avoidance-mode 'jump)
+(mouse-avoidance-mode 'banish)
 
 ;; "y or n" instead of "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -77,7 +75,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "conkeror")
+      browse-url-generic-program "firefox")
 
 ;; Trailing whitespace is unnecessary
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
@@ -95,13 +93,12 @@
 ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
 ;; w3m stuff
-
-(if (locate-library "w3m")
-    (progn (setq w3m-use-cookies t)
-           (setq mm-w3m-safe-url-regexp nil)
-           (setq w3m-default-display-inline-images t)
-           (setq mm-text-html-renderer 'w3m)
-           (require 'mime-w3m)))
+;; (if (locate-library "w3m")
+;;     (progn (setq w3m-use-cookies t)
+;;            (setq mm-w3m-safe-url-regexp nil)
+;;            (setq w3m-default-display-inline-images t)
+;;            (setq mm-text-html-renderer 'w3m)
+;;            (require 'mime-w3m)))
 
 ;; Tramp
 (setq tramp-default-method "ssh")

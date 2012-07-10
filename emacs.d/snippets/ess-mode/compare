@@ -1,0 +1,7 @@
+# -*- mode: ess-mode -*-
+# name: compare
+# key: comp
+# --
+proc compare base=${1:dataset} compare=${2:dataset};
+    title 'Comparison of $1 and $2';
+run;

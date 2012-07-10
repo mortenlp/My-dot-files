@@ -113,4 +113,7 @@
 
 ;;; SAS bindings
 (define-key ess-mode-map (kbd "C-c C-u") 'submit-portion-sas)
-(define-key ess-mode-map (kbd "C-c C-h") 'mark-proc)
+(define-key ess-mode-map (kbd "C-z C-m") 'mark-proc)
+
+;;; Notetaking buffer
+(global-set-key (kbd "C-c n") 'toggle-notetaking-buffer)
