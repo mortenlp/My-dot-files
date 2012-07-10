@@ -111,6 +111,11 @@
 (global-set-key (kbd "C-M-y") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
 (global-set-key (kbd "C-*") 'mark-all-like-this)
 
+;; Experimental multiple-cursors
+(global-set-key (kbd "C-S-c C-S-c") 'mc/add-multiple-cursors-to-region-lines)
+(global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
+(global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
+
 ;;; SAS bindings
 (define-key ess-mode-map (kbd "C-c C-u") 'submit-portion-sas)
 (define-key ess-mode-map (kbd "C-z C-m") 'mark-proc)

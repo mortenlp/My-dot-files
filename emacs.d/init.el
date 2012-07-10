@@ -18,6 +18,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/themes/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ess-12.04/lisp/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/mark-multiple/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/multiple-cursors/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-w3m/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/flim/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/apel/")
@@ -28,6 +29,7 @@
     (setq custom-theme-load-path "~/.emacs.d/site-lisp/themes/"))
 
 ;; Require some packages
+(require 'multiple-cursors)
 (require 'grep-edit)
 (require 'paredit)
 (require 'clojure-mode)
