@@ -24,3 +24,6 @@
 ;; For markdown mode
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+;;; Javascript
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))

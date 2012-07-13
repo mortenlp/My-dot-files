@@ -22,6 +22,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-w3m/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/flim/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/apel/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/js2-mode/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/site-lisp/themes/")
@@ -29,6 +30,7 @@
     (setq custom-theme-load-path "~/.emacs.d/site-lisp/themes/"))
 
 ;; Require some packages
+(require 'js2-mode)
 (require 'multiple-cursors)
 (require 'grep-edit)
 (require 'paredit)
