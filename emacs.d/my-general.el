@@ -12,11 +12,10 @@
 ;; Set color if using X
 (cond
  ((and (< emacs-major-version 24) (eq window-system 'x))
-  (load-theme 'naquadah))
+  (load-theme 'tomorrow-night))
  ((and (>= emacs-major-version 24) (eq window-system 'x))
-  (load-theme 'naquadah t))
+  (load-theme 'tomorrow-night t))
  )
-(set-face-background 'region "#464740")
 
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
@@ -75,7 +74,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+      browse-url-generic-program "conkeror")
 
 ;; Trailing whitespace is unnecessary
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
