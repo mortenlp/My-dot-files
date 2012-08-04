@@ -74,3 +74,4 @@
 (load "my-bindings.el")
 (load "my-yasnippet.el")
 (load "my-registers.el")
+(load "my-dired.el")
