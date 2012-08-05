@@ -113,3 +113,6 @@
 
 ;;; Use system clipboard
 (setq x-select-enable-clipboard t)
+
+;;; Enable electric-pair-mode
+(electric-pair-mode t)

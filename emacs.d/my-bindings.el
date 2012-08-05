@@ -122,3 +122,6 @@
 
 ;;; Notetaking buffer
 (global-set-key (kbd "C-c n") 'toggle-notetaking-buffer)
+
+;;; Find-file-in-project
+(global-set-key (kbd "C-x f") 'find-file-in-project)

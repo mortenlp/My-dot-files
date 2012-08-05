@@ -8,7 +8,7 @@
 ;; Add stuff to load-path
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/magit-1.0.0/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/magit/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/yasnippet/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/deft/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/expand-region/")
@@ -23,6 +23,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/flim/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/apel/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/js2-mode/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/find-file-in-project/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/site-lisp/themes/")
@@ -30,6 +31,7 @@
     (setq custom-theme-load-path "~/.emacs.d/site-lisp/themes/"))
 
 ;; Require some packages
+(require 'find-file-in-project)
 (require 'js2-mode)
 (require 'multiple-cursors)
 (require 'grep-edit)

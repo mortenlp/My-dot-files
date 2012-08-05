@@ -7,3 +7,9 @@
 [submodule "emacs.d/site-lisp/js2-mode"]
 	path = emacs.d/site-lisp/js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "emacs.d/site-lisp/magit"]
+	path = emacs.d/site-lisp/magit
+	url = https://github.com/magit/magit.git
+[submodule "emacs.d/site-lisp/find-file-in-project"]
+	path = emacs.d/site-lisp/find-file-in-project
+	url = https://github.com/technomancy/find-file-in-project.git
