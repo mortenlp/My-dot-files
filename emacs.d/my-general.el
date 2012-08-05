@@ -116,3 +116,5 @@
 
 ;;; Enable electric-pair-mode
 (electric-pair-mode t)
+
+(provide 'my-general)

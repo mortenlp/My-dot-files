@@ -68,3 +68,5 @@
   "#+latex_header: \\mode<beamer>{\\usetheme{Copenhagen}}\n"
   "#+latex_header: \\mode<beamer>{\\useoutertheme[subsection=false]{smoothbars}}\n"
   )
+
+(provide 'my-skeletons)

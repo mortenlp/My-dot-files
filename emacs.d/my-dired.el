@@ -46,3 +46,5 @@
      (define-key wdired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
      (define-key wdired-mode-map (kbd "M-<up>") 'dired-back-to-top)
      (define-key wdired-mode-map (kbd "M-<down>") 'dired-jump-to-bottom)))
+
+(provide 'my-dired)

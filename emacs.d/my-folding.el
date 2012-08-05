@@ -5,3 +5,5 @@
 (add-hook 'haskell-mode-hook 'folding-mode)
 (folding-add-to-marks-list 'tuareg-mode "(*{{{"  "(*}}}*)"  nil t)
 (add-hook 'tuareg-mode-hook 'folding-mode)
+
+(provide 'my-folding)

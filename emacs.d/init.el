@@ -5,25 +5,25 @@
 ;; Make sure all backup files only live in one place
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
-;; Add stuff to load-path
-(add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/magit/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/yasnippet/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/deft/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/expand-region/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/vimgolf/emacs/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/org-7.8.11/lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/org-7.8.11/contrib/lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/themes/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/ess-12.04/lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/mark-multiple/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/multiple-cursors/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-w3m/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/flim/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/apel/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/js2-mode/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/find-file-in-project/")
+;; Set path to .emacs.d
+(setq dotfiles-dir "~/Dokumenter/dotFiles/emacs.d/")
+
+;; Set path to dependencies
+(setq site-lisp-dir (expand-file-name "site-lisp" dotfiles-dir))
+
+;; Set up load path
+(add-to-list 'load-path dotfiles-dir)
+(add-to-list 'load-path site-lisp-dir)
+
+;; Add external projects to load path
+(dolist (project (directory-files site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
+
+(add-to-list 'load-path "~/Dokumenter/dotFiles/emacs.d/site-lisp/ess-12.04/lisp/")
+(add-to-list 'load-path "~/Dokumenter/dotFiles/emacs.d/site-lisp/vimgolf/emacs/")
+(add-to-list 'load-path "~/Dokumenter/dotFiles/emacs.d/site-lisp/org-7.8.11/lisp/")
+(add-to-list 'load-path "~/Dokumenter/dotFiles/emacs.d/site-lisp/org-7.8.11/contrib/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/site-lisp/themes/")
@@ -37,8 +37,6 @@
 (require 'grep-edit)
 (require 'paredit)
 (require 'clojure-mode)
-(require 'ess-site)
-(require 'python)
 (require 'ido-ubiquitous)
 (require 'ace-jump-mode)
 (require 'screencast)
@@ -52,7 +50,6 @@
 (require 'markdown-mode)
 (require 'magit)
 (require 'starter-kit-eshell)
-(require 'vimgolf)
 (require 'bibsnarf)
 (require 'browse-kill-ring)
 (require 'deft)
@@ -61,19 +58,21 @@
 (require 'erc)
 (require 'mark-more-like-this)          ;Used for mark-multiple
 (require 'inline-string-rectangle)      ;Used for mark-multiple
-
-;; Load various stuff
-(load "my-general.el")
-(load "my-programming.el")
-(load "my-folding.el")
-(load "my-defuns.el")
-(load "my-deft.el")
-(load "my-erc.el")
-(load "my-skeletons.el")
-(load "my-orgmode.el")
-(load "my-tabs.el")
-(load "my-latexstuff.el")
-(load "my-bindings.el")
-(load "my-yasnippet.el")
-(load "my-registers.el")
-(load "my-dired.el")
+(require 'my-general)
+(require 'my-programming)
+(require 'my-folding)
+(require 'my-defuns)
+(require 'my-deft)
+(require 'my-erc)
+(require 'my-skeletons)
+(require 'my-tabs)
+(require 'my-latexstuff)
+(require 'my-yasnippet)
+(require 'my-registers)
+(require 'my-dired)
+(require 'my-wrap-region)
+(require 'python)
+(require 'ess-site)
+(require 'vimgolf)
+(require 'my-orgmode)
+(require 'my-bindings)

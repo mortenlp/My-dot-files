@@ -71,3 +71,5 @@
 
 ;; Show syntax highlighted fonts when using org-babel.
 (setq org-src-fontify-natively t)
+
+(provide 'my-orgmode)

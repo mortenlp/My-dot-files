@@ -4,3 +4,5 @@
 (setq erc-save-queries-on-quit nil
       erc-log-write-after-send t
       erc-log-write-after-insert t)
+
+(provide 'my-erc)
