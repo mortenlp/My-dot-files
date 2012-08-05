@@ -13,6 +13,3 @@
 [submodule "emacs.d/site-lisp/find-file-in-project"]
 	path = emacs.d/site-lisp/find-file-in-project
 	url = https://github.com/technomancy/find-file-in-project.git
-[submodule "emacs.d/site-lisp/wrap-region"]
-	path = emacs.d/site-lisp/wrap-region
-	url = https://github.com/rejeep/wrap-region.git

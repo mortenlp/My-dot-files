@@ -102,5 +102,3 @@
 (define-key gnus-group-mode-map (kbd "g") 'aar/get-new-news-and-disconnect)
 
 (setq gnus-interactive-exit nil)
-
-(provide 'my-gnus)

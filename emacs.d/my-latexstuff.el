@@ -55,5 +55,3 @@
 
 ;; Don't use ido-ubiquitous when compiling LaTeX
 (ido-ubiquitous-disable-in TeX-command-master)
-
-(provide 'my-latexstuff)
