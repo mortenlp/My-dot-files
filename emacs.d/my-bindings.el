@@ -70,7 +70,7 @@
 (global-set-key (kbd "C-z 3") 'beamer-skeleton)
 
 ;; Smart TAB!
-(global-set-key (kbd "TAB") 'smart-tab)
+(global-set-key (kbd "C-.") 'smart-tab)
 
 ;; Rotate windows
 (global-set-key [(control c) (r)] 'rotate-windows)
@@ -96,7 +96,7 @@
 (global-set-key (kbd "C-z s e") 'screencast-stop)
 
 ;; Ace-jump-mode
-(define-key global-map (kbd "C-ø") 'ace-jump-mode)
+(define-key global-map (kbd "C-ø") 'ace-jump-char-mode)
 
 ;; Find library
 (global-set-key (kbd "C-c f") 'find-library)
@@ -125,3 +125,12 @@
 
 ;;; Find-file-in-project
 (global-set-key (kbd "C-x f") 'find-file-in-project)
+
+;; Use shell-like backspace C-h, rebind help to F1
+(define-key key-translation-map [?\C-h] [?\C-?])
+
+;;; Alternative M-x
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+
+;;; H-space
+(global-set-key (kbd "C-,") 'h-space)

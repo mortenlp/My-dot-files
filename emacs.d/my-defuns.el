@@ -141,3 +141,9 @@ el -> for elisp"
   "Open a buffer in a seperate window that is designed to take notes."
   (interactive)
   (switch-to-buffer-other-window (get-buffer-create "*Notes*")))
+
+;;; Horizontal space
+(defun h-space ()
+  (interactive)
+  (save-excursion
+    (insert-char ?\s 1)))

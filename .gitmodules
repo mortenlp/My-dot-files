@@ -13,3 +13,6 @@
 [submodule "emacs.d/site-lisp/find-file-in-project"]
 	path = emacs.d/site-lisp/find-file-in-project
 	url = https://github.com/technomancy/find-file-in-project.git
+[submodule "emacs.d/site-lisp/projectile"]
+	path = emacs.d/site-lisp/projectile
+	url = https://github.com/bbatsov/projectile.git
