@@ -70,7 +70,7 @@
 (global-set-key (kbd "C-z 3") 'beamer-skeleton)
 
 ;; Smart TAB!
-(global-set-key (kbd "C-.") 'smart-tab)
+(global-set-key (kbd "C-.") 'hippie-expand)
 
 ;; Rotate windows
 (global-set-key [(control c) (r)] 'rotate-windows)
@@ -104,14 +104,10 @@
 ;; View url-at-point
 (global-set-key (kbd "C-c v") 'w3m-external-view-this-url)
 
-;;; Mark multiple
-(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
-(global-set-key (kbd "C-<") 'mark-previous-like-this)
-(global-set-key (kbd "C->") 'mark-next-like-this)
-(global-set-key (kbd "C-M-y") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
-(global-set-key (kbd "C-*") 'mark-all-like-this)
-
 ;; Experimental multiple-cursors
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/add-multiple-cursors-to-region-lines)
 (global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
@@ -128,6 +124,9 @@
 
 ;; Use shell-like backspace C-h, rebind help to F1
 (define-key key-translation-map [?\C-h] [?\C-?])
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
+
+(global-set-key (kbd "C-c m") 'mark-defun)
 
 ;;; Alternative M-x
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)

@@ -17,7 +17,6 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-7.8.11/contrib/lisp/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/themes/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ess-12.04/lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/mark-multiple/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/multiple-cursors/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-w3m/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/flim/")
@@ -60,8 +59,6 @@
 (require 'yasnippet)
 (require 'smex)
 (require 'erc)
-(require 'mark-more-like-this)          ;Used for mark-multiple
-(require 'inline-string-rectangle)      ;Used for mark-multiple
 
 ;; Load various stuff
 (load "my-general.el")
@@ -72,7 +69,7 @@
 (load "my-erc.el")
 (load "my-skeletons.el")
 (load "my-orgmode.el")
-(load "my-tabs.el")
+(load "my-hippie.el")
 (load "my-latexstuff.el")
 (load "my-bindings.el")
 (load "my-yasnippet.el")
