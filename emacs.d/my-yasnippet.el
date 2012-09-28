@@ -8,6 +8,7 @@
 (add-hook 'html-mode-hook 'yas/minor-mode)
 (add-hook 'python-mode-hook 'yas/minor-mode)
 (add-hook 'ess-mode-hook 'yas/minor-mode)
+(add-hook 'nxml-mode-hook 'yas/minor-mode)
 
 (yas/load-directory "~/.emacs.d/site-lisp/yasnippet/snippets")
 (yas/load-directory "~/.emacs.d/snippets/")

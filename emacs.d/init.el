@@ -23,7 +23,14 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/apel/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/js2-mode/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/projectile/")
-
+(add-to-list 'load-path "~/.emacs.d/site-lisp/ace-jump-mode/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/browse-kill-ring/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/clojure-mode/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/dired-details/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/epresent/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/evil-numbers/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/ido-ubiquitous/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/markdown-mode/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/site-lisp/themes/")

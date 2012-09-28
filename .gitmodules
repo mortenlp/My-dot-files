@@ -16,3 +16,30 @@
 [submodule "emacs.d/site-lisp/projectile"]
 	path = emacs.d/site-lisp/projectile
 	url = https://github.com/bbatsov/projectile.git
+[submodule "emacs.d/site-lisp/ace-jump-mode"]
+	path = emacs.d/site-lisp/ace-jump-mode
+	url = https://github.com/winterTTr/ace-jump-mode.git
+[submodule "emacs.d/site-lisp/browse-kill-ring"]
+	path = emacs.d/site-lisp/browse-kill-ring
+	url = https://github.com/browse-kill-ring/browse-kill-ring.git
+[submodule "emacs.d/site-lisp/clojure-mode"]
+	path = emacs.d/site-lisp/clojure-mode
+	url = https://github.com/technomancy/clojure-mode.git
+[submodule "emacs.d/site-lisp/dired-details"]
+	path = emacs.d/site-lisp/dired-details
+	url = https://github.com/emacsmirror/dired-details.git
+[submodule "emacs.d/site-lisp/epresent"]
+	path = emacs.d/site-lisp/epresent
+	url = https://github.com/technomancy/epresent.git
+[submodule "emacs.d/site-lisp/evil-numbers"]
+	path = emacs.d/site-lisp/evil-numbers
+	url = https://github.com/cofi/evil-numbers.git
+[submodule "emacs.d/site-lisp/ido-ubiquitous"]
+	path = emacs.d/site-lisp/ido-ubiquitous
+	url = https://github.com/technomancy/ido-ubiquitous.git
+[submodule "emacs.d/site-lisp/markdown-mode"]
+	path = emacs.d/site-lisp/markdown-mode
+	url = https://github.com/defunkt/markdown-mode.git
+[submodule "emacs.d/site-lisp/smex"]
+	path = emacs.d/site-lisp/smex
+	url = https://github.com/nonsequitur/smex.git
