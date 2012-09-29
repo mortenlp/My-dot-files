@@ -52,3 +52,6 @@
 [submodule "emacs.d/site-lisp/python_el"]
 	path = emacs.d/site-lisp/python_el
 	url = https://github.com/fgallina/python.el.git
+[submodule "emacs.d/site-lisp/screencast"]
+	path = emacs.d/site-lisp/screencast
+	url = https://github.com/rpdillon/screencast.git
