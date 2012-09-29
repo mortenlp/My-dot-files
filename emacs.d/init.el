@@ -20,9 +20,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ess/lisp/")
 
 ;; Set theme directory
-(setq custom-theme-directory "~/.emacs.d/site-lisp/themes/")
+(setq custom-theme-directory "~/.emacs.d/themes/")
 (if (< emacs-major-version 23)
-    (setq custom-theme-load-path "~/.emacs.d/site-lisp/themes/"))
+    (setq custom-theme-load-path "~/.emacs.d/themes/"))
 
 ;; Require some packages
 (require 'projectile)

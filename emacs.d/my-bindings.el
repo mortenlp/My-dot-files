@@ -102,7 +102,7 @@
 (global-set-key (kbd "C-c f") 'find-library)
 
 ;; View url-at-point
-(global-set-key (kbd "C-c v") 'w3m-external-view-this-url)
+(global-set-key (kbd "C-c v") 'eval-buffer)
 
 ;; Experimental multiple-cursors
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
