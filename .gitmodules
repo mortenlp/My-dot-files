@@ -46,3 +46,9 @@
 [submodule "emacs.d/site-lisp/ess"]
 	path = emacs.d/site-lisp/ess
 	url = https://github.com/emacs-ess/ESS.git
+[submodule "emacs.d/site-lisp/wgrep"]
+	path = emacs.d/site-lisp/wgrep
+	url = https://github.com/mhayashi1120/Emacs-wgrep.git
+[submodule "emacs.d/site-lisp/python_el"]
+	path = emacs.d/site-lisp/python_el
+	url = https://github.com/fgallina/python.el.git
