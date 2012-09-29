@@ -43,3 +43,6 @@
 [submodule "emacs.d/site-lisp/smex"]
 	path = emacs.d/site-lisp/smex
 	url = https://github.com/nonsequitur/smex.git
+[submodule "emacs.d/site-lisp/ess"]
+	path = emacs.d/site-lisp/ess
+	url = https://github.com/emacs-ess/ESS.git
