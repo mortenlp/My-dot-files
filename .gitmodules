@@ -55,3 +55,6 @@
 [submodule "emacs.d/site-lisp/screencast"]
 	path = emacs.d/site-lisp/screencast
 	url = https://github.com/rpdillon/screencast.git
+[submodule "emacs.d/site-lisp/mark-multiple"]
+	path = emacs.d/site-lisp/mark-multiple
+	url = https://github.com/magnars/mark-multiple.el.git
