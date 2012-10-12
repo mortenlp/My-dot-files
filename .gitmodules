@@ -58,3 +58,6 @@
 [submodule "emacs.d/site-lisp/mark-multiple"]
 	path = emacs.d/site-lisp/mark-multiple
 	url = https://github.com/magnars/mark-multiple.el.git
+[submodule "emacs.d/site-lisp/s.el"]
+	path = emacs.d/site-lisp/s.el
+	url = https://github.com/magnars/s.el.git
