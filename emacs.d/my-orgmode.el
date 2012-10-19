@@ -1,11 +1,8 @@
-(require 'org-contacts)
-
-;; Set file to look for contacts
-(setq org-contacts-files (quote ("~/Dokumenter/OrgMode/contacts.org")))
-
-;; ;; Workaround to make gnus integration work
-;; (add-hook 'message-mode-hook
-;;           (lambda () (local-set-key (kbd "TAB") 'completion-at-point)))
+;;; Org-contacts
+(if (locate-library "org-contacts")
+    (progn
+      (require 'org-contacts)
+      (setq org-contacts-files (quote ("~/Dokumenter/OrgMode/contacts.org")))))
 
 ;; Org files
 (setq org-agenda-files (quote ("~/Dokumenter/OrgMode/Notes.org")))

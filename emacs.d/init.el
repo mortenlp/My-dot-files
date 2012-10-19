@@ -15,10 +15,6 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/org/lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/org/contrib/lisp/")
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/ess/lisp/")
-
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/themes/")
 (if (< emacs-major-version 23)
@@ -66,7 +62,8 @@
    (cons 'solarized-theme melpa)
    (cons 'zenburn-theme marmalade)
    (cons 'undo-tree melpa)
-   (cons 'ess melpa)))
+   (cons 'ess melpa)
+   (cons 'yasnippet melpa)))
 
 (condition-case nil
     (init--install-packages)

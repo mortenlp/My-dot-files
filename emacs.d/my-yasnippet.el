@@ -10,7 +10,8 @@
 (add-hook 'ess-mode-hook 'yas/minor-mode)
 (add-hook 'nxml-mode-hook 'yas/minor-mode)
 
-(yas/load-directory "~/.emacs.d/site-lisp/yasnippet/snippets")
+(yas/load-directory
+ (car (file-expand-wildcards "~/.emacs.d/elpa/yasnippet-*/snippets")))
 (yas/load-directory "~/.emacs.d/snippets/")
 
 (setq yas/prompt-functions '(yas/ido-prompt
