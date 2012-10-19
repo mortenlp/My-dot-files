@@ -8,6 +8,7 @@
 ;; Add stuff to load-path
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
+(add-to-list 'load-path "~/.emacs.d/themes/")
 
 ;; Add external projects to load path
 (dolist (project (directory-files "~/.emacs.d/site-lisp/" t "\\w+"))

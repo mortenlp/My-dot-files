@@ -17,9 +17,9 @@
 ;; Set color if using X
 (cond
  ((and (< emacs-major-version 24) (eq window-system 'x))
-  (load-theme 'tomorrow-night-eighties))
+  (load-theme 'solarized-dark))
  ((and (>= emacs-major-version 24) (eq window-system 'x))
-  (load-theme 'tomorrow-night-eighties t))
+  (load-theme 'solarized-dark t))
  )
 
 ;; Mail stuff
