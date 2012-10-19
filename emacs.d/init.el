@@ -29,24 +29,51 @@
   (require 'package "package-23.el"))
 
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/")
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages '(projectile expand-region multiple-cursors clojure-mode
-                      browse-kill-ring csharp-mode deft s dired-details
-                      evil-numbers smex magit js2-mode markdown-mode
-                      lorem-ipsum paredit rainbow-mode starter-kit-eshell
-                      wgrep))
+;; Install extensions if they're missing
+(load "my-package.el")
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(defun init--install-packages ()
+  (packages-install
+   (cons 'projectile melpa)
+   (cons 'expand-region melpa)
+   (cons 'multiple-cursors melpa)
+   (cons 'clojure-mode marmalade)
+   (cons 'browse-kill-ring marmalade)
+   (cons 'csharp-mode marmalade)
+   (cons 'deft marmalade)
+   (cons 's melpa)
+   (cons 'dired-details marmalade)
+   (cons 'evil-numbers marmalade)
+   (cons 'smex marmalade)
+   (cons 'magit melpa)
+   (cons 'js2-mode melpa)
+   (cons 'markdown-mode marmalade)
+   (cons 'lorem-ipsum marmalade)
+   (cons 'paredit melpa)
+   (cons 'rainbow-mode melpa)
+   (cons 'starter-kit-eshell marmalade)
+   (cons 'wgrep marmalade)
+   (cons 'ace-jump-mode marmalade)
+   (cons 'ido-ubiquitous marmalade)
+   (cons 'solarized-theme melpa)
+   (cons 'zenburn-theme marmalade)))
+
+(condition-case nil
+    (init--install-packages)
+  (error
+   (package-refresh-contents)
+   (init--install-packages)))
 
 ;; Require some packages
+(require 'ace-jump-mode)
 (require 'ess-site)
 (require 'screencast)
 (require 'org-install)

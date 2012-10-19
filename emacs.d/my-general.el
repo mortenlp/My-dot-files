@@ -17,9 +17,9 @@
 ;; Set color if using X
 (cond
  ((and (< emacs-major-version 24) (eq window-system 'x))
-  (load-theme 'solarized-dark))
+  (load-theme 'zenburn))
  ((and (>= emacs-major-version 24) (eq window-system 'x))
-  (load-theme 'solarized-dark t))
+  (load-theme 'zenburn t))
  )
 
 ;; Mail stuff
@@ -35,7 +35,7 @@
 ;; Ido mode
 (ido-mode t)
 (setq ido-enable-flex-matching t)
-(ido-ubiquitous)
+(ido-ubiquitous-mode)
 (smex-initialize)
 
 ;; Don't show startup screen

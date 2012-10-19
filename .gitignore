@@ -193,3 +193,4 @@ emacs.d/url/cache
 /emacs.d/site-lisp/flim*
 /emacs.d/site-lisp/emacs-w3m/
 /emacs.d/.newsrc-dribble
+/emacs.d/elpa/*
