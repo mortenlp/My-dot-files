@@ -15,7 +15,6 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/vimgolf/emacs/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org/lisp/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org/contrib/lisp/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ess/lisp/")
@@ -25,40 +24,39 @@
 (if (< emacs-major-version 23)
     (setq custom-theme-load-path "~/.emacs.d/themes/"))
 
+;; Packages
+(when (not (require 'package nil t))
+  (require 'package "package-23.el"))
+
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/")
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
+(package-initialize)
+
+(when (null package-archive-contents)
+  (package-refresh-contents))
+
+(defvar my-packages '(projectile expand-region multiple-cursors mark-multiple
+                                 clojure-mode browse-kill-ring csharp-mode deft
+                                 s dired-details evil-numbers smex magit js2-mode
+                                 markdown-mode lorem-ipsum paredit rainbow-mode
+                                 starter-kit-eshell wgrep))
+
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 ;; Require some packages
-(require 'projectile)
-(require 'js2-mode)
-(require 'multiple-cursors)
-(require 'wgrep)
-(require 'paredit)
-(require 'clojure-mode)
 (require 'ess-site)
-(require 'python)
-(require 'ido-ubiquitous)
-(require 'ace-jump-mode)
 (require 'screencast)
 (require 'org-install)
-(require 'csharp-mode)
-(require 'evil-numbers)
-(require 'rainbow-mode)
-(require 'expand-region)
-(require 'lorem-ipsum)
+(require 'ido-ubiquitous)
 (require 'epresent)
-(require 'markdown-mode)
-(require 'magit)
-(require 'starter-kit-eshell)
-(require 'vimgolf)
-(require 'bibsnarf)
-(require 'browse-kill-ring)
-(require 'deft)
 (require 'yasnippet)
-(require 'smex)
-(require 'erc)
 
 ;; Load various stuff
 (load "my-general.el")
 (load "my-programming.el")
-(load "my-folding.el")
 (load "my-defuns.el")
 (load "my-deft.el")
 (load "my-erc.el")
