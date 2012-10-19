@@ -36,11 +36,11 @@
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages '(projectile expand-region multiple-cursors mark-multiple
-                                 clojure-mode browse-kill-ring csharp-mode deft
-                                 s dired-details evil-numbers smex magit js2-mode
-                                 markdown-mode lorem-ipsum paredit rainbow-mode
-                                 starter-kit-eshell wgrep))
+(defvar my-packages '(projectile expand-region multiple-cursors clojure-mode
+                      browse-kill-ring csharp-mode deft s dired-details
+                      evil-numbers smex magit js2-mode markdown-mode
+                      lorem-ipsum paredit rainbow-mode starter-kit-eshell
+                      wgrep))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
