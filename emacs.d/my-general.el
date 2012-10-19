@@ -71,6 +71,9 @@
 ;; Avoid mouse!!
 (mouse-avoidance-mode 'banish)
 
+;;; Set fill column to 80
+(setq-default fill-column 80)
+
 ;; "y or n" instead of "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -106,6 +109,11 @@
 
 ;; Tramp
 (setq tramp-default-method "ssh")
+
+;; Represent undo-history as an actual tree (visualize with C-x u)
+(setq undo-tree-mode-lighter "")
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 ;; Don't show external ediff frame
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)

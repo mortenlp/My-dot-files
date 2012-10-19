@@ -17,7 +17,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org/lisp/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org/contrib/lisp/")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/ess/lisp/")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/ess/lisp/")
 
 ;; Set theme directory
 (setq custom-theme-directory "~/.emacs.d/themes/")
@@ -64,7 +64,9 @@
    (cons 'ace-jump-mode marmalade)
    (cons 'ido-ubiquitous marmalade)
    (cons 'solarized-theme melpa)
-   (cons 'zenburn-theme marmalade)))
+   (cons 'zenburn-theme marmalade)
+   (cons 'undo-tree melpa)
+   (cons 'ess melpa)))
 
 (condition-case nil
     (init--install-packages)
