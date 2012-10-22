@@ -41,7 +41,7 @@
 (global-set-key [(control c) (y)] 'my-term-paste)
 
 ;; Mail
-(global-set-key [(f6)] 'gnus-group-mailmagit-status)
+(global-set-key [(f6)] 'gnus-group-mail)
 
 ;; Imenu (nice!)
 (global-set-key [(control x) (control i)] 'imenu)
