@@ -10,6 +10,9 @@
 ;; Wrap long lines
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+;;; Use org in other modes as well!
+(add-hook 'message-mode-hook 'turn-on-orgstruct++)
+
 ;; Use Org-mode for .org and .org-archive
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 

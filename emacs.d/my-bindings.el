@@ -29,7 +29,7 @@
 (global-set-key [(meta k)] 'kill-this-buffer)
 
 ;; Version control and change related
-(global-set-key [(f6)] 'magit-status)
+(global-set-key [(control x) (m)] 'magit-status)
 (global-set-key [(f7)] 'svn-status)
 
 ;; Compile
@@ -41,7 +41,7 @@
 (global-set-key [(control c) (y)] 'my-term-paste)
 
 ;; Mail
-(global-set-key [(control x) (m)] 'gnus-group-mail)
+(global-set-key [(f6)] 'gnus-group-mailmagit-status)
 
 ;; Imenu (nice!)
 (global-set-key [(control x) (control i)] 'imenu)

@@ -74,10 +74,10 @@
 ;; Require some packages
 (require 'ace-jump-mode)
 (require 'ess-site)
-(require 'screencast)
+(require 'screencast nil t)
 (require 'org-install)
 (require 'ido-ubiquitous)
-(require 'epresent)
+(require 'epresent nil t)
 (require 'yasnippet)
 
 ;; Load various stuff

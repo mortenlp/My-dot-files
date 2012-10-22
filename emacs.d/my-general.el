@@ -16,9 +16,9 @@
 
 ;; Set color if using X
 (cond
- ((and (< emacs-major-version 24) (eq window-system 'x))
+ ((and (< emacs-major-version 24) (display-graphic-p))
   (load-theme 'zenburn))
- ((and (>= emacs-major-version 24) (eq window-system 'x))
+ ((and (>= emacs-major-version 24) (display-graphic-p))
   (load-theme 'zenburn t))
  )
 
