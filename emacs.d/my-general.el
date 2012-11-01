@@ -129,7 +129,3 @@
 
 ;;; Enable electric-pair-mode
 (electric-pair-mode t)
-
-;;; Projectile
-(projectile-global-mode)
-(setq projectile-enable-caching t)

@@ -122,6 +122,8 @@
 ;;; Find-file-in-project
 (global-set-key (kbd "C-x f") 'find-file-in-project)
 
+(global-set-key (kbd "C-c w") 'winner-undo)
+
 ;; Use shell-like backspace C-h, rebind help to F1
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-M-h") 'backward-kill-word)

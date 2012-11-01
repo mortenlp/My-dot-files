@@ -38,7 +38,6 @@
 
 (defun init--install-packages ()
   (packages-install
-   (cons 'projectile melpa)
    (cons 'expand-region melpa)
    (cons 'multiple-cursors melpa)
    (cons 'clojure-mode marmalade)
