@@ -28,6 +28,8 @@
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives
+             '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
 
 (when (null package-archive-contents)
@@ -62,6 +64,7 @@
    (cons 'zenburn-theme marmalade)
    (cons 'undo-tree melpa)
    (cons 'ess melpa)
+   (cons 'auctex gnu)
    (cons 'yasnippet melpa)))
 
 (condition-case nil
