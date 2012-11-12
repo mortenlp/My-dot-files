@@ -120,7 +120,7 @@
 (global-set-key (kbd "C-c n") 'toggle-notetaking-buffer)
 
 ;;; Find-file-in-project
-(global-set-key (kbd "C-x f") 'find-file-in-project)
+(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 
 (global-set-key (kbd "C-c w") 'winner-undo)
 

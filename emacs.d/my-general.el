@@ -129,3 +129,6 @@
 
 ;;; Enable electric-pair-mode
 (electric-pair-mode t)
+
+;;; Remove clutter from modeline
+(diminish 'yas-minor-mode)

@@ -65,7 +65,8 @@
    (cons 'undo-tree melpa)
    (cons 'ess melpa)
    (cons 'auctex gnu)
-   (cons 'yasnippet melpa)))
+   (cons 'yasnippet melpa)
+   (cons 'diminish melpa)))
 
 (condition-case nil
     (init--install-packages)
