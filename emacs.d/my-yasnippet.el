@@ -9,6 +9,7 @@
 (add-hook 'python-mode-hook 'yas/minor-mode)
 (add-hook 'ess-mode-hook 'yas/minor-mode)
 (add-hook 'nxml-mode-hook 'yas/minor-mode)
+(add-hook 'ruby-mode-hook 'yas/minor-mode)
 
 (yas/load-directory
  (car (file-expand-wildcards "~/.emacs.d/elpa/yasnippet-*/snippets")))
