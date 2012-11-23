@@ -14,14 +14,6 @@
 ;; Set eshell directory
 (setq eshell-directory-name "~/.emacs.d/eshell/")
 
-;; Set color if using X
-(cond
- ((and (< emacs-major-version 24) (display-graphic-p))
-  (load-theme 'zenburn))
- ((and (>= emacs-major-version 24) (display-graphic-p))
-  (load-theme 'zenburn t))
- )
-
 ;; Mail stuff
 (setq user-mail-address "mortenlp2@gmail.com")
 (setq user-full-name "Morten Leander Petersen")
@@ -132,3 +124,7 @@
 
 ;;; Remove clutter from modeline
 (diminish 'yas-minor-mode)
+
+
+;; Don't break lines for me, please
+(setq-default truncate-lines t)

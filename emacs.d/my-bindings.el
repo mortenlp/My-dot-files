@@ -13,20 +13,20 @@
 (global-set-key [(f5)]  'revert-buffer)
 
 ;; Map the window manipulation keys to meta 0, 1, 2, o
-(global-set-key (kbd "M-3") 'split-window-horizontally)
-(global-set-key (kbd "M-2") 'split-window-vertically)
-(global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-0") 'delete-window)
-(global-set-key [(meta o)] 'other-window)
+;; (global-set-key (kbd "M-3") 'split-window-horizontally)
+;; (global-set-key (kbd "M-2") 'split-window-vertically)
+;; (global-set-key (kbd "M-1") 'delete-other-windows)
+;; (global-set-key (kbd "M-0") 'delete-window)
+;; (global-set-key [(meta o)] 'other-window)
 
 ;; Replace dired's M-o
-(add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map (kbd "M-o") 'other-window)))
+;; (add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map (kbd "M-o") 'other-window)))
 
 ;; Replace ibuffer's M-o
-(add-hook 'ibuffer-mode-hook (lambda () (define-key ibuffer-mode-map (kbd "M-o") 'other-window)))
+;; (add-hook 'ibuffer-mode-hook (lambda () (define-key ibuffer-mode-map (kbd "M-o") 'other-window)))
 
 ;; Easier buffer killing
-(global-set-key [(meta k)] 'kill-this-buffer)
+;; (global-set-key [(meta k)] 'kill-this-buffer)
 
 ;; Version control and change related
 (global-set-key [(control x) (m)] 'magit-status)
@@ -111,6 +111,7 @@
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
+(global-set-key (kbd "C-'") 'mc/mark-all-like-this-dwim)
 
 ;;; SAS bindings
 (define-key ess-mode-map (kbd "C-c C-u") 'submit-portion-sas)
@@ -135,3 +136,10 @@
 
 ;;; H-space
 (global-set-key (kbd "C-,") 'h-space)
+
+;; Jump from file to containing directory
+(global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
+(global-set-key (kbd "C-x M-j") '(lambda () (interactive) (dired-jump 1)))
+
+;; Browse the kill ring
+(global-set-key (kbd "C-x C-y") 'browse-kill-ring)

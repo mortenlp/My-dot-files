@@ -84,10 +84,12 @@
 (require 'yasnippet)
 
 ;; Load various stuff
+(load "my-appearance.el")
 (load "my-general.el")
 (load "my-programming.el")
 (load "my-defuns.el")
 (load "my-deft.el")
+(load "my-recentf.el")
 (load "my-erc.el")
 (load "my-skeletons.el")
 (load "my-orgmode.el")
