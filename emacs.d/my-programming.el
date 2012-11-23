@@ -27,3 +27,6 @@
 
 ;;; Javascript
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;;; Show fill column indicator in certain modes!
+(add-hook 'ruby-mode-hook 'fci-mode)

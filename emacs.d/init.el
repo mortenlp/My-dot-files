@@ -66,7 +66,9 @@
    (cons 'ess melpa)
    (cons 'auctex gnu)
    (cons 'yasnippet melpa)
-   (cons 'diminish melpa)))
+   (cons 'diminish melpa)
+   (cons 'inf-ruby melpa)
+   (cons 'fill-column-indicator melpa)))
 
 (condition-case nil
     (init--install-packages)

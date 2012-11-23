@@ -1,9 +1,9 @@
 ;; Set color if using X
 ;; (cond
 ;;  ((and (< emacs-major-version 24) (display-graphic-p))
-;;   (load-theme 'wombat))
+;;   (load-theme 'zenburn))
 ;;  ((and (>= emacs-major-version 24) (display-graphic-p))
-;;   (load-theme 'wombat t)) )
+;;   (load-theme 'zenburn t)) )
 ;; (set-background-color "black")
 ;; (set-foreground-color "white")
 ;; (set-face-background 'region "#464740")
@@ -25,11 +25,11 @@
 ;;; The colors are pretty much stolen from the wombat theme
 (custom-set-faces
  '(default ((t (:background "#242424" :foreground "#f6f3e8"))))
- '(cursor ((t (:background "chocolate3" :foreground "#f6f3e8"))))
- '(region ((t (:background "#444444" :foreground "#f6f3e8"))))
+ '(cursor ((t (:background "chocolate3"))))
+ '(region ((t (:background "#444444"))))
  '(mode-line ((t (:background "#444444" :foreground "#f6f3e8"))))
  '(mode-line-inactive ((t (:background "#444444" :foreground "#857b6f"))))
- '(hl-line ((t (:background "#333333" :foreground "#f6f3e8"))))
+ '(hl-line ((t (:background "#333333"))))
  '(fringe ((t (:background "#303030"))))
  '(minibuffer-prompt ((t (:foreground "#e5786d"))))
  '(font-lock-builtin-face ((t (:foreground "#e5786d"))))
