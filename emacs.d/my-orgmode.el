@@ -7,6 +7,8 @@
 ;; Org files
 (setq org-agenda-files (quote ("~/Dokumenter/OrgMode/Notes.org")))
 
+(ido-ubiquitous-disable-in org-capture)
+
 ;; Wrap long lines
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 

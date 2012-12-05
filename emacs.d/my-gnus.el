@@ -1,6 +1,9 @@
 ;; Start gnus unplugged!
 (setq gnus-plugged nil)
 
+;;; Textify html
+(setq mm-discouraged-alternatives '("text/html" "text/richtext"))
+
 (setq gnus-select-method '(nntp "news.gmane.org"))
 
 ;; Makes it possible to see [Gmail] folders

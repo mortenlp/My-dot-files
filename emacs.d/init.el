@@ -68,7 +68,8 @@
    (cons 'yasnippet melpa)
    (cons 'diminish melpa)
    (cons 'inf-ruby melpa)
-   (cons 'fill-column-indicator melpa)))
+   (cons 'fill-column-indicator melpa)
+   (cons 'wrap-region melpa)))
 
 (condition-case nil
     (init--install-packages)
@@ -101,3 +102,4 @@
 (load "my-yasnippet.el")
 (load "my-registers.el")
 (load "my-dired.el")
+(load "my-wrap-region.el")

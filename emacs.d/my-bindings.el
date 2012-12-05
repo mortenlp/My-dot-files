@@ -128,6 +128,8 @@
 ;; Use shell-like backspace C-h, rebind help to F1
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
+(add-hook 'c-mode-common-hook
+          '(lambda () (local-set-key (kbd "C-M-h") 'backward-kill-word)))
 
 (global-set-key (kbd "C-c m") 'mark-defun)
 

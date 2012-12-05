@@ -11,7 +11,7 @@
 
 ;; Auto-new-line
 (add-hook 'c-mode-common-hook
-          (lambda () (c-toggle-auto-newline 1)))
+          (lambda () (c-toggle-auto-newline -1)))
 
 ;; Switch between header and source file
 (add-hook 'c-mode-common-hook
@@ -30,3 +30,5 @@
 
 ;;; Show fill column indicator in certain modes!
 (add-hook 'ruby-mode-hook 'fci-mode)
+(add-hook 'c-mode-common-hook 'fci-mode)
+(add-hook 'emacs-lisp-mode-hook 'fci-mode)

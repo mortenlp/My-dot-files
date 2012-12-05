@@ -1,0 +1,7 @@
+# -*- mode: java-mode -*-
+# name: Comment
+# key: /
+# --
+/**
+    $0
+*/

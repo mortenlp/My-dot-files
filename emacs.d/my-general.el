@@ -74,7 +74,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "conkeror")
+      browse-url-generic-program "chromium-browser")
 
 ;; Trailing whitespace is unnecessary
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
@@ -124,7 +124,8 @@
 
 ;;; Remove clutter from modeline
 (diminish 'yas-minor-mode)
+(diminish 'wrap-region-mode)
 
-
-;; Don't break lines for me, please
-(setq-default truncate-lines t)
+;;; Use 'z' to kill an info buffer
+(add-hook 'Info-mode-hook (lambda () (define-key Info-mode-map (kbd "z")
+                                       'kill-this-buffer)))

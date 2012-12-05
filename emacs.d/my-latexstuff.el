@@ -23,6 +23,8 @@
 ;; Use abbrev-mode when editing LaTeX
 (add-hook 'LaTeX-mode-hook (lambda () (setq abbrev-mode t)))
 
+(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+
 ;; My few LaTeX abbreviations
 (define-abbrev-table 'global-abbrev-table '(
                                             ("kcol" "\\vcentcolon" nil 0)
