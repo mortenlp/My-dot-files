@@ -103,3 +103,4 @@
 (load "my-registers.el")
 (load "my-dired.el")
 (load "my-wrap-region.el")
+(load "my-eshell.el")
