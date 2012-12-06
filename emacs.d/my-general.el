@@ -122,10 +122,6 @@
 ;;; Enable electric-pair-mode
 (electric-pair-mode t)
 
-;;; Remove clutter from modeline
-(diminish 'yas-minor-mode)
-(diminish 'wrap-region-mode)
-
 ;;; Use 'z' to kill an info buffer
 (add-hook 'Info-mode-hook (lambda () (define-key Info-mode-map (kbd "z")
                                        'kill-this-buffer)))

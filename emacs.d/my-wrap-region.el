@@ -9,3 +9,6 @@
 (wrap-region-add-wrapper "*" "*" "*" 'org-mode)
 (wrap-region-add-wrapper "/" "/" "/" 'org-mode)
 (wrap-region-add-wrapper "_" "_" "_" 'org-mode)
+
+;;; Remove clutter from modeline
+(diminish 'wrap-region-mode)
