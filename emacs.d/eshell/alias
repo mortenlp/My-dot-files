@@ -14,3 +14,4 @@ alias acsh apt-cache show $*
 alias sudo *sudo $*
 alias mntusb sudo mount -t vfat /dev/sdb1 /media/external -o uid=1000,gid=1000,utf8,dmask=027,fmask=137
 alias pubWeb scp ~/Dokumenter/Homepage/index.html ~/Dokumenter/Homepage/org.css ~/Dokumenter/Homepage/index.org mortenlp@ssh1.imf.au.dk:/home/mortenlp/public_html/
+alias jdoc chromium-browser /usr/share/doc/openjdk-7-doc/api/index.html
