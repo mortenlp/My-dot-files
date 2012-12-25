@@ -87,7 +87,6 @@
 (require 'yasnippet)
 
 ;; Load various stuff
-(load "my-appearance.el")
 (load "my-general.el")
 (load "my-programming.el")
 (load "my-defuns.el")
@@ -104,3 +103,5 @@
 (load "my-dired.el")
 (load "my-wrap-region.el")
 (load "my-eshell.el")
+(load "my-mu4e.el")
+(load "my-appearance.el")

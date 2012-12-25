@@ -8,7 +8,7 @@
          (base (car rpwdlst)))
     (concat (if (string= base "")
                 "/"
-              (if (cdr pwdlst) "<...> /" ""))
+              (if (cdr pwdlst) "" ""))
             base
             (if (= (user-uid) 0) " # " " $ "))))
 (setq eshell-prompt-function
