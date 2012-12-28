@@ -12,7 +12,7 @@
 (setq reftex-plug-into-AUCTeX t)
 
 ;; Turn on flyspell
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;; (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 
 ;; PDF mode
 (setq TeX-PDF-mode t)

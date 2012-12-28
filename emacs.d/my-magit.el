@@ -1,3 +1,4 @@
+(require 'magit)
 ;; full screen magit-status
 
 (defadvice magit-status (around magit-fullscreen activate)

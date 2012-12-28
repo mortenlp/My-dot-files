@@ -33,20 +33,20 @@
 ;; GMAIL stuff
 (add-to-list 'gnus-secondary-select-methods
              '(nntp "news.gwene.org"))
-;; (add-to-list 'gnus-secondary-select-methods
-;;              '(nnimap "gmail"
-;;                       (nnimap-address "imap.gmail.com")
-;;                       (nnimap-user "mortenlp2")
-;;                       (nnimap-server-port 993)
-;;                       (nnimap-stream ssl)
-;;                       (nnir-search-engine imap)))
+(add-to-list 'gnus-secondary-select-methods
+             '(nnimap "gmail"
+                      (nnimap-address "imap.gmail.com")
+                      (nnimap-user "mortenlp2")
+                      (nnimap-server-port 993)
+                      (nnimap-stream ssl)
+                      (nnir-search-engine imap)))
 
-;; (setq message-send-mail-function 'smtpmail-send-it
-;;       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-;;       smtpmail-smtp-user "mortenlp2"
-;;       smtpmail-default-smtp-server "smtp.gmail.com"
-;;       smtpmail-smtp-server "smtp.gmail.com"
-;;       smtpmail-smtp-service 587)
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-smtp-user "mortenlp2"
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587)
 
 ;; Posting style
 (setq gnus-posting-styles `((".*"
