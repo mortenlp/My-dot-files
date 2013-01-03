@@ -66,7 +66,7 @@
 ;; Used to search gmail's
 (require 'nnir)
 
-(setq gnus-use-full-window nil)         ;Makes sure that gnus doesn't
+(setq gnus-use-full-window t)         ;Makes sure that gnus doesn't
                                         ;steel the hole frame
 
 ;; Record time stamp

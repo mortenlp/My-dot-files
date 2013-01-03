@@ -38,7 +38,7 @@
 ;; Shell/Terminal
 (global-set-key [(control c) (s)] 'create-scratch-buffer)
 (global-set-key [(control c) (t)] 'eshell)
-(global-set-key [(control c) (y)] 'my-term-paste)
+(global-set-key [(control c) (y)] 'ml-term-paste)
 
 ;; Mail
 (global-set-key [(f6)] 'gnus-group-mail)
@@ -79,7 +79,7 @@
 (global-set-key [(control c) (e)] 'eval-and-replace)
 
 ;; Tell-the-time
-(global-set-key [(control c) (u)] 'tell-the-time)
+(global-set-key [(control c) (u)] 'ml-tell-the-time)
 
 ;; Browse url
 (global-set-key (kbd "C-c b") 'browse-url)
@@ -114,11 +114,11 @@
 (global-set-key (kbd "C-'") 'mc/mark-all-like-this-dwim)
 
 ;;; SAS bindings
-(define-key ess-mode-map (kbd "C-c C-u") 'submit-portion-sas)
-(define-key ess-mode-map (kbd "C-z C-m") 'mark-proc)
+(define-key ess-mode-map (kbd "C-c C-u") 'ml-submit-portion-sas)
+(define-key ess-mode-map (kbd "C-z C-m") 'ml-mark-proc)
 
 ;;; Notetaking buffer
-(global-set-key (kbd "C-c n") 'toggle-notetaking-buffer)
+(global-set-key (kbd "C-c n") 'ml-toggle-notetaking-buffer)
 
 ;;; Find-file-in-project
 (global-set-key (kbd "C-x f") 'recentf-ido-find-file)
@@ -137,7 +137,7 @@
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 
 ;;; H-space
-(global-set-key (kbd "C-,") 'h-space)
+(global-set-key (kbd "C-,") 'ml-h-space)
 
 ;; Jump from file to containing directory
 (global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")

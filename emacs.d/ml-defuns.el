@@ -32,7 +32,7 @@
     (browse-url (format "http://www.google.dk/search?q=%s" arg))))
 
 ;; Paste things to ansi-term
-(defun my-term-paste (&optional string)
+(defun ml-term-paste (&optional string)
   (interactive)
   (process-send-string
    (get-buffer-process (current-buffer))
@@ -40,7 +40,9 @@
 
 ;; Eval-and-replace-ish kbd macro
 (fset 'eval-and-replace
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([21 24 5 134217826 escape C-backspace 134217830] 0 "%d")) arg)))
+   (lambda (&optional arg) "Keyboard macro." (interactive "p")
+     (kmacro-exec-ring-item
+      (quote ([21 24 5 134217826 escape C-backspace 134217830] 0 "%d")) arg)))
 
 ;; Rotate windows easily
 (defun rotate-windows ()
@@ -68,19 +70,19 @@
              (set-window-start w2 s1)
              (setq i (1+ i)))))))
 
-(defun tell-the-time ()
+(defun ml-tell-the-time ()
   "Print the time and date in the minibuffer"
   (interactive)
   (shell-command "date")
   )
 
-(defun show-battery-state ()
+(defun ml-show-battery-state ()
   "Print the battery state in the minibuffer"
   (interactive)
   (shell-command "acpi")
   )
 
-(defun pub-web ()
+(defun ml-pub-web ()
   "Export my index.org to html and copy to public_html"
   (interactive)
   (org-export-as-html 3)
@@ -91,7 +93,7 @@
   (shell-command scp-string)
 )
 
-(defun etags-current (sudo string)
+(defun ml-etags-current (sudo string)
   "Run the etags shell command on the current directory.
 STRING should be one of the following:
 c/cpp -> for c/c++ programs
@@ -113,7 +115,7 @@ el -> for elisp"
 
 
 ;;; Function to mark a proc or data step in SAS code
-(defun mark-proc ()
+(defun ml-mark-proc ()
   "Mark the proc or data step at point"
   (interactive)
   (set-mark (point))
@@ -122,7 +124,7 @@ el -> for elisp"
   (re-search-backward "\\(^ *proc\\)\\|\\(^ *data[^=l]\\)"))
 
 ;;; Function to run the sas code contained in the region
-(defun submit-portion-sas (beg end)
+(defun ml-submit-portion-sas (beg end)
   "Create a new temporary file to store the current region and run a batch process of SAS on that temporary file"
   (interactive (list (point) (mark)))
   (unless (and beg end)
@@ -137,13 +139,13 @@ el -> for elisp"
     (shell-command "rm temp.sas")))
 
 ;;; Toggle notetaking buffer
-(defun toggle-notetaking-buffer ()
+(defun ml-toggle-notetaking-buffer ()
   "Open a buffer in a seperate window that is designed to take notes."
   (interactive)
   (switch-to-buffer-other-window (get-buffer-create "*Notes*")))
 
 ;;; Horizontal space
-(defun h-space ()
+(defun ml-h-space ()
   (interactive)
   (save-excursion
     (insert-char ?\s 1)))
