@@ -7,9 +7,8 @@
 
 ;; Gnus stuff
 (require 'gnus)
-(setq gnus-init-file "~/.emacs.d/my-gnus.el")
+(setq gnus-init-file "~/.emacs.d/ml-gnus.el")
 (setq gnus-inhibit-startup-message t)
-(ido-ubiquitous-disable-in mml-attach-file)
 
 ;; Set eshell directory
 (setq eshell-directory-name "~/.emacs.d/eshell/")
@@ -23,12 +22,6 @@
 
 ;; Visible bell
 (setq visible-bell t)
-
-;; Ido mode
-(ido-mode t)
-(setq ido-enable-flex-matching t)
-(ido-ubiquitous-mode)
-(smex-initialize)
 
 ;; Don't show startup screen
 (setq inhibit-startup-screen t)

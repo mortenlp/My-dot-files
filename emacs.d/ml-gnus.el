@@ -73,10 +73,10 @@
 (add-hook 'gnus-select-group-hook 'gnus-group-set-timestamp)
 
 ;; ?
-(defun my-message-mode-setup ()
+(defun ml-message-mode-setup ()
   (setq fill-column 72)
   (turn-on-auto-fill))
-(add-hook 'message-mode-hook 'my-message-mode-setup)
+(add-hook 'message-mode-hook 'ml-message-mode-setup)
 
 ;; Spell checking
 ;; (add-hook 'message-mode-hook 'flyspell-mode)
