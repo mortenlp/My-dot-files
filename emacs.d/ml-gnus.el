@@ -105,3 +105,20 @@
 (define-key gnus-group-mode-map (kbd "g") 'aar/get-new-news-and-disconnect)
 
 (setq gnus-interactive-exit nil)
+
+;;; Restore window configuration when done reading news
+(defadvice gnus (around gnus-fullscreen activate)
+  (window-configuration-to-register :gnus-fullscreen)
+  ad-do-it
+  (delete-other-windows))
+
+(defun gnus-quit-session ()
+  "Restores the previous window configuration and kills the gnus group buffer"
+  (interactive)
+  (kill-buffer)
+  (jump-to-register :gnus-fullscreen))
+
+(define-key gnus-group-mode-map (kbd "q") 'gnus-quit-session)
+
+;;; Don't ask if it is ok to go online
+(setq gnus-agent-go-online t)

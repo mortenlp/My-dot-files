@@ -149,3 +149,9 @@ el -> for elisp"
   (interactive)
   (save-excursion
     (insert-char ?\s 1)))
+
+(defun ml-eshell-other-window ()
+  "Open eshell in other window"
+  (interactive)
+  (switch-to-buffer-other-window "*eshell*")
+  (eshell))

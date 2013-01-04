@@ -33,11 +33,11 @@
 (global-set-key [(f7)] 'svn-status)
 
 ;; Compile
-(global-set-key [(f9)]  'compile)
+(global-set-key (kbd "C-c m") 'compile)
 
 ;; Shell/Terminal
 (global-set-key [(control c) (s)] 'create-scratch-buffer)
-(global-set-key (kbd "C-c <SPC>") 'eshell)
+(global-set-key (kbd "C-c <SPC>") 'ml-eshell-other-window)
 (global-set-key [(control c) (y)] 'ml-term-paste)
 
 ;; Mail
@@ -96,7 +96,7 @@
 (global-set-key (kbd "C-z s e") 'screencast-stop)
 
 ;; Ace-jump-mode
-(define-key global-map (kbd "C-ø") 'ace-jump-char-mode)
+(define-key global-map (kbd "C-ø") 'ace-jump-mode)
 
 ;; Find library
 (global-set-key (kbd "C-c f") 'find-library)
@@ -117,8 +117,8 @@
 (define-key ess-mode-map (kbd "C-c C-u") 'ml-submit-portion-sas)
 (define-key ess-mode-map (kbd "C-z C-m") 'ml-mark-proc)
 
-;;; Notetaking buffer
-(global-set-key (kbd "C-c n") 'ml-toggle-notetaking-buffer)
+;;; Gnus
+(global-set-key (kbd "C-c n") 'gnus)
 
 ;;; Find-file-in-project
 (global-set-key (kbd "C-x f") 'recentf-ido-find-file)
@@ -130,8 +130,6 @@
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (add-hook 'c-mode-common-hook
           '(lambda () (local-set-key (kbd "C-M-h") 'backward-kill-word)))
-
-(global-set-key (kbd "C-c m") 'mark-defun)
 
 ;;; Alternative M-x
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
