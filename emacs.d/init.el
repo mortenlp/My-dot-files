@@ -105,3 +105,4 @@
 (load "ml-eshell.el")
 (load "ml-appearance.el")
 (load "ml-magit.el")
+(load "ml-ido.el")
