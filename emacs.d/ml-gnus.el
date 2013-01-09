@@ -1,5 +1,5 @@
-;; Start gnus unplugged!
-(setq gnus-plugged nil)
+;; Start gnus plugged!
+(setq gnus-plugged t)
 
 ;;; Textify html
 (setq mm-discouraged-alternatives '("text/html" "text/richtext"))
@@ -74,7 +74,7 @@
 
 ;; ?
 (defun ml-message-mode-setup ()
-  (setq fill-column 72)
+  (setq fill-column 80)
   (turn-on-auto-fill))
 (add-hook 'message-mode-hook 'ml-message-mode-setup)
 
@@ -88,21 +88,6 @@
 
 ;; Unbind this key; it's annoying!
 (define-key gnus-summary-mode-map "o" (lambda () (interactive)))
-
-(defun aar/get-new-news-and-disconnect (&optional arg)
-  "Plug in, send, receive, plug out."
-  (interactive "P")
-  (gnus-group-save-newsrc)
-  (gnus-agent-toggle-plugged t)
-  (gnus-group-send-queue)
-  (gnus-group-get-new-news arg)
-  (gnus-agent-fetch-session)
-  (gnus-group-save-newsrc)
-  (gnus-agent-toggle-plugged nil)
-  (goto-char (point-min))
-  (gnus-group-next-unread-group 1))
-
-(define-key gnus-group-mode-map (kbd "g") 'aar/get-new-news-and-disconnect)
 
 (setq gnus-interactive-exit nil)
 
