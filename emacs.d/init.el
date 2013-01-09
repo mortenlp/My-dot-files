@@ -89,6 +89,7 @@
 ;; Load various stuff
 (load "ml-general.el")
 (load "ml-programming.el")
+(load "ml-projectile.el")
 (load "ml-defuns.el")
 (load "ml-deft.el")
 (load "ml-recentf.el")
