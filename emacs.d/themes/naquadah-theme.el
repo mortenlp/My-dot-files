@@ -1,6 +1,6 @@
-;;; naquadah-theme.el --- A color theme
+;;; naquadah-theme.el --- A theme based on Tango color set
 
-;; Copyright (C) 2011 Julien Danjou
+;; Copyright (C) 2011-2012 Free Software Foundation, Inc
 
 ;; Authors: Julien Danjou <julien@danjou.info>
 
@@ -22,8 +22,7 @@
 ;;; Code:
 
 (deftheme naquadah
-  "Naquadah theme.")
-
+  "A theme based on Tango color set.")
 
 ;; We want the face to be created even if they do not exist.
 (put 'naquadah 'theme-immediate t)
@@ -72,7 +71,7 @@
          (gradient-10 . "#75507b") ;; plum-2
          (gradient-11 . "#c17d11") ;; chocolate-2
          )
-        (t
+	(((class color) (min-colors 256))
          (aluminium-1 . "color-255")
          (aluminium-2 . "color-253")
          (aluminium-3 . "color-251")
@@ -113,6 +112,90 @@
          (gradient-9 . "color-208")    ;; orange-2
          (gradient-10 . "color-96")    ;; plum-2
          (gradient-11 . "color-172")   ;; chocolate-2
+         )
+	(((class color) (min-colors 88))
+	 (aluminium-1 . "color-87")
+	 (aluminium-2 . "color-86")
+	 (aluminium-3 . "color-85")
+	 (aluminium-4 . "color-84")
+	 (aluminium-5 . "color-82")
+	 (aluminium-6 . "color-80")
+	 (butter-1 . "color-77")
+	 (butter-2 . "color-76")
+	 (butter-3 . "color-72")
+	 (orange-1 . "color-72")
+	 (orange-2 . "color-68")
+	 (orange-3 . "color-68")
+	 (chocolate-1 . "color-73")
+	 (chocolate-2 . "color-68")
+	 (chocolate-3 . "color-52")
+	 (chameleon-1 . "color-60")
+	 (chameleon-2 . "color-44")
+	 (chameleon-3 . "color-40")
+	 (sky-blue-1 . "color-43")
+	 (sky-blue-2 . "color-22")
+	 (sky-blue-3 . "color-22")
+	 (plum-1 . "color-54")
+	 (plum-2 . "color-37")
+	 (plum-3 . "color-33")
+	 (scarlet-red-1 . "color-64")
+	 (scarlet-red-2 . "color-64")
+	 (scarlet-red-3 . "color-48")
+         (background . "color-80")
+	 (black . "color-16")
+	 (gradient-1 . "color-43")    ;; sky-blue-1
+	 (gradient-2 . "color-60")    ;; chameleon-1
+	 (gradient-3 . "color-77")    ;; butter-1
+	 (gradient-4 . "color-54")    ;; plum-1
+	 (gradient-5 . "color-73")    ;; chocolate-1
+	 (gradient-6 . "color-72")    ;; orange-1
+	 (gradient-7 . "color-22")    ;; sky-blue-2
+	 (gradient-8 . "color-44")    ;; chameleon-2
+	 (gradient-9 . "color-68")    ;; orange-2
+	 (gradient-10 . "color-37")   ;; plum-2
+	 (gradient-11 . "color-68")   ;; chocolate-2
+         )
+	(t
+         (aluminium-1 . "white")
+         (aluminium-2 . "white")
+         (aluminium-3 . "white")
+         (aluminium-4 . "white")
+         (aluminium-5 . "white")
+         (aluminium-6 . "white")
+         (butter-1 . "yellow")
+         (butter-2 . "yellow")
+         (butter-3 . "yellow")
+         (orange-1 . "yellow")
+         (orange-2 . "yellow")
+         (orange-3 . "yellow")
+         (chocolate-1 . "yellow")
+         (chocolate-2 . "yellow")
+         (chocolate-3 . "yellow")
+         (chameleon-1 . "green")
+         (chameleon-2 . "green")
+         (chameleon-3 . "green")
+         (sky-blue-1 . "blue")
+         (sky-blue-2 . "blue")
+         (sky-blue-3 . "blue")
+         (plum-1 . "magenta")
+         (plum-2 . "magenta")
+         (plum-3 . "magenta")
+         (scarlet-red-1 . "red")
+         (scarlet-red-2 . "red")
+         (scarlet-red-3 . "red")
+         (background . "black")
+         (black . "black")
+         (gradient-1 . "blue")    ;; sky-blue-1
+         (gradient-2 . "green")     ;; chameleon-1
+         (gradient-3 . "yellow")    ;; butter-1
+         (gradient-4 . "yellow")    ;; plum-1
+         (gradient-5 . "yellow")    ;; chocolate-1
+         (gradient-6 . "yellow")    ;; orange-1
+         (gradient-7 . "blue")     ;; sky-blue-2
+         (gradient-8 . "green")     ;; chameleon-2
+         (gradient-9 . "red")    ;; orange-2
+         (gradient-10 . "yellow")    ;; plum-2
+         (gradient-11 . "yellow")   ;; chocolate-2
          ))
       "The color values for each color name for a given
       condition.  The format is: ((condition) (key . value) (key
@@ -124,24 +207,14 @@
     name
     (car naquadah-colors))))
 
-(setq ansi-term-color-vector
-      `[unspecified ,(naquadah-get-colors 'black)
-                    ,(naquadah-get-colors 'scarlet-red-1)
-                    ,(naquadah-get-colors 'chameleon-1)
-                    ,(naquadah-get-colors 'butter-1)
-                    ,(naquadah-get-colors 'sky-blue-1)
-                    ,(naquadah-get-colors 'plum-1)
-                    "cyan3"
-                    ,(naquadah-get-colors 'aluminium-1)])
-
 (defun naquadah-simple-face-to-multiple (face)
   (let ((spec (car face))
         (lst (cadr face)))
     (list spec (mapcar
-                '(lambda (entry)
-                   (let ((color-condition (car entry)))
-                     (list color-condition
-                           (naquadah-color-list-expand (cdr entry) lst))))
+                (lambda (entry)
+                  (let ((color-condition (car entry)))
+                    (list color-condition
+                          (naquadah-color-list-expand (cdr entry) lst))))
                 naquadah-colors))))
 
 (defun naquadah-color-list-expand (color-alist lst)
@@ -157,10 +230,33 @@
       (setq lst (cddr lst)))
     result))
 
+(defun naquadah-properties-get (lst prop)
+  (cadr (assoc prop lst)))
+
+(defun naquadah-apply-unspecified-properties (inherit-props props)
+  (while (car inherit-props)
+    (let ((i-key (car inherit-props)))
+      (if (not (plist-member props i-key))
+          (plist-put props i-key 'unspecified)))
+    (setq inherit-props (cddr inherit-props))))
+
+(defun naquadah-append-unspecified-properties (lst)
+  (dolist (elt lst)
+    (let ((key (car elt))
+          (props (cadr elt)))
+      (when (plist-member props :inherit)
+        (let ((inherit-prop (plist-get props :inherit)))
+          (if (listp inherit-prop)
+              (dolist (i inherit-prop)
+                (naquadah-apply-unspecified-properties (naquadah-properties-get lst i) props))
+            (naquadah-apply-unspecified-properties (naquadah-properties-get lst inherit-prop) props))))))
+  lst)
+
 (defun naquadah-theme-set-faces (theme &rest args)
   (apply 'custom-theme-set-faces
          (append (list theme)
-                 (mapcar 'naquadah-simple-face-to-multiple args))))
+                 (mapcar 'naquadah-simple-face-to-multiple
+                         (naquadah-append-unspecified-properties args)))))
 
 (naquadah-theme-set-faces
  'naquadah
@@ -178,28 +274,28 @@
  '(mode-line-buffer-id (:bold t :foreground orange-2))
  '(header-line (:foreground aluminium-1 :background black
                             :box (:line-width 1 :color aluminium-6)))
- '(region (:background nil))
+ '(region (:background black))
  '(link (:foreground sky-blue-1))
- '(link-visited (:inherit 'link :foreground plum-1))
+ '(link-visited (:inherit link :foreground plum-1))
  '(match (:bold t :background chocolate-1 :foreground black))
- '(tooltip (:inherit 'variable-pitch :foreground aluminium-1 :background black))
+ '(tooltip (:inherit variable-pitch :foreground aluminium-1 :background black))
  '(bold (:bold t))
  '(italic (:italic t))
+ '(warning (:bold t :foreground orange-1))
+ '(error (:bold t :foreground scarlet-red-1))
+ '(success (:bold t :foreground chameleon-1))
 
  '(font-lock-builtin-face (:foreground sky-blue-1))
- '(font-lock-keyword-face (:inherit 'font-lock-builtin-face :bold t))
- '(font-lock-comment-face (:inherit 'shadow :italic t))
- '(font-lock-comment-delimiter-face ((t (:inherit 'font-lock-comment-face))))
+ '(font-lock-keyword-face (:inherit font-lock-builtin-face :bold t))
+ '(font-lock-comment-face (:inherit shadow :italic t))
+ '(font-lock-comment-delimiter-face (:inherit font-lock-comment-face))
  '(font-lock-constant-face (:foreground chameleon-2))
- '(font-lock-type-face (:inherit 'font-lock-constant-face :bold t))
- '(font-lock-doc-face (:inherit 'shadow))
+ '(font-lock-type-face (:inherit font-lock-constant-face :bold t))
+ '(font-lock-doc-face (:inherit shadow))
  '(font-lock-string-face (:foreground plum-1))
  '(font-lock-variable-name-face (:foreground scarlet-red-1))
- '(font-lock-warning-face (:bold t :foreground orange-1))
+ '(font-lock-warning-face (:inherit warning))
  '(font-lock-function-name-face (:foreground butter-2 :bold t))
-
- ;; This is only used by jd to highligh words like TODO, XXX in code
- '(important (:box (:color aluminium-4 :line-width 2) :background scarlet-red-3 :bold t :foreground butter-2))
 
  '(comint-highlight-prompt ())
 
@@ -222,13 +318,13 @@
  '(custom-state (:foreground sky-blue-1))
  ;; '(custom-button  ((t :background "gray50" :foreground black
  ;; :box (:line-width 1 :style released-button))))
- ;; '(custom-variable-button ((t (:inherit 'custom-button))))
- ;; '(custom-button-mouse  ((t (:inherit 'custom-button :background "gray60"))))
+ ;; '(custom-variable-button ((t (:inherit custom-button))))
+ ;; '(custom-button-mouse  ((t (:inherit custom-button :background "gray60"))))
  ;; '(custom-button-unraised  ((t (:background "gray50" :foreground "black"))))
- ;; '(custom-button-mouse-unraised  ((t (:inherit 'custom-button-unraised :background "gray60"))))
- ;; '(custom-button-pressed  ((t (:inherit 'custom-button :box (:style pressed-button)))))
- ;; '(custom-button-mouse-pressed-unraised  ((t (:inherit 'custom-button-unraised :background "gray60"))))
- '(custom-documentation (:inherit 'font-lock-comment-face))
+ ;; '(custom-button-mouse-unraised  ((t (:inherit custom-button-unraised :background "gray60"))))
+ ;; '(custom-button-pressed  ((t (:inherit custom-button :box (:style pressed-button)))))
+ ;; '(custom-button-mouse-pressed-unraised  ((t (:inherit custom-button-unraised :background "gray60"))))
+ '(custom-documentation (:inherit font-lock-comment-face))
 
  '(gnus-cite-1 (:foreground gradient-1))
  '(gnus-cite-2 (:foreground gradient-2))
@@ -246,46 +342,47 @@
  '(gnus-header-to (:bold t :foreground aluminium-2))
  '(gnus-header-subject (:foreground butter-1))
  '(gnus-header-content (:italic t :foreground aluminium-2))
- '(gnus-header-newsgroups (:inherit 'gnus-header-to))
+ '(gnus-header-newsgroups (:inherit gnus-header-to))
  '(gnus-signature (:italic t :foreground aluminium-3))
  '(gnus-summary-cancelled (:background black :foreground butter-1))
  '(gnus-summary-normal-ancient (:foreground chameleon-3))
  '(gnus-summary-normal-read (:foreground chameleon-1))
  '(gnus-summary-normal-ticked (:foreground scarlet-red-1))
  '(gnus-summary-normal-unread (:foreground aluminium-1))
- '(gnus-summary-high-ancient (:inherit 'gnus-summary-normal-ancient))
- '(gnus-summary-high-read (:inherit 'gnus-summary-normal-read))
- '(gnus-summary-high-ticked (:inherit 'gnus-summary-normal-ticked))
- '(gnus-summary-high-unread (:inherit 'gnus-summary-normal-unread))
- '(gnus-summary-low-ancient (:inherit 'gnus-summary-normal-ancient :italic t))
- '(gnus-summary-low-read (:inherit 'gnus-summary-normal-read :italic t))
- '(gnus-summary-low-ticked (:inherit 'gnus-summary-normal-ticked :italic t))
- '(gnus-summary-low-unread (:inherit 'gnus-summary-normal-unread :italic t))
+ '(gnus-summary-high-ancient (:inherit gnus-summary-normal-ancient))
+ '(gnus-summary-high-read (:inherit gnus-summary-normal-read))
+ '(gnus-summary-high-ticked (:inherit gnus-summary-normal-ticked))
+ '(gnus-summary-high-unread (:inherit gnus-summary-normal-unread))
+ '(gnus-summary-low-ancient (:inherit gnus-summary-normal-ancient :italic t))
+ '(gnus-summary-low-read (:inherit gnus-summary-normal-read :italic t))
+ '(gnus-summary-low-ticked (:inherit gnus-summary-normal-ticked :italic t))
+ '(gnus-summary-low-unread (:inherit gnus-summary-normal-unread :italic t))
  '(gnus-summary-selected (:background sky-blue-3 :foreground aluminium-1))
  '(gnus-button (:bold t))
  '(spam (:background black :foreground orange-2))
 
- '(message-header-newsgroups (:inherit gnus-header-newsgroups))
- '(message-header-name (:inherit 'gnus-header-name))
+ '(message-header-newsgroups (:inherit gnus-header-to))
+ '(message-header-name (:inherit gnus-header-name))
  '(message-header-to (:inherit gnus-header-to))
  '(message-header-other (:inherit gnus-header-content))
- '(message-header-subject (:inherit 'gnus-header-subject))
+ '(message-header-subject (:inherit gnus-header-subject))
  '(message-header-cc (:foreground aluminium-2))
  '(message-header-xheader (:foreground aluminium-4))
  '(message-separator (:foreground sky-blue-3))
  '(message-mml (:foreground chameleon-1))
 
  ;; org-mode
- '(org-level-1 (:bold t :foreground gradient-1))
- '(org-level-2 (:bold t :foreground gradient-2))
- '(org-level-3 (:bold t :foreground gradient-3))
+ '(org-level-1 (:bold t :foreground gradient-1 :height 1.3))
+ '(org-level-2 (:bold t :foreground gradient-2 :height 1.2))
+ '(org-level-3 (:bold t :foreground gradient-3 :height 1.1))
  '(org-level-4 (:bold t :foreground gradient-4))
  '(org-level-5 (:bold t :foreground gradient-5))
  '(org-level-6 (:bold t :foreground gradient-6))
  '(org-level-7 (:bold t :foreground gradient-7))
  '(org-level-8 (:bold t :foreground gradient-8))
 
- '(org-mode-line-clock ())
+ '(org-column ())
+ '(org-mode-line-clock (nil))
  '(org-mode-line-clock-overrun (:foreground scarlet-red-1))
  '(org-document-title (:bold t :foreground sky-blue-1 :height 1.4))
  '(org-document-info (:foreground sky-blue-1 :italic t))
@@ -298,11 +395,11 @@
  '(org-date (:foreground chocolate-1))
  '(org-special-keyword (:foreground scarlet-red-1 :bold t))
  '(org-agenda-done ())
- '(org-time-grid (:inherit 'shadow))
- '(org-agenda-date (:foreground butter-1))
- '(org-agenda-date-today (:inherit 'org-agenda-date :foreground butter-2 :weight bold))
- '(org-agenda-date-tc (:inherit 'org-agenda-date :foreground butter-3))
- '(org-agenda-date-weekend (:inherit 'org-agenda-date :foreground scarlet-red-1 :weight bold))
+ '(org-time-grid (:inherit shadow))
+ '(org-agenda-date (:foreground butter-1 :height 1.2))
+ '(org-agenda-date-today (:inherit org-agenda-date :foreground butter-2 :weight bold :height 1.3))
+ '(org-agenda-date-tc (:inherit org-agenda-date :foreground butter-3))
+ '(org-agenda-date-weekend (:inherit org-agenda-date :foreground scarlet-red-1 :weight bold))
 
  '(org-habit-clear-future-face (:background sky-blue-3))
  '(org-habit-clear-face (:background sky-blue-2))
@@ -316,17 +413,17 @@
  '(egocentric-face (:foreground scarlet-red-1 :weight bold))
 
  ;; erc
- '(erc-direct-msg-face (:inherit 'egocentric-face))
- '(erc-header-line (:inherit 'header-line))
- '(erc-input-face (:inherit 'shadow))
- '(erc-my-nick-face (:inherit 'egocentric-face))
+ '(erc-direct-msg-face (:inherit egocentric-face))
+ '(erc-header-line (:inherit header-line))
+ '(erc-input-face (:inherit shadow))
+ '(erc-my-nick-face (:inherit egocentric-face))
  '(erc-notice-face (:foreground sky-blue-1))
  '(erc-prompt-face (:background black :foreground aluminium-1 :weight bold))
  '(erc-timestamp-face (:foreground aluminium-2 :weight bold))
  '(erc-pal-face (:foreground chameleon-1 :weight bold))
  '(erc-keyword-face (:foreground orange-1))
- '(erc-fool-face (:inherit 'shadow))
- '(erc-current-nick-face (:inherit 'egocentric-face))
+ '(erc-fool-face (:inherit shadow))
+ '(erc-current-nick-face (:inherit egocentric-face))
 
  '(which-func (:foreground sky-blue-1))
 
@@ -367,13 +464,16 @@
  ;; git-commit-mode
  '(git-commit-summary-face (:bold t))
  '(git-commit-branch-face (:foreground orange-2 :bold t))
- '(git-commit-nonempty-second-line-face ((:foreground scarlet-red-2)))
+ '(git-commit-nonempty-second-line-face (:foreground scarlet-red-2))
  '(git-commit-comment-face (:inherit font-lock-comment-face))
  '(git-commit-known-pseudo-header-face (:inherit gnus-header-name-face))
  '(git-commit-pseudo-header-face (:inherit gnus-header-content))
 
  ;; makefile-mode
  '(makefile-space (:background plum-3))
+
+ ;; mmm-mode
+ '(mmm-default-submode-face (:background aluminium-6))
 
  ;; rainbow-delimiters
  '(rainbow-delimiters-depth-1-face (:foreground gradient-1))
@@ -396,7 +496,45 @@
  '(rst-level-3-face (:foreground gradient-3 :height 1.1))
  '(rst-level-4-face (:foreground gradient-4))
  '(rst-level-5-face (:foreground gradient-5))
- '(rst-level-6-face (:foreground gradient-6)))
+ '(rst-level-6-face (:foreground gradient-6))
+
+ ;; term-mode
+ '(term-color-black (:foreground black :background black))
+ '(term-color-red (:foreground scarlet-red-1 :background scarlet-red-1))
+ '(term-color-green (:foreground chameleon-1 :background chameleon-1))
+ '(term-color-yellow (:foreground butter-1 :background butter-1))
+ '(term-color-blue (:foreground sky-blue-1 :background sky-blue-1))
+ '(term-color-magenta (:foreground plum-1 :background plum-1))
+ '(term-color-cyan (:foreground "cyan3" :background "cyan3"))
+ '(term-color-white (:foreground aluminium-1 :background aluminium-1))
+
+ ;; idle-highlight
+ '(idle-highlight (:foreground aluminium-1 :background scarlet-red-3))
+
+ ;; doc-mode
+ '(doc-title-1-face (:foreground gradient-1 :bold t :height 1.3 :inherit variable-pitch))
+ '(doc-title-2-face (:foreground gradient-2 :bold t :height 1.2 :inherit variable-pitch))
+ '(doc-title-3-face (:foreground gradient-3 :bold t :height 1.1 :inherit variable-pitch))
+ '(doc-title-4-face (:foreground gradient-4 :bold t :inherit variable-pitch))
+
+ ;; jabber
+ '(jabber-activity-face (:foreground scarlet-red-1 :weight bold))
+ '(jabber-activity-personal-face (:foreground sky-blue-1 :weight bold))
+ '(jabber-chat-error (:inherit error))
+ '(jabber-chat-prompt-foreign (:foreground scarlet-red-1 :weight bold))
+ '(jabber-chat-prompt-local (:foreground sky-blue-1 :weight bold))
+ '(jabber-chat-prompt-system (:foreground chameleon-1 :weight bold))
+ '(jabber-rare-time-face (:foreground chameleon-3 :underline t))
+ '(jabber-roster-user-away (:foreground chameleon-3 :weight normal :slant italic))
+ '(jabber-roster-user-chatty (:foreground orange-3 :weight bold :slant normal))
+ '(jabber-roster-user-dnd (:foreground scarlet-red-1 :weight normal :slant italic))
+ '(jabber-roster-user-error (:foreground scarlet-red-2 :weight light :slant italic))
+ '(jabber-roster-user-offline (:foreground aluminium-4 :weight light :slant italic))
+ '(jabber-roster-user-online (:foreground sky-blue-1 :weight bold :slant normal))
+ '(jabber-roster-user-xa (:foreground plum-1 :weight normal :slant italic))
+ '(jabber-title-large (:foreground sky-blue-1 :weight bold :height 1.4))
+ '(jabber-title-medium (:weight bold :height 1.2))
+ '(jabber-title-small (:weight bold :height 1.0)))
 
 (provide-theme 'naquadah)
 

@@ -67,7 +67,7 @@
 
 ;; Set default browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "chromium-browser")
+      browse-url-generic-program "firefox")
 
 ;; Trailing whitespace is unnecessary
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
@@ -108,7 +108,7 @@
 (add-hook 'Info-mode-hook (lambda () (define-key Info-mode-map (kbd "z")
                                        'kill-this-buffer)))
 ;; Highlight current line
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
