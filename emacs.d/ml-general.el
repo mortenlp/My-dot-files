@@ -1,10 +1,5 @@
 (server-start)
 
-;; I don't need to kill emacs that easily
-;; the mnemonic is C-x REALLY QUIT
-(global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
-(global-set-key (kbd "C-x C-c") 'delete-frame)
-
 ;; Gnus stuff
 (require 'gnus)
 (setq gnus-init-file "~/.emacs.d/ml-gnus.el")
@@ -17,27 +12,9 @@
 (setq user-mail-address "mortenlp2@gmail.com")
 (setq user-full-name "Morten Leander Petersen")
 
-;; Tooltip mode off
-(tooltip-mode -1)
-
-;; Visible bell
-(setq visible-bell t)
-
-;; Don't show startup screen
-(setq inhibit-startup-screen t)
-
 ;; Enable transient-mark-mode
 (setq transient-mark-mode t)
 (delete-selection-mode t)
-
-;; Explicitly show the end of a buffer
-(set-default 'indicate-empty-lines t)
-
-;; No bars
-(when (fboundp 'toggle-scroll-bar)
-  (toggle-scroll-bar -1)
-  (tool-bar-mode -1)
-  (menu-bar-mode -1))
 
 ;; Don't disable upcase/downcase functions
 (put 'upcase-region 'disabled nil)
@@ -45,13 +22,6 @@
 
 ;; Enable narrowing
 (put 'narrow-to-region 'disabled nil)
-
-;; Don’t blink the cursor
-(blink-cursor-mode 0)
-
-;; Display line and column numbers
-(setq line-number-mode    t)
-(setq column-number-mode  t)
 
 ;; Avoid mouse!!
 (mouse-avoidance-mode 'banish)
@@ -107,8 +77,6 @@
 ;;; Use 'z' to kill an info buffer
 (add-hook 'Info-mode-hook (lambda () (define-key Info-mode-map (kbd "z")
                                        'kill-this-buffer)))
-;; Highlight current line
-;; (global-hl-line-mode 1)
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)

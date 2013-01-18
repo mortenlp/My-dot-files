@@ -1,3 +1,29 @@
+;; Tooltip mode off
+(tooltip-mode -1)
+
+;; Visible bell
+(setq visible-bell t)
+
+;; Don't show startup screen
+(setq inhibit-startup-screen t)
+
+;; Explicitly show the end of a buffer
+(set-default 'indicate-empty-lines t)
+
+;; No bars
+(when (fboundp 'toggle-scroll-bar)
+  (toggle-scroll-bar -1)
+  (tool-bar-mode -1)
+  (menu-bar-mode -1))
+
+;; Don’t blink the cursor
+(blink-cursor-mode 0)
+
+;; Display line and column numbers
+(setq line-number-mode    t)
+(setq column-number-mode  t)
+
+
 ;; Set color if using X
 (cond
  ((and (< emacs-major-version 24) (display-graphic-p))
