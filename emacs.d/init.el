@@ -88,6 +88,7 @@
 (require 'yasnippet)
 
 ;; Load various stuff
+(load "ml-appearance.el")
 (load "ml-general.el")
 (load "ml-programming.el")
 (load "ml-projectile.el")
@@ -105,6 +106,5 @@
 (load "ml-dired.el")
 (load "ml-wrap-region.el")
 (load "ml-eshell.el")
-(load "ml-appearance.el")
 (load "ml-magit.el")
 (load "ml-ido.el")
