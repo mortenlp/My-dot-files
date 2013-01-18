@@ -1,0 +1,5 @@
+# -*- mode: emacs-lisp-mode -*-
+# name: global-set-key
+# key: gsk
+# --
+(global-set-key (kbd "C-c $1") '$0)

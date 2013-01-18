@@ -69,7 +69,8 @@
    (cons 'diminish melpa)
    (cons 'inf-ruby melpa)
    (cons 'fill-column-indicator melpa)
-   (cons 'wrap-region melpa)))
+   (cons 'wrap-region melpa)
+   (cons 'projectile melpa)))
 
 (condition-case nil
     (init--install-packages)
