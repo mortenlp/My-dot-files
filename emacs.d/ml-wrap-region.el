@@ -6,6 +6,7 @@
 (add-to-list 'wrap-region-except-modes 'emacs-lisp-mode)
 (add-to-list 'wrap-region-except-modes 'ido-mode)
 (add-to-list 'wrap-region-except-modes 'ido-ubiquitous-mode)
+(add-to-list 'wrap-region-except-modes 'gnus-summary-mode)
 (wrap-region-add-wrapper "*" "*" "*" 'org-mode)
 (wrap-region-add-wrapper "/" "/" "/" 'org-mode)
 (wrap-region-add-wrapper "_" "_" "_" 'org-mode)

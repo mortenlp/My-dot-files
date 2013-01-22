@@ -42,7 +42,7 @@
 
 ;; Shell/Terminal
 (global-set-key [(control c) (s)] 'create-scratch-buffer)
-(global-set-key (kbd "C-c <SPC>") 'ml-eshell-other-window)
+(global-set-key (kbd "C-c t") 'ml-eshell-other-window)
 (global-set-key [(control c) (y)] 'ml-term-paste)
 
 ;; Mail

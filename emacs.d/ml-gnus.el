@@ -103,7 +103,8 @@
   (kill-buffer)
   (jump-to-register :gnus-fullscreen))
 
-(define-key gnus-group-mode-map (kbd "q") 'gnus-quit-session)
+(define-key gnus-group-mode-map (kbd "q")
+  (lambda () (interactive) (gnus-group-save-newsrc) (gnus-quit-session)))
 
 ;;; Don't ask if it is ok to go online
 (setq gnus-agent-go-online t)

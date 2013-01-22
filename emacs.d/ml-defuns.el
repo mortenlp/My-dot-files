@@ -170,5 +170,4 @@ el -> for elisp"
 (defun ml-eshell-other-window ()
   "Open eshell in other window"
   (interactive)
-  (switch-to-buffer-other-window "*eshell*")
-  (eshell))
+  (pop-to-buffer (eshell)))

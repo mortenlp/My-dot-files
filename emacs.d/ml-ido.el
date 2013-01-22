@@ -17,6 +17,7 @@
 (ido-ubiquitous-use-new-completing-read webjump 'webjump)
 (ido-ubiquitous-use-new-completing-read yas/expand 'yasnippet)
 (ido-ubiquitous-use-new-completing-read yas/visit-snippet-file 'yasnippet)
+(ido-ubiquitous-use-new-completing-read recentf-ido-find-file 'recenf)
 
 ;;; Disable ido-ubiquitous in certain situations
 (ido-ubiquitous-disable-in mml-attach-file)

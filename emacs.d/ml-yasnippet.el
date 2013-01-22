@@ -31,3 +31,6 @@
 
 ;;; Remove clutter from modeline
 (diminish 'yas-minor-mode)
+
+;; Jump to end of snippet definition
+(define-key yas/keymap (kbd "<return>") 'yas/exit-all-snippets)
