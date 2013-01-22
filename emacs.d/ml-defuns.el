@@ -167,7 +167,18 @@ el -> for elisp"
   (save-excursion
     (insert-char ?\s 1)))
 
-(defun ml-eshell-other-window ()
-  "Open eshell in other window"
-  (interactive)
-  (pop-to-buffer (eshell)))
+(defun ml-choose-shell (n)
+    (let* ((shell-name (concat "*shell-" (number-to-string n) "*"))
+	  (buf (get-buffer shell-name)))
+      (if (null buf)
+	  (progn
+	    (setq buf (eshell))
+	    (rename-buffer shell-name)))
+      (pop-to-buffer buf)
+      (goto-char (point-max))))
+
+(defun ml-shell (n)
+  (interactive "P")
+  (cond ((null n) (jw-choose-shell 0))		; no prefix
+	((atom n) (jw-choose-shell n))		; numeric prefix
+	(t (jw-choose-shell 1)) ))		; ^U prefix
