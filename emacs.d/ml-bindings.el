@@ -42,7 +42,8 @@
 
 ;; Shell/Terminal
 (global-set-key [(control c) (s)] 'create-scratch-buffer)
-(global-set-key (kbd "C-c t") 'ml-shell)
+(global-set-key (kbd "C-x SPC") 'ml-shell)
+(global-set-key (kbd "C-c SPC") 'ml-shell)
 (global-set-key [(control c) (y)] 'ml-term-paste)
 
 ;; Mail
@@ -151,3 +152,6 @@
 
 ;;; Rename current buffer
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+
+;;; Join lines
+(global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))

@@ -179,6 +179,6 @@ el -> for elisp"
 
 (defun ml-shell (n)
   (interactive "P")
-  (cond ((null n) (jw-choose-shell 0))		; no prefix
-	((atom n) (jw-choose-shell n))		; numeric prefix
-	(t (jw-choose-shell 1)) ))		; ^U prefix
+  (cond ((null n) (ml-choose-shell 0))		; no prefix
+	((atom n) (ml-choose-shell n))		; numeric prefix
+	(t (ml-choose-shell 1)) ))		; ^U prefix

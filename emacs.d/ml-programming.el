@@ -24,6 +24,7 @@
 ;; For markdown mode
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+(add-hook 'markdown-mode-hook 'turn-on-auto-fill)
 
 ;;; Javascript
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
