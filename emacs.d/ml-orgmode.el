@@ -71,3 +71,7 @@
 
 ;; Show syntax highlighted fonts when using org-babel.
 (setq org-src-fontify-natively t)
+
+;;; Don't clutter the agenda
+(setq org-agenda-skip-scheduled-if-done t)
+(setq org-agenda-skip-deadline-if-done t)
