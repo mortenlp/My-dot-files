@@ -21,3 +21,5 @@ define_webjump("tv-oversigt", "http://www.dr.dk/tv/oversigt?v#side(1)")
 define_webjump("android", "http://developer.android.com/training/index.html")
 define_webjump("ruby-tut", "http://rubylearning.com/satishtalim/tutorial.html")
 define_webjump("ruby-doc", "http://www.ruby-doc.org/")
+
+define_key(text_keymap, "C-M-h", "cmd_deleteWordBackward")

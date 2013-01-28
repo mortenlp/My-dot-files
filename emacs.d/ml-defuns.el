@@ -90,14 +90,12 @@
 (defun ml-tell-the-time ()
   "Print the time and date in the minibuffer"
   (interactive)
-  (shell-command "date")
-  )
+  (shell-command "date"))
 
 (defun ml-show-battery-state ()
   "Print the battery state in the minibuffer"
   (interactive)
-  (shell-command "acpi")
-  )
+  (shell-command "acpi"))
 
 (defun ml-pub-web ()
   "Export my index.org to html and copy to public_html"
@@ -107,8 +105,7 @@
                            " ~/Dokumenter/Homepage/org.css"
                            " ~/Dokumenter/Homepage/index.org"
                            " mortenlp@ssh1.imf.au.dk:/home/mortenlp/public_html/"))
-  (shell-command scp-string)
-)
+  (shell-command scp-string))
 
 (defun ml-etags-current (sudo string)
   "Run the etags shell command on the current directory.
