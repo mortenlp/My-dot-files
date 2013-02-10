@@ -152,6 +152,11 @@
 
 ;;; Rename current buffer
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+(global-set-key (kbd "C-x C-d") 'delete-current-buffer-file)
 
 ;;; Join lines
 (global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
+
+;;; Multi-occur
+(global-set-key (kbd "M-s m") 'multi-occur)
+(global-set-key (kbd "M-s M") 'multi-occur-in-matching-buffers)

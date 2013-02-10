@@ -1,6 +1,7 @@
 alias mntntfs sudo mount -t ntfs-3g /dev/sdb1 /media/external
 alias sagar sudo apt-get autoremove
 alias upgr sudo apt-get update && sudo apt-get upgrade
+alias dupgr sudo apt-get update && sudo apt-get dist-upgrade
 alias sagi sudo apt-get install $*
 alias sagpu sudo apt-get purge $*
 alias sagug sudo apt-get upgrade
