@@ -137,6 +137,9 @@
 (add-hook 'c-mode-common-hook
           '(lambda () (local-set-key (kbd "C-M-h") 'backward-kill-word)))
 
+;;; Mark-defun
+(global-set-key (kbd "C-M-S-h") 'mark-defun)
+
 ;;; Alternative M-x
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 
