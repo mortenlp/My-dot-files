@@ -1,3 +1,11 @@
+(defun sudo-edit ()
+  (interactive)
+  (if (not buffer-file-name)
+      (find-file (concat "/sudo:root@localhost:"
+                         (ido-read-file-name "File: ")))
+    (find-alternate-file (concat "/sudo:root@localhost:"
+                                 buffer-file-name))))
+
 (defun delete-current-buffer-file ()
   "Removes file connected to current buffer and kills buffer."
   (interactive)

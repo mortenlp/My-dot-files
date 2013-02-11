@@ -163,3 +163,6 @@
 ;;; Multi-occur
 (global-set-key (kbd "M-s m") 'multi-occur)
 (global-set-key (kbd "M-s M") 'multi-occur-in-matching-buffers)
+
+;;; Edit as root!
+(global-set-key (kbd "M-s e") 'sudo-edit)
