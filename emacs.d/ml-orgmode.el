@@ -2,10 +2,10 @@
 (if (locate-library "org-contacts")
     (progn
       (require 'org-contacts)
-      (setq org-contacts-files (quote ("~/Dokumenter/OrgMode/contacts.org")))))
+      (setq org-contacts-files (quote ("~/Dokumenter/Org/contacts.org")))))
 
 ;; Org files
-(setq org-agenda-files (quote ("~/Dokumenter/OrgMode/Notes.org")))
+(setq org-agenda-files (quote ("~/Dokumenter/Org/Notes.org")))
 
 ;; Wrap long lines
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
@@ -31,34 +31,34 @@
 (setq org-drawers (quote ("PROPERTIES" "SETUP")))
 
 ;; Set default notes file
-(setq org-default-notes-file (expand-file-name "~/Dokumenter/OrgMode/Notes.org"))
+(setq org-default-notes-file (expand-file-name "~/Dokumenter/Org/Notes.org"))
 
 ;; Define templates
 (setq org-capture-templates
-      '(("o" "Opgave" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Opgaver")
+      '(("o" "Opgave" entry (file+headline "~/Dokumenter/Org/Notes.org" "Opgaver")
          "* %? %^g\n %i\n %a\n")
-        ("j" "Journal" entry (file+datetree "~/Dokumenter/OrgMode/Journal.org")
+        ("j" "Journal" entry (file+datetree "~/Dokumenter/Org/Journal.org")
          "* %?\nEntered on %U\n  %i\n  %a\n")
-        ("ø" "JeanneØnsker" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Gaveidéer til Jeanne")
+        ("ø" "JeanneØnsker" entry (file+headline "~/Dokumenter/Org/Notes.org" "Gaveidéer til Jeanne")
          "* %? %^g\n")
-        ("r" "Random noter" entry (file+headline "~/Dokumenter/OrgMode/Notes.org" "Random noter") "* %?\n")
-        ("c" "Contacts" entry (file "~/Dokumenter/OrgMode/contacts.org")
+        ("r" "Random noter" entry (file+headline "~/Dokumenter/Org/Notes.org" "Random noter") "* %?\n")
+        ("c" "Contacts" entry (file "~/Dokumenter/Org/contacts.org")
          "* %(org-contacts-template-name)
 :PROPERTIES:
 :EMAIL: %(org-contacts-template-email)
 :END:")))
 
 ;; For moblie org
-(setq org-directory "~/Dokumenter/OrgMode")
+(setq org-directory "~/Dokumenter/Org")
 (setq org-mobile-directory "~/Dropbox/Org-Mobile")
-(setq org-mobile-inbox-for-pull "~/Dokumenter/OrgMode/from-mobile.org")
-(setq org-mobile-files '("~/Dokumenter/OrgMode/Notes.org" "~/Dokumenter/OrgMode/archive.org"))
+(setq org-mobile-inbox-for-pull "~/Dokumenter/Org/from-mobile.org")
+(setq org-mobile-files '("~/Dokumenter/Org/Notes.org" "~/Dokumenter/Org/archive.org"))
 
 ;; Push changes to mobile org after saving
 (add-hook 'after-save-hook (lambda ()
                              (when
-                                 (or (equal buffer-file-name "/home/mortenlp/Dokumenter/OrgMode/Notes.org")
-                                     (equal buffer-file-name "/home/mortenlp/Dokumenter/OrgMode/archive.org"))
+                                 (or (equal buffer-file-name "/home/mortenlp/Dokumenter/Org/Notes.org")
+                                     (equal buffer-file-name "/home/mortenlp/Dokumenter/Org/archive.org"))
                                (org-mobile-push))))
 
 ;; Add languages to org-babel
