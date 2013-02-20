@@ -82,7 +82,7 @@
 (global-set-key [(control c) (r)] 'rotate-windows)
 
 ;; Eval-and-replace-ish kbd macro
-(global-set-key [(control c) (e)] 'eval-and-replace)
+(global-set-key [(control c) (e)] 'ml-eval-and-replace)
 
 ;; Tell-the-time
 (global-set-key [(control c) (u)] 'ml-tell-the-time)
@@ -159,10 +159,15 @@
 
 ;;; Join lines
 (global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
+(global-set-key (kbd "M-J") 'delete-indentation)
 
 ;;; Multi-occur
 (global-set-key (kbd "M-s m") 'multi-occur)
 (global-set-key (kbd "M-s M") 'multi-occur-in-matching-buffers)
 
 ;;; Edit as root!
-(global-set-key (kbd "M-s e") 'sudo-edit)
+(global-set-key (kbd "M-s e") 'ml-sudo-edit)
+
+;;; Rebind goto-line
+(global-set-key (kbd "M-g g") 'ml-goto-line-with-feedback)
+(global-set-key (kbd "M-g M-g") 'ml-goto-line-with-feedback)

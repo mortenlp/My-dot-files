@@ -1,6 +1,26 @@
-(defun sudo-edit ()
+(defun ml-goto-line-with-feedback ()
+  "Show line numbers temporarily, while prompting for the line number
+input"
   (interactive)
-  (if (not buffer-file-name)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (call-interactively 'goto-line))
+    (linum-mode -1)))
+
+(defun ml-eval-and-replace ()
+  "Replace the preceding sexp with its value."
+  (interactive)
+  (backward-kill-sexp)
+  (condition-case nil
+      (prin1 (eval (read (current-kill 0)))
+             (current-buffer))
+    (error (message "Invalid expression")
+           (insert (current-kill 0)))))
+
+(defun ml-sudo-edit (&optional arg)
+  (interactive)
+  (if (or arg (not buffer-file-name))
       (find-file (concat "/sudo:root@localhost:"
                          (ido-read-file-name "File: ")))
     (find-alternate-file (concat "/sudo:root@localhost:"
