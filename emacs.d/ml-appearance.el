@@ -30,7 +30,7 @@
   (load-theme 'naquadah))
  ((and (>= emacs-major-version 24) (display-graphic-p))
   (load-theme 'naquadah t)) )
-(setq fci-rule-color "#222222")
+(setq fci-rule-color "#333333")
 
 ;; (set-background-color "black")
 ;; (set-foreground-color "white")

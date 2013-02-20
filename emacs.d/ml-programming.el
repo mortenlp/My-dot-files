@@ -34,4 +34,10 @@
 (add-hook 'c-mode-common-hook 'fci-mode)
 (add-hook 'emacs-lisp-mode-hook 'fci-mode)
 (add-hook 'LaTeX-mode-hook 'fci-mode)
-(add-hook 'shell-script-mode 'fci-mode)
+(add-hook 'sh-mode-hook 'fci-mode)
+
+;;; JAVA
+(add-hook 'java-mode-hook (lambda ()
+                            (local-set-key
+                             (kbd "M-j")
+                             '(lambda () (interactive) (join-line -1)))))

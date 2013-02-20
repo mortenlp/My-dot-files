@@ -1,0 +1,8 @@
+# -*- mode: java-mode -*-
+# name: BeforeTest
+# key: bef
+# --
+@Before
+public void setUp() {
+$0
+}

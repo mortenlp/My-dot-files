@@ -1,0 +1,8 @@
+# -*- mode: java-mode -*-
+# name: Test
+# key: t
+# --
+@Test
+public void ${1:name}() {
+$0
+}
