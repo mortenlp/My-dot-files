@@ -1,0 +1,5 @@
+# -*- mode: java-mode -*-
+# name: printError
+# key: pe
+# --
+System.err.println($0);

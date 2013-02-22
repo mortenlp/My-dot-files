@@ -1,0 +1,5 @@
+# -*- mode: emacs-lisp-mode -*-
+# name: save-excursion
+# key: se
+# --
+(save-excursion $0)
