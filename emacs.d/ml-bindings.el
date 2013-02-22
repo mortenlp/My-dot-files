@@ -38,7 +38,9 @@
 (global-set-key [(f7)] 'svn-status)
 
 ;; Compile
-(global-set-key (kbd "C-c m") 'compile)
+;; Compile
+(global-set-key (kbd "C-c m")  'recompile)
+(global-set-key (kbd "C-c M")  'compile)
 
 ;; Shell/Terminal
 (global-set-key [(control c) (s)] 'create-scratch-buffer)

@@ -19,7 +19,7 @@
             (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
 ;; Compile command
-(setq compile-command "make -f ")
+(setq compile-command "make -k -f ")
 
 ;; For markdown mode
 (setq auto-mode-alist
@@ -41,3 +41,5 @@
                             (local-set-key
                              (kbd "M-j")
                              '(lambda () (interactive) (join-line -1)))))
+(add-hook 'java-mode-hook 'java-refactor-mode)
+(diminish 'java-refactor-mode)

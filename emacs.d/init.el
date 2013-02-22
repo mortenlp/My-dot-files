@@ -86,6 +86,7 @@
 (require 'ido-ubiquitous)
 (require 'epresent nil t)
 (require 'yasnippet)
+(require 'java-refactor)
 
 ;; Load various stuff
 (load "ml-appearance.el")
